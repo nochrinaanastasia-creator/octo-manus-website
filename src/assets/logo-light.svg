@@ -1,0 +1,12 @@
+<!-- Replace this placeholder with your final light-on-dark logo asset. -->
+<svg width="480" height="160" viewBox="0 0 480 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="160" rx="32" fill="#191430"/>
+  <circle cx="68" cy="80" r="30" stroke="#EFD4CF" stroke-width="2"/>
+  <circle cx="68" cy="80" r="10" fill="#EFD4CF"/>
+  <circle cx="96" cy="58" r="5" fill="#EFD4CF"/>
+  <circle cx="102" cy="80" r="4" fill="#EFD4CF"/>
+  <circle cx="94" cy="102" r="5" fill="#EFD4CF"/>
+  <path d="M125 60H132.5L145.5 97L158.5 60H166L146.5 115H144.5L125 60Z" fill="#EFD4CF"/>
+  <text x="186" y="82" fill="#EFD4CF" font-family="Georgia, serif" font-size="44" letter-spacing="4">Octo Manus</text>
+  <text x="188" y="112" fill="#EFD4CF" font-family="Arial, sans-serif" font-size="13" letter-spacing="6">AI CONSULTING STUDIO</text>
+</svg>
