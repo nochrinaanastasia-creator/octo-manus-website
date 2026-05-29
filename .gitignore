@@ -34,3 +34,6 @@ dist-ssr
 # Netlify
 .netlify/
 
+# Local-only presentation slides
+src/routes/presentation.tsx
+
