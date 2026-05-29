@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import {
   Building2, User, Mail, Phone, Briefcase, Users,
@@ -558,8 +558,15 @@ function ContactPage() {
               )}
             </span>
             <span className="text-base leading-relaxed" style={{ color: IVORY, opacity: 0.65 }}>
-              I agree to the processing of my personal data in accordance with Octo Manus's Privacy Policy.{" "}
-              <span style={{ color: ROSE, opacity: 0.85 }}>*</span>
+              I agree to the processing of my personal data in accordance with Octo Manus's{" "}
+              <Link
+                to="/privacy"
+                className="underline underline-offset-2 transition-opacity hover:opacity-100"
+                style={{ color: ROSE, opacity: 0.85 }}
+              >
+                Privacy Policy
+              </Link>
+              . <span style={{ color: ROSE, opacity: 0.85 }}>*</span>
             </span>
           </button>
 

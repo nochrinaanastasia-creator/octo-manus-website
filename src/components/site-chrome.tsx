@@ -114,13 +114,13 @@ export function CookieBar() {
           We use cookies to understand how you use our site and to improve your experience.
           By continuing to use this site, you agree to our use of cookies.
           {" "}
-          <a
-            href="#"
+          <Link
+            to="/privacy"
             className="underline underline-offset-2 transition-opacity hover:opacity-100"
             style={{ color: ROSE, opacity: 0.85 }}
           >
             Privacy Policy
-          </a>
+          </Link>
         </p>
         <div className="flex shrink-0 gap-3">
           <button

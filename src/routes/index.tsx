@@ -10,7 +10,7 @@ import {
   ROSE,
   ctaButtonStyle,
 } from "@/components/site-chrome";
-import { makeStars, StarField, ConstellationLines } from "@/components/StarField";
+import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // No constellation color override — using brand ROSE from default
@@ -103,7 +103,6 @@ function Index() {
           <StarField stars={heroStarsDeep} />
           {/* Middle constellations */}
           <StarField stars={heroStarsConstellation} />
-          <ConstellationLines stars={heroStarsConstellation} color={ROSE} lineOpacity={0.4} every={1} maxDist={25} />
           {/* Right-side constellation fill — dense stars where the gap is */}
           <StarField stars={heroStarsRight} />
           <StarField stars={heroStarsBright} />
