@@ -38,42 +38,6 @@ export const Route = createFileRoute("/contact")({
   }),
 });
 
-const INDUSTRIES = [
-  "Supply Chain, Logistics & Warehousing",
-  "Retail, E-commerce & Fashion",
-  "Beauty & Wellness",
-  "Other",
-];
-
-const COMPANY_SIZES = [
-  "1–10 employees",
-  "11–50 employees",
-  "51–200 employees",
-  "201–500 employees",
-  "500+ employees",
-];
-
-const SERVICES = [
-  { id: "ai-advisory", label: "AI Advisory" },
-  { id: "automation", label: "Automation & Workflows" },
-  { id: "ai-agents", label: "AI Agents" },
-];
-
-const TIMELINES = [
-  "As soon as possible",
-  "Within 1–3 months",
-  "3–6 months from now",
-  "Just exploring for now",
-];
-
-const BUDGETS = [
-  "€2,000 – €5,000",
-  "€5,000 – €15,000",
-  "€15,000 – €50,000",
-  "Over €50,000",
-  "Prefer to discuss",
-];
-
 type FormData = {
   company:      string;
   name:         string;
@@ -148,6 +112,8 @@ function Field({
 /* ── Page ────────────────────────────────────────────────── */
 function ContactPage() {
   const { t } = useLanguage();
+  const ct = t.contact;
+
   const [form, setForm] = useState<FormData>(EMPTY);
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [fileName, setFileName] = useState<string>("");
@@ -181,7 +147,6 @@ function ContactPage() {
     e.preventDefault();
     setStatus("submitting");
     // TODO: Connect to email service (Formspree / EmailJS)
-    // e.g.: await fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: JSON.stringify(form) })
     await new Promise((r) => setTimeout(r, 1400)); // simulate
     setStatus("success");
   }
@@ -210,14 +175,14 @@ function ContactPage() {
               className="metallic-rose text-4xl md:text-5xl mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Message received.
+              {ct.successH1}
             </h1>
             <p className="text-base leading-relaxed mb-4" style={{ color: IVORY, opacity: 0.82 }}>
-              We'll review your enquiry and come back to you within{" "}
-              <span style={{ color: ROSE }}>1 business day</span>.
+              {ct.successBody}{" "}
+              <span style={{ color: ROSE }}>1 {ct.reassurances[0].text.split(" ").slice(-2).join(" ")}</span>.
             </p>
             <p className="text-sm italic" style={{ color: IVORY, opacity: 0.5 }}>
-              In the meantime, feel free to explore our services or industries pages.
+              {ct.successSub}
             </p>
           </div>
         </div>
@@ -242,32 +207,28 @@ function ContactPage() {
             className="text-sm uppercase tracking-[0.22em] mb-5"
             style={{ color: ROSE, fontFamily: "var(--font-body)", fontWeight: 500 }}
           >
-            Contact
+            {ct.heroLabel}
           </p>
           <h1
             className="metallic-rose text-5xl leading-[1.08] md:text-6xl lg:text-7xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Let's Talk About
+            {ct.heroH1[0]}
             <br />
-            Your Business.
+            {ct.heroH1[1]}
           </h1>
           <p
             className="mx-auto mt-7 max-w-xl text-base leading-relaxed md:text-lg"
             style={{ color: IVORY, opacity: 0.78 }}
           >
-            No pitch, no pressure. Tell us what you're working on and what you'd like to change — we'll come back within 1 business day.
+            {ct.heroBody}
           </p>
 
           {/* Quick reassurances */}
           <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
-            {[
-              { icon: Clock, text: "Reply within 1 business day" },
-              { icon: Users, text: "No sales call unless you want one" },
-              { icon: CheckCircle2, text: "First call is a free assessment" },
-            ].map(({ icon: Icon, text }) => (
+            {ct.reassurances.map(({ text }) => (
               <div key={text} className="flex items-center gap-2.5">
-                <Icon className="h-4 w-4 flex-shrink-0" style={{ color: ROSE, opacity: 0.75 }} strokeWidth={1.5} />
+                <Clock className="h-4 w-4 flex-shrink-0" style={{ color: ROSE, opacity: 0.75 }} strokeWidth={1.5} />
                 <span className="text-base" style={{ color: IVORY, opacity: 0.65 }}>{text}</span>
               </div>
             ))}
@@ -281,10 +242,10 @@ function ContactPage() {
 
           {/* ── Company + Name ── */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <Field label="Company name" icon={Building2} required>
+            <Field label={ct.fields.companyName} icon={Building2} required>
               <input
                 type="text"
-                placeholder="Your company name"
+                placeholder={ct.fields.companyPlaceholder}
                 required
                 value={form.company}
                 onChange={set("company")}
@@ -293,10 +254,10 @@ function ContactPage() {
                 style={focusStyle("company")}
               />
             </Field>
-            <Field label="Your name" icon={User} required>
+            <Field label={ct.fields.yourName} icon={User} required>
               <input
                 type="text"
-                placeholder="First and last name"
+                placeholder={ct.fields.namePlaceholder}
                 required
                 value={form.name}
                 onChange={set("name")}
@@ -309,10 +270,10 @@ function ContactPage() {
 
           {/* ── Email + Phone ── */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <Field label="Email address" icon={Mail} required>
+            <Field label={ct.fields.emailAddress} icon={Mail} required>
               <input
                 type="email"
-                placeholder="info@yourcompany.com"
+                placeholder={ct.fields.emailPlaceholder}
                 required
                 value={form.email}
                 onChange={set("email")}
@@ -321,10 +282,10 @@ function ContactPage() {
                 style={focusStyle("email")}
               />
             </Field>
-            <Field label="Phone number" icon={Phone}>
+            <Field label={ct.fields.phoneNumber} icon={Phone}>
               <input
                 type="tel"
-                placeholder="+39 000 000 0000"
+                placeholder={ct.fields.phonePlaceholder}
                 value={form.phone}
                 onChange={set("phone")}
                 onFocus={() => setFocusedField("phone")}
@@ -335,7 +296,7 @@ function ContactPage() {
           </div>
 
           {/* ── Industry ── */}
-          <Field label="Industry" icon={Briefcase} required>
+          <Field label={ct.fields.industry} icon={Briefcase} required>
             <select
               required
               value={form.industry}
@@ -351,18 +312,18 @@ function ContactPage() {
                 paddingRight: "42px",
               }}
             >
-              <option value="" disabled>Select your industry</option>
-              {INDUSTRIES.map((ind) => (
+              <option value="" disabled>{ct.fields.industryPlaceholder}</option>
+              {ct.industries.map((ind) => (
                 <option key={ind} value={ind} style={{ backgroundColor: "#08131F" }}>{ind}</option>
               ))}
             </select>
           </Field>
 
-          {form.industry === "Other" && (
-            <Field label="Please specify your industry" icon={Briefcase} required>
+          {form.industry === ct.industries[ct.industries.length - 1] && (
+            <Field label={ct.fields.industryOther} icon={Briefcase} required>
               <input
                 type="text"
-                placeholder="Describe your industry"
+                placeholder={ct.fields.industryOtherPlaceholder}
                 required
                 value={form.industryOther}
                 onChange={set("industryOther")}
@@ -374,7 +335,7 @@ function ContactPage() {
           )}
 
           {/* ── Company size ── */}
-          <Field label="Company size" icon={Users}>
+          <Field label={ct.fields.companySize} icon={Users}>
             <select
               value={form.companySize}
               onChange={set("companySize")}
@@ -389,8 +350,8 @@ function ContactPage() {
                 paddingRight: "42px",
               }}
             >
-              <option value="" style={{ backgroundColor: "#08131F" }}>Select company size</option>
-              {COMPANY_SIZES.map((s) => (
+              <option value="" style={{ backgroundColor: "#08131F" }}>{ct.fields.companySizePlaceholder}</option>
+              {ct.companySizes.map((s) => (
                 <option key={s} value={s} style={{ backgroundColor: "#08131F" }}>{s}</option>
               ))}
             </select>
@@ -401,11 +362,11 @@ function ContactPage() {
             <label style={labelStyle}>
               <span className="flex items-center gap-1.5">
                 <Briefcase className="h-3.5 w-3.5" />
-                Services interested in
+                {ct.fields.servicesLabel}
               </span>
             </label>
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-5">
-              {SERVICES.map(({ id, label }) => {
+              {ct.services.map(({ id, label }) => {
                 const checked = form.services.includes(id);
                 return (
                   <button
@@ -443,10 +404,10 @@ function ContactPage() {
           </div>
 
           {/* ── Description ── */}
-          <Field label="Tell us about your challenge" icon={FileText} required>
+          <Field label={ct.fields.descriptionLabel} icon={FileText} required>
             <textarea
               rows={5}
-              placeholder="Describe what you'd like to automate, improve, or solve. The more context you give us, the more useful our first conversation will be."
+              placeholder={ct.fields.descriptionPlaceholder}
               required
               value={form.description}
               onChange={set("description")}
@@ -458,7 +419,7 @@ function ContactPage() {
 
           {/* ── Timeline + Budget ── */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <Field label="When do you want to start?" icon={Clock}>
+            <Field label={ct.fields.timelineLabel} icon={Clock}>
               <select
                 value={form.timeline}
                 onChange={set("timeline")}
@@ -473,13 +434,13 @@ function ContactPage() {
                   paddingRight: "42px",
                 }}
               >
-                <option value="" style={{ backgroundColor: "#08131F" }}>Select timeline</option>
-                {TIMELINES.map((t) => (
-                  <option key={t} value={t} style={{ backgroundColor: "#08131F" }}>{t}</option>
+                <option value="" style={{ backgroundColor: "#08131F" }}>{ct.fields.timelinePlaceholder}</option>
+                {ct.timelines.map((tl) => (
+                  <option key={tl} value={tl} style={{ backgroundColor: "#08131F" }}>{tl}</option>
                 ))}
               </select>
             </Field>
-            <Field label="Budget range (optional)" icon={Briefcase}>
+            <Field label={ct.fields.budgetLabel} icon={Briefcase}>
               <select
                 value={form.budget}
                 onChange={set("budget")}
@@ -494,8 +455,8 @@ function ContactPage() {
                   paddingRight: "42px",
                 }}
               >
-                <option value="" style={{ backgroundColor: "#08131F" }}>Select budget range</option>
-                {BUDGETS.map((b) => (
+                <option value="" style={{ backgroundColor: "#08131F" }}>{ct.fields.budgetPlaceholder}</option>
+                {ct.budgets.map((b) => (
                   <option key={b} value={b} style={{ backgroundColor: "#08131F" }}>{b}</option>
                 ))}
               </select>
@@ -507,7 +468,7 @@ function ContactPage() {
             <label style={labelStyle}>
               <span className="flex items-center gap-1.5">
                 <Paperclip className="h-3.5 w-3.5" />
-                Attach a file (optional)
+                {ct.fields.attachLabel}
               </span>
             </label>
             <label
@@ -520,7 +481,7 @@ function ContactPage() {
             >
               <Paperclip className="h-4 w-4 flex-shrink-0" style={{ color: ROSE, opacity: 0.65 }} />
               <span className="text-base" style={{ opacity: fileName ? 1 : 0.5 }}>
-                {fileName || "Click to attach a brief, process doc, or screenshot"}
+                {fileName || ct.fields.attachPlaceholder}
               </span>
               <input
                 type="file"
@@ -533,7 +494,7 @@ function ContactPage() {
               />
             </label>
             <p className="mt-1.5 text-xs" style={{ color: IVORY, opacity: 0.38 }}>
-              PDF, DOC, PNG, JPG, XLSX or CSV — max 10 MB
+              {ct.fields.attachHint}
             </p>
           </div>
 
@@ -558,13 +519,13 @@ function ContactPage() {
               )}
             </span>
             <span className="text-base leading-relaxed" style={{ color: IVORY, opacity: 0.65 }}>
-              I agree to the processing of my personal data in accordance with Octo Manus's{" "}
+              {ct.privacyText}{" "}
               <Link
                 to="/privacy"
                 className="underline underline-offset-2 transition-opacity hover:opacity-100"
                 style={{ color: ROSE, opacity: 0.85 }}
               >
-                Privacy Policy
+                {ct.privacyLink}
               </Link>
               . <span style={{ color: ROSE, opacity: 0.85 }}>*</span>
             </span>
@@ -584,17 +545,17 @@ function ContactPage() {
               {status === "submitting" ? (
                 <>
                   <span className="animate-spin">◌</span>
-                  Sending…
+                  {ct.sendingLabel}
                 </>
               ) : (
                 <>
                   <Send className="h-4 w-4" strokeWidth={1.8} />
-                  Send Enquiry
+                  {ct.submitLabel}
                 </>
               )}
             </button>
             <p className="mt-4 text-sm italic" style={{ color: IVORY, opacity: 0.4 }}>
-              No pitch. No sales pressure. Just an honest conversation about your business.
+              {ct.noPitch}
             </p>
           </div>
 

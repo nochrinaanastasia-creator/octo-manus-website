@@ -88,6 +88,82 @@ export interface Translations {
     retail: { navLabel: string; shortLabel: string };
     beauty: { navLabel: string; shortLabel: string };
   };
+  services: {
+    heroLabel: string;
+    heroH1: string[];
+    heroBody: string;
+    exploreLabel: string;
+    howWeWork: string;
+    advisory: {
+      badge: string;
+      headline: string[];
+      sub: string;
+      intro: string;
+      steps: { title: string; desc: string }[];
+      benefits: { title: string; desc: string }[];
+    };
+    automation: {
+      badge: string;
+      headline: string[];
+      sub: string;
+      intro: string;
+      steps: { title: string; desc: string }[];
+      benefits: { stat: string; title: string; desc: string }[];
+    };
+    agents: {
+      badge: string;
+      headline: string[];
+      sub: string;
+      intro: string;
+      steps: { title: string; desc: string }[];
+      benefits: { stat?: string; title: string; desc: string }[];
+    };
+  };
+  contact: {
+    heroLabel: string;
+    heroH1: string[];
+    heroBody: string;
+    reassurances: { text: string }[];
+    fields: {
+      companyName: string;
+      companyPlaceholder: string;
+      yourName: string;
+      namePlaceholder: string;
+      emailAddress: string;
+      emailPlaceholder: string;
+      phoneNumber: string;
+      phonePlaceholder: string;
+      industry: string;
+      industryPlaceholder: string;
+      industryOther: string;
+      industryOtherPlaceholder: string;
+      companySize: string;
+      companySizePlaceholder: string;
+      servicesLabel: string;
+      descriptionLabel: string;
+      descriptionPlaceholder: string;
+      timelineLabel: string;
+      timelinePlaceholder: string;
+      budgetLabel: string;
+      budgetPlaceholder: string;
+      attachLabel: string;
+      attachPlaceholder: string;
+      attachHint: string;
+    };
+    industries: string[];
+    companySizes: string[];
+    services: { id: string; label: string }[];
+    timelines: string[];
+    budgets: string[];
+    privacyText: string;
+    privacyLink: string;
+    submitLabel: string;
+    sendingLabel: string;
+    noPitch: string;
+    successH1: string;
+    successBody: string;
+    successSub: string;
+  };
 }
 
 /* ════════════════════════════════════════════
@@ -239,6 +315,141 @@ const en: Translations = {
       navLabel: "Beauty & Wellness",
       shortLabel: "Beauty & Wellness",
     },
+  },
+  services: {
+    heroLabel: "Services",
+    heroH1: ["AI That Works the Way", "Your Business Does."],
+    heroBody: "Three focused services — advisory, automation, and agents — each built to deliver measurable results without the complexity that usually comes with AI adoption.",
+    exploreLabel: "↓ Explore",
+    howWeWork: "How we work",
+    advisory: {
+      badge: "AI Advisory",
+      headline: ["Understand AI Before", "You Invest in It."],
+      sub: "For businesses that want to move deliberately — not just quickly.",
+      intro: "Most businesses know they need to do something with AI. Few know exactly what, where to start, or what will actually make a difference. AI Advisory combines strategic guidance with a hands-on masterclass built around your specific business — so you finish knowing precisely what AI can do for you, how to start, and how to avoid the costly mistakes most companies make.",
+      steps: [
+        { title: "Discovery Call", desc: "We understand your business and goals." },
+        { title: "Customised Masterclass", desc: "Hands-on session built around your operations." },
+        { title: "3-Month Support", desc: "Ongoing guidance as you apply AI." },
+      ],
+      benefits: [
+        { title: "Clarity Before You Spend", desc: "Know exactly where AI fits — and where it doesn't. No guesswork, no wasted budget on tools that don't match your business." },
+        { title: "A Roadmap Built Around You", desc: "Not a generic framework. A prioritised plan based on your actual operations, team size, and real constraints." },
+        { title: "Confidence at Every Step", desc: "Expert guidance before you commit — not a consultant who disappears after the deck is delivered." },
+      ],
+    },
+    automation: {
+      badge: "Automation & Workflows",
+      headline: ["The Hours Spent on Manual Work", "Are Costing More Than You Think."],
+      sub: "For operations teams drowning in tasks that don't require human judgement.",
+      intro: "Manual processes are expensive in ways that don't show up in a spreadsheet — time, morale, error rates, delayed decisions. We identify the workflows ready to be automated, build the systems that replace them, and make sure they fit how your team actually works. The goal isn't automation for its own sake. It's more capacity for the work that matters.",
+      steps: [
+        { title: "Discovery Call", desc: "We identify where manual work costs most." },
+        { title: "Process Mapping", desc: "Document what's done and where errors occur." },
+        { title: "Tool Selection", desc: "Right automation tools for your stack." },
+        { title: "Build & Integrate", desc: "Build, connect, and test with real data." },
+        { title: "Test & Optimise", desc: "Refine until results beat the manual process." },
+        { title: "2-Month Support", desc: "Guidance as your team settles in." },
+      ],
+      benefits: [
+        { stat: "8–15h", title: "Recovered Every Week", desc: "Teams typically recover 8–15 hours per week once key manual processes are automated — every week, without anyone managing them." },
+        { stat: "~0%", title: "Error Rate", desc: "Manual data entry carries a 1–5% error rate. Automated pipelines run at effectively zero — no rekeying, no forgotten steps." },
+        { stat: "10×", title: "Volume, Same Team", desc: "Handle 10× the operational volume with the same headcount. No overtime, no burnout, no additional cost." },
+      ],
+    },
+    agents: {
+      badge: "AI Agents",
+      headline: ["Some Work Doesn't Need", "to Wait for a Human."],
+      sub: "For businesses that want consistent, scalable output without scaling headcount.",
+      intro: "An AI agent handles a specific task — customer inquiries, data processing, reporting, supplier follow-ups — without human intervention at every step. We design agents that understand your business context, operate within defined boundaries, and escalate to humans precisely when they should. Consistent, high-quality output at a scale your team couldn't maintain manually.",
+      steps: [
+        { title: "Discovery Call", desc: "We identify the task, scope, and boundaries." },
+        { title: "Process Mapping", desc: "Map the logic and data the agent needs." },
+        { title: "Agent Design", desc: "Boundaries, tone, and escalation — before code." },
+        { title: "Training & Testing", desc: "Trained on your data, tested on edge cases." },
+        { title: "Deploy & Monitor", desc: "Live, tracked, and ready to retrain." },
+      ],
+      benefits: [
+        { title: "Always Available", desc: "Your agent handles enquiries around the clock — weekends, evenings, and holidays. Consistent quality, every time, without adding headcount." },
+        { stat: "80%", title: "Routine Handled", desc: "Agents handle up to 80% of routine interactions, freeing your team for work that requires human judgement." },
+        { title: "Consistent at Scale", desc: "Unlike humans, agents don't have off days. Every interaction is handled with the same quality, tone, and accuracy — regardless of volume." },
+      ],
+    },
+  },
+  contact: {
+    heroLabel: "Contact",
+    heroH1: ["Let's Talk About", "Your Business."],
+    heroBody: "No pitch, no pressure. Tell us what you're working on and what you'd like to change — we'll come back within 1 business day.",
+    reassurances: [
+      { text: "Reply within 1 business day" },
+      { text: "No sales call unless you want one" },
+      { text: "First call is a free assessment" },
+    ],
+    fields: {
+      companyName: "Company name",
+      companyPlaceholder: "Your company name",
+      yourName: "Your name",
+      namePlaceholder: "First and last name",
+      emailAddress: "Email address",
+      emailPlaceholder: "info@yourcompany.com",
+      phoneNumber: "Phone number",
+      phonePlaceholder: "+39 000 000 0000",
+      industry: "Industry",
+      industryPlaceholder: "Select your industry",
+      industryOther: "Please specify your industry",
+      industryOtherPlaceholder: "Describe your industry",
+      companySize: "Company size",
+      companySizePlaceholder: "Select company size",
+      servicesLabel: "Services interested in",
+      descriptionLabel: "Tell us about your challenge",
+      descriptionPlaceholder: "Describe what you'd like to automate, improve, or solve. The more context you give us, the more useful our first conversation will be.",
+      timelineLabel: "When do you want to start?",
+      timelinePlaceholder: "Select timeline",
+      budgetLabel: "Budget range (optional)",
+      budgetPlaceholder: "Select budget range",
+      attachLabel: "Attach a file (optional)",
+      attachPlaceholder: "Click to attach a brief, process doc, or screenshot",
+      attachHint: "PDF, DOC, PNG, JPG, XLSX or CSV — max 10 MB",
+    },
+    industries: [
+      "Supply Chain, Logistics & Warehousing",
+      "Retail, E-commerce & Fashion",
+      "Beauty & Wellness",
+      "Other",
+    ],
+    companySizes: [
+      "1–10 employees",
+      "11–50 employees",
+      "51–200 employees",
+      "201–500 employees",
+      "500+ employees",
+    ],
+    services: [
+      { id: "ai-advisory", label: "AI Advisory" },
+      { id: "automation", label: "Automation & Workflows" },
+      { id: "ai-agents", label: "AI Agents" },
+    ],
+    timelines: [
+      "As soon as possible",
+      "Within 1–3 months",
+      "3–6 months from now",
+      "Just exploring for now",
+    ],
+    budgets: [
+      "€2,000 – €5,000",
+      "€5,000 – €15,000",
+      "€15,000 – €50,000",
+      "Over €50,000",
+      "Prefer to discuss",
+    ],
+    privacyText: "I agree to the processing of my personal data in accordance with Octo Manus's",
+    privacyLink: "Privacy Policy",
+    submitLabel: "Send Enquiry",
+    sendingLabel: "Sending…",
+    noPitch: "No pitch. No sales pressure. Just an honest conversation about your business.",
+    successH1: "Message received.",
+    successBody: "We'll review your enquiry and come back to you within",
+    successSub: "In the meantime, feel free to explore our services or industries pages.",
   },
 };
 
@@ -393,6 +604,141 @@ const es: Translations = {
       shortLabel: "Belleza y Bienestar",
     },
   },
+  services: {
+    heroLabel: "Servicios",
+    heroH1: ["Una IA que Funciona", "Como tu Negocio."],
+    heroBody: "Tres servicios enfocados — asesoría, automatización y agentes — cada uno diseñado para ofrecer resultados medibles sin la complejidad que suele venir con la adopción de la IA.",
+    exploreLabel: "↓ Explorar",
+    howWeWork: "Cómo trabajamos",
+    advisory: {
+      badge: "Asesoría de IA",
+      headline: ["Entiende la IA Antes", "de Invertir en Ella."],
+      sub: "Para empresas que quieren avanzar con criterio — no solo con rapidez.",
+      intro: "La mayoría de las empresas saben que necesitan hacer algo con la IA. Pocas saben exactamente qué, por dónde empezar o qué marcará realmente la diferencia. La Asesoría de IA combina orientación estratégica con una masterclass práctica construida en torno a tu negocio específico — para que acabes sabiendo exactamente qué puede hacer la IA por ti, cómo empezar y cómo evitar los errores costosos que cometen la mayoría de las empresas.",
+      steps: [
+        { title: "Llamada de Descubrimiento", desc: "Entendemos tu negocio y tus objetivos." },
+        { title: "Masterclass Personalizada", desc: "Sesión práctica construida alrededor de tus operaciones." },
+        { title: "Soporte de 3 Meses", desc: "Orientación continua mientras aplicas la IA." },
+      ],
+      benefits: [
+        { title: "Claridad Antes de Gastar", desc: "Sabe exactamente dónde encaja la IA — y dónde no. Sin conjeturas, sin presupuesto desperdiciado en herramientas que no encajan con tu negocio." },
+        { title: "Una Hoja de Ruta a Tu Medida", desc: "No es un marco genérico. Es un plan priorizado basado en tus operaciones reales, el tamaño de tu equipo y tus restricciones concretas." },
+        { title: "Confianza en Cada Paso", desc: "Orientación experta antes de comprometerte — no un consultor que desaparece después de entregar la presentación." },
+      ],
+    },
+    automation: {
+      badge: "Automatización de Procesos",
+      headline: ["Las Horas Invertidas en Trabajo Manual", "Cuestan Más de lo que Crees."],
+      sub: "Para equipos de operaciones desbordados de tareas que no requieren juicio humano.",
+      intro: "Los procesos manuales son costosos de formas que no aparecen en una hoja de cálculo — tiempo, motivación, tasas de error, decisiones retrasadas. Identificamos los flujos de trabajo listos para automatizarse, construimos los sistemas que los reemplazan y nos aseguramos de que encajen con la forma en que tu equipo trabaja realmente. El objetivo no es la automatización por sí misma. Es más capacidad para el trabajo que importa.",
+      steps: [
+        { title: "Llamada de Descubrimiento", desc: "Identificamos dónde el trabajo manual tiene más coste." },
+        { title: "Mapeo de Procesos", desc: "Documentamos qué se hace y dónde ocurren los errores." },
+        { title: "Selección de Herramientas", desc: "Las herramientas de automatización adecuadas para tu stack." },
+        { title: "Construcción e Integración", desc: "Construimos, conectamos y probamos con datos reales." },
+        { title: "Prueba y Optimización", desc: "Refinamos hasta que los resultados superen el proceso manual." },
+        { title: "Soporte de 2 Meses", desc: "Orientación mientras tu equipo se adapta." },
+      ],
+      benefits: [
+        { stat: "8–15h", title: "Recuperadas Cada Semana", desc: "Los equipos suelen recuperar entre 8 y 15 horas semanales una vez que se automatizan los procesos manuales clave — cada semana, sin que nadie los gestione." },
+        { stat: "~0%", title: "Tasa de Error", desc: "La entrada manual de datos tiene una tasa de error del 1–5%. Las pipelines automatizadas funcionan a efectivamente cero — sin rekeying, sin pasos olvidados." },
+        { stat: "10×", title: "Volumen, Mismo Equipo", desc: "Gestiona un volumen operativo 10 veces mayor con el mismo personal. Sin horas extra, sin agotamiento, sin coste adicional." },
+      ],
+    },
+    agents: {
+      badge: "Agentes de IA",
+      headline: ["Hay Trabajo que No Necesita", "Esperar a una Persona."],
+      sub: "Para empresas que quieren resultados consistentes y escalables sin aumentar el equipo.",
+      intro: "Un agente de IA gestiona una tarea específica — consultas de clientes, procesamiento de datos, informes, seguimiento de proveedores — sin intervención humana en cada paso. Diseñamos agentes que entienden el contexto de tu negocio, operan dentro de límites definidos y escalan a personas exactamente cuando deben. Resultados consistentes y de alta calidad a una escala que tu equipo no podría mantener manualmente.",
+      steps: [
+        { title: "Llamada de Descubrimiento", desc: "Identificamos la tarea, el alcance y los límites." },
+        { title: "Mapeo de Procesos", desc: "Mapeamos la lógica y los datos que necesita el agente." },
+        { title: "Diseño del Agente", desc: "Límites, tono y escalada — antes del código." },
+        { title: "Entrenamiento y Pruebas", desc: "Entrenado con tus datos, probado en casos extremos." },
+        { title: "Despliegue y Monitorización", desc: "En producción, con seguimiento y listo para reentrenarse." },
+      ],
+      benefits: [
+        { title: "Siempre Disponible", desc: "Tu agente gestiona consultas a cualquier hora — fines de semana, noches y festivos. Calidad consistente, siempre, sin aumentar el equipo." },
+        { stat: "80%", title: "Rutinas Gestionadas", desc: "Los agentes gestionan hasta el 80% de las interacciones rutinarias, liberando a tu equipo para el trabajo que requiere juicio humano." },
+        { title: "Consistente a Escala", desc: "A diferencia de las personas, los agentes no tienen días malos. Cada interacción se gestiona con la misma calidad, tono y precisión — independientemente del volumen." },
+      ],
+    },
+  },
+  contact: {
+    heroLabel: "Contacto",
+    heroH1: ["Hablemos de", "Tu Negocio."],
+    heroBody: "Sin discursos, sin presión. Cuéntanos en qué estás trabajando y qué te gustaría cambiar — te respondemos en 1 día hábil.",
+    reassurances: [
+      { text: "Respuesta en 1 día hábil" },
+      { text: "Sin llamada de ventas salvo que la quieras" },
+      { text: "La primera llamada es una evaluación gratuita" },
+    ],
+    fields: {
+      companyName: "Nombre de la empresa",
+      companyPlaceholder: "Nombre de tu empresa",
+      yourName: "Tu nombre",
+      namePlaceholder: "Nombre y apellidos",
+      emailAddress: "Correo electrónico",
+      emailPlaceholder: "info@tuempresa.com",
+      phoneNumber: "Teléfono",
+      phonePlaceholder: "+34 000 000 000",
+      industry: "Sector",
+      industryPlaceholder: "Selecciona tu sector",
+      industryOther: "Especifica tu sector",
+      industryOtherPlaceholder: "Describe tu sector",
+      companySize: "Tamaño de la empresa",
+      companySizePlaceholder: "Selecciona el tamaño",
+      servicesLabel: "Servicios de interés",
+      descriptionLabel: "Cuéntanos tu reto",
+      descriptionPlaceholder: "Describe qué te gustaría automatizar, mejorar o resolver. Cuanto más contexto nos des, más útil será nuestra primera conversación.",
+      timelineLabel: "¿Cuándo quieres empezar?",
+      timelinePlaceholder: "Selecciona el plazo",
+      budgetLabel: "Rango de presupuesto (opcional)",
+      budgetPlaceholder: "Selecciona un rango",
+      attachLabel: "Adjuntar un archivo (opcional)",
+      attachPlaceholder: "Haz clic para adjuntar un brief, documento de proceso o captura",
+      attachHint: "PDF, DOC, PNG, JPG, XLSX o CSV — máx. 10 MB",
+    },
+    industries: [
+      "Cadena de Suministro, Logística y Almacenamiento",
+      "Retail, E-commerce y Moda",
+      "Belleza y Bienestar",
+      "Otro",
+    ],
+    companySizes: [
+      "1–10 empleados",
+      "11–50 empleados",
+      "51–200 empleados",
+      "201–500 empleados",
+      "500+ empleados",
+    ],
+    services: [
+      { id: "ai-advisory", label: "Asesoría de IA" },
+      { id: "automation", label: "Automatización de Procesos" },
+      { id: "ai-agents", label: "Agentes de IA" },
+    ],
+    timelines: [
+      "Lo antes posible",
+      "En 1–3 meses",
+      "En 3–6 meses",
+      "Solo estoy explorando por ahora",
+    ],
+    budgets: [
+      "€2.000 – €5.000",
+      "€5.000 – €15.000",
+      "€15.000 – €50.000",
+      "Más de €50.000",
+      "Prefiero discutirlo",
+    ],
+    privacyText: "Acepto el tratamiento de mis datos personales de acuerdo con la",
+    privacyLink: "Política de Privacidad",
+    submitLabel: "Enviar Consulta",
+    sendingLabel: "Enviando…",
+    noPitch: "Sin discursos. Sin presión de ventas. Solo una conversación honesta sobre tu negocio.",
+    successH1: "Mensaje recibido.",
+    successBody: "Revisaremos tu consulta y te responderemos en",
+    successSub: "Mientras tanto, no dudes en explorar nuestros servicios o páginas de sectores.",
+  },
 };
 
 /* ════════════════════════════════════════════
@@ -545,6 +891,141 @@ const it: Translations = {
       navLabel: "Beauty & Wellness",
       shortLabel: "Beauty & Wellness",
     },
+  },
+  services: {
+    heroLabel: "Servizi",
+    heroH1: ["Una IA che Funziona", "Come la Tua Azienda."],
+    heroBody: "Tre servizi focalizzati — consulenza, automazione e agenti — ciascuno pensato per offrire risultati misurabili senza la complessità che di solito accompagna l'adozione dell'IA.",
+    exploreLabel: "↓ Scopri",
+    howWeWork: "Come lavoriamo",
+    advisory: {
+      badge: "Consulenza IA",
+      headline: ["Capire l'IA Prima", "di Investirci."],
+      sub: "Per le aziende che vogliono muoversi con criterio — non solo in fretta.",
+      intro: "La maggior parte delle aziende sa di dover fare qualcosa con l'IA. Poche sanno esattamente cosa, da dove iniziare o cosa farà davvero la differenza. La Consulenza IA combina una guida strategica con una masterclass pratica costruita attorno alla tua azienda specifica — così alla fine saprai esattamente cosa può fare l'IA per te, come iniziare e come evitare gli errori costosi che commettono la maggior parte delle aziende.",
+      steps: [
+        { title: "Discovery Call", desc: "Capiamo la tua azienda e i tuoi obiettivi." },
+        { title: "Masterclass Personalizzata", desc: "Sessione pratica costruita attorno alle tue operazioni." },
+        { title: "Supporto di 3 Mesi", desc: "Guida continua mentre applichi l'IA." },
+      ],
+      benefits: [
+        { title: "Chiarezza Prima di Spendere", desc: "Sapere esattamente dove si adatta l'IA — e dove non si adatta. Nessuna congettura, nessun budget sprecato in strumenti che non corrispondono al tuo business." },
+        { title: "Una Roadmap Costruita su Misura", desc: "Non un framework generico. Un piano prioritizzato basato sulle tue operazioni reali, le dimensioni del tuo team e i tuoi vincoli concreti." },
+        { title: "Sicurezza ad Ogni Passo", desc: "Guida esperta prima di impegnarti — non un consulente che sparisce dopo aver consegnato la presentazione." },
+      ],
+    },
+    automation: {
+      badge: "Automazione dei Processi",
+      headline: ["Le Ore Spese nel Lavoro Manuale", "Costano Più di Quanto Pensi."],
+      sub: "Per i team operativi sommersi da attività che non richiedono giudizio umano.",
+      intro: "I processi manuali sono costosi in modi che non compaiono in un foglio di calcolo — tempo, morale, tassi di errore, decisioni ritardate. Identifichiamo i flussi di lavoro pronti per essere automatizzati, costruiamo i sistemi che li sostituiscono e ci assicuriamo che si adattino a come il tuo team lavora davvero. L'obiettivo non è l'automazione in sé. È più capacità per il lavoro che conta.",
+      steps: [
+        { title: "Discovery Call", desc: "Identifichiamo dove il lavoro manuale costa di più." },
+        { title: "Mappatura dei Processi", desc: "Documentiamo cosa si fa e dove si verificano gli errori." },
+        { title: "Selezione degli Strumenti", desc: "Gli strumenti di automazione giusti per il tuo stack." },
+        { title: "Costruzione e Integrazione", desc: "Costruiamo, connettiamo e testiamo con dati reali." },
+        { title: "Test e Ottimizzazione", desc: "Raffiniamo finché i risultati superano il processo manuale." },
+        { title: "Supporto di 2 Mesi", desc: "Guida mentre il tuo team si adatta." },
+      ],
+      benefits: [
+        { stat: "8–15h", title: "Recuperate Ogni Settimana", desc: "I team recuperano tipicamente 8–15 ore a settimana una volta che i principali processi manuali sono stati automatizzati — ogni settimana, senza che nessuno li gestisca." },
+        { stat: "~0%", title: "Tasso di Errore", desc: "L'inserimento manuale dei dati ha un tasso di errore dell'1–5%. Le pipeline automatizzate funzionano a zero — nessuna riscrittura, nessun passaggio dimenticato." },
+        { stat: "10×", title: "Volume, Stesso Team", desc: "Gestisci un volume operativo 10 volte maggiore con lo stesso organico. Nessuno straordinario, nessun esaurimento, nessun costo aggiuntivo." },
+      ],
+    },
+    agents: {
+      badge: "Agenti IA",
+      headline: ["Certo Lavoro Non Ha", "Bisogno di Aspettare una Persona."],
+      sub: "Per le aziende che vogliono output consistenti e scalabili senza aumentare l'organico.",
+      intro: "Un agente IA gestisce un compito specifico — richieste dei clienti, elaborazione dati, reportistica, follow-up con i fornitori — senza intervento umano ad ogni passaggio. Progettiamo agenti che comprendono il contesto del tuo business, operano entro limiti definiti ed escalano agli esseri umani esattamente quando dovrebbero. Output consistente e di alta qualità a una scala che il tuo team non potrebbe mantenere manualmente.",
+      steps: [
+        { title: "Discovery Call", desc: "Identifichiamo il compito, l'ambito e i limiti." },
+        { title: "Mappatura dei Processi", desc: "Mappiamo la logica e i dati di cui l'agente ha bisogno." },
+        { title: "Design dell'Agente", desc: "Limiti, tono ed escalation — prima del codice." },
+        { title: "Training e Testing", desc: "Addestrato sui tuoi dati, testato sui casi limite." },
+        { title: "Deploy e Monitoraggio", desc: "Attivo, monitorato e pronto per il retraining." },
+      ],
+      benefits: [
+        { title: "Sempre Disponibile", desc: "Il tuo agente gestisce le richieste tutto il giorno — weekend, serate e festivi. Qualità consistente, ogni volta, senza aggiungere personale." },
+        { stat: "80%", title: "Routine Gestite", desc: "Gli agenti gestiscono fino all'80% delle interazioni di routine, liberando il tuo team per il lavoro che richiede giudizio umano." },
+        { title: "Consistente su Scala", desc: "A differenza degli esseri umani, gli agenti non hanno giorni no. Ogni interazione viene gestita con la stessa qualità, tono e precisione — indipendentemente dal volume." },
+      ],
+    },
+  },
+  contact: {
+    heroLabel: "Contatti",
+    heroH1: ["Parliamo del", "Tuo Business."],
+    heroBody: "Nessun discorso, nessuna pressione. Raccontaci su cosa stai lavorando e cosa vorresti cambiare — ti rispondiamo entro 1 giorno lavorativo.",
+    reassurances: [
+      { text: "Risposta entro 1 giorno lavorativo" },
+      { text: "Nessuna chiamata di vendita salvo che tu la voglia" },
+      { text: "La prima chiamata è una valutazione gratuita" },
+    ],
+    fields: {
+      companyName: "Nome dell'azienda",
+      companyPlaceholder: "Nome della tua azienda",
+      yourName: "Il tuo nome",
+      namePlaceholder: "Nome e cognome",
+      emailAddress: "Indirizzo email",
+      emailPlaceholder: "info@tuaazienda.com",
+      phoneNumber: "Numero di telefono",
+      phonePlaceholder: "+39 000 000 0000",
+      industry: "Settore",
+      industryPlaceholder: "Seleziona il tuo settore",
+      industryOther: "Specifica il tuo settore",
+      industryOtherPlaceholder: "Descrivi il tuo settore",
+      companySize: "Dimensione aziendale",
+      companySizePlaceholder: "Seleziona la dimensione",
+      servicesLabel: "Servizi di interesse",
+      descriptionLabel: "Raccontaci la tua sfida",
+      descriptionPlaceholder: "Descrivi cosa vorresti automatizzare, migliorare o risolvere. Più contesto ci dai, più utile sarà la nostra prima conversazione.",
+      timelineLabel: "Quando vuoi iniziare?",
+      timelinePlaceholder: "Seleziona la tempistica",
+      budgetLabel: "Fascia di budget (opzionale)",
+      budgetPlaceholder: "Seleziona una fascia",
+      attachLabel: "Allega un file (opzionale)",
+      attachPlaceholder: "Clicca per allegare un brief, documento di processo o screenshot",
+      attachHint: "PDF, DOC, PNG, JPG, XLSX o CSV — max 10 MB",
+    },
+    industries: [
+      "Supply Chain, Logistica e Magazzino",
+      "Retail, E-commerce e Moda",
+      "Beauty & Wellness",
+      "Altro",
+    ],
+    companySizes: [
+      "1–10 dipendenti",
+      "11–50 dipendenti",
+      "51–200 dipendenti",
+      "201–500 dipendenti",
+      "500+ dipendenti",
+    ],
+    services: [
+      { id: "ai-advisory", label: "Consulenza IA" },
+      { id: "automation", label: "Automazione dei Processi" },
+      { id: "ai-agents", label: "Agenti IA" },
+    ],
+    timelines: [
+      "Il prima possibile",
+      "Entro 1–3 mesi",
+      "Tra 3–6 mesi",
+      "Sto solo esplorando per ora",
+    ],
+    budgets: [
+      "€2.000 – €5.000",
+      "€5.000 – €15.000",
+      "€15.000 – €50.000",
+      "Oltre €50.000",
+      "Preferisco discuterne",
+    ],
+    privacyText: "Acconsento al trattamento dei miei dati personali in conformità con la",
+    privacyLink: "Privacy Policy",
+    submitLabel: "Invia Richiesta",
+    sendingLabel: "Invio in corso…",
+    noPitch: "Nessun discorso. Nessuna pressione commerciale. Solo una conversazione onesta sul tuo business.",
+    successH1: "Messaggio ricevuto.",
+    successBody: "Esamineremo la tua richiesta e ti risponderemo entro",
+    successSub: "Nel frattempo, esplora pure le nostre pagine sui servizi o sui settori.",
   },
 };
 

@@ -83,7 +83,7 @@ type Step = {
 
 type Benefit = {
   icon:   LucideIcon;
-  stat?:  string;   // optional — only shown when defined
+  stat?:  string;
   title:  string;
   desc:   string;
 };
@@ -98,188 +98,17 @@ type ServiceData = {
   benefits: Benefit[];
 };
 
-/* ── Service content ─────────────────────────────────────── */
-const SERVICES: ServiceData[] = [
-  {
-    id:       "ai-advisory",
-    badge:    "AI Advisory",
-    headline: ["Understand AI Before", "You Invest in It."],
-    sub:      "For businesses that want to move deliberately — not just quickly.",
-    intro:
-      "Most businesses know they need to do something with AI. Few know exactly what, where to start, or what will actually make a difference. AI Advisory combines strategic guidance with a hands-on masterclass built around your specific business — so you finish knowing precisely what AI can do for you, how to start, and how to avoid the costly mistakes most companies make.",
-    steps: [
-      {
-        number: "01",
-        icon:   Phone,
-        title:  "Discovery Call",
-        desc:   "We understand your business and goals.",
-      },
-      {
-        number: "02",
-        icon:   BookOpen,
-        title:  "Customised Masterclass",
-        desc:   "Hands-on session built around your operations.",
-      },
-      {
-        number: "03",
-        icon:   LifeBuoy,
-        title:  "3-Month Support",
-        desc:   "Ongoing guidance as you apply AI.",
-        isHighlight: true,
-      },
-    ],
-    benefits: [
-      {
-        icon:  Compass,
-        title: "Clarity Before You Spend",
-        desc:  "Know exactly where AI fits — and where it doesn't. No guesswork, no wasted budget on tools that don't match your business.",
-      },
-      {
-        icon:  Map,
-        title: "A Roadmap Built Around You",
-        desc:  "Not a generic framework. A prioritised plan based on your actual operations, team size, and real constraints.",
-      },
-      {
-        icon:  Award,
-        title: "Confidence at Every Step",
-        desc:  "Expert guidance before you commit — not a consultant who disappears after the deck is delivered.",
-      },
-    ],
-  },
+/* ── Icon maps (static) ──────────────────────────────────── */
+const ADVISORY_STEP_ICONS: LucideIcon[] = [Phone, BookOpen, LifeBuoy];
+const AUTOMATION_STEP_ICONS: LucideIcon[] = [Phone, GitBranch, Settings, Layers, CheckCircle2, ShieldCheck];
+const AGENT_STEP_ICONS: LucideIcon[] = [Phone, GitBranch, Bot, Brain, Rocket];
 
-  {
-    id:       "automation",
-    badge:    "Automation & Workflows",
-    headline: ["The Hours Spent on Manual Work", "Are Costing More Than You Think."],
-    sub:      "For operations teams drowning in tasks that don't require human judgement.",
-    intro:
-      "Manual processes are expensive in ways that don't show up in a spreadsheet — time, morale, error rates, delayed decisions. We identify the workflows ready to be automated, build the systems that replace them, and make sure they fit how your team actually works. The goal isn't automation for its own sake. It's more capacity for the work that matters.",
-    steps: [
-      {
-        number: "01",
-        icon:   Phone,
-        title:  "Discovery Call",
-        desc:   "We identify where manual work costs most.",
-      },
-      {
-        number: "02",
-        icon:   GitBranch,
-        title:  "Process Mapping",
-        desc:   "Document what's done and where errors occur.",
-      },
-      {
-        number: "03",
-        icon:   Settings,
-        title:  "Tool Selection",
-        desc:   "Right automation tools for your stack.",
-      },
-      {
-        number: "04",
-        icon:   Layers,
-        title:  "Build & Integrate",
-        desc:   "Build, connect, and test with real data.",
-      },
-      {
-        number: "05",
-        icon:   CheckCircle2,
-        title:  "Test & Optimise",
-        desc:   "Refine until results beat the manual process.",
-      },
-      {
-        number: "06",
-        icon:   ShieldCheck,
-        title:  "2-Month Support",
-        desc:   "Guidance as your team settles in.",
-        isHighlight: true,
-      },
-    ],
-    benefits: [
-      {
-        icon:  Clock,
-        stat:  "8–15h",
-        title: "Recovered Every Week",
-        desc:  "Teams typically recover 8–15 hours per week once key manual processes are automated — every week, without anyone managing them.",
-      },
-      {
-        icon:  RefreshCw,
-        stat:  "~0%",
-        title: "Error Rate",
-        desc:  "Manual data entry carries a 1–5% error rate. Automated pipelines run at effectively zero — no rekeying, no forgotten steps.",
-      },
-      {
-        icon:  TrendingUp,
-        stat:  "10×",
-        title: "Volume, Same Team",
-        desc:  "Handle 10× the operational volume with the same headcount. No overtime, no burnout, no additional cost.",
-      },
-    ],
-  },
-
-  {
-    id:       "ai-agents",
-    badge:    "AI Agents",
-    headline: ["Some Work Doesn't Need", "to Wait for a Human."],
-    sub:      "For businesses that want consistent, scalable output without scaling headcount.",
-    intro:
-      "An AI agent handles a specific task — customer inquiries, data processing, reporting, supplier follow-ups — without human intervention at every step. We design agents that understand your business context, operate within defined boundaries, and escalate to humans precisely when they should. Consistent, high-quality output at a scale your team couldn't maintain manually.",
-    steps: [
-      {
-        number: "01",
-        icon:   Phone,
-        title:  "Discovery Call",
-        desc:   "We identify the task, scope, and boundaries.",
-      },
-      {
-        number: "02",
-        icon:   GitBranch,
-        title:  "Process Mapping",
-        desc:   "Map the logic and data the agent needs.",
-      },
-      {
-        number: "03",
-        icon:   Bot,
-        title:  "Agent Design",
-        desc:   "Boundaries, tone, and escalation — before code.",
-      },
-      {
-        number: "04",
-        icon:   Brain,
-        title:  "Training & Testing",
-        desc:   "Trained on your data, tested on edge cases.",
-      },
-      {
-        number: "05",
-        icon:   Rocket,
-        title:  "Deploy & Monitor",
-        desc:   "Live, tracked, and ready to retrain.",
-        isHighlight: true,
-      },
-    ],
-    benefits: [
-      {
-        icon:  Users,
-        // no stat
-        title: "Always Available",
-        desc:  "Your agent handles enquiries around the clock — weekends, evenings, and holidays. Consistent quality, every time, without adding headcount.",
-      },
-      {
-        icon:  Database,
-        stat:  "80%",
-        title: "Routine Handled",
-        desc:  "Agents handle up to 80% of routine interactions, freeing your team for work that requires human judgement.",
-      },
-      {
-        icon:  Star,
-        // no stat
-        title: "Consistent at Scale",
-        desc:  "Unlike humans, agents don’t have off days. Every interaction is handled with the same quality, tone, and accuracy — regardless of volume.",
-      },
-    ],
-  },
-];
+const ADVISORY_BENEFIT_ICONS: LucideIcon[] = [Compass, Map, Award];
+const AUTOMATION_BENEFIT_ICONS: LucideIcon[] = [Clock, RefreshCw, TrendingUp];
+const AGENT_BENEFIT_ICONS: LucideIcon[] = [Users, Database, Star];
 
 /* ── Horizontal Timeline ─────────────────────────────────── */
-function HowWeWork({ steps }: { steps: Step[] }) {
+function HowWeWork({ steps, howWeWorkLabel }: { steps: Step[]; howWeWorkLabel: string }) {
   const count = steps.length;
   const colClass =
     count <= 3 ? "lg:grid-cols-3" :
@@ -287,7 +116,7 @@ function HowWeWork({ steps }: { steps: Step[] }) {
 
   return (
     <div className="mt-14">
-      <SectionLabel>How we work</SectionLabel>
+      <SectionLabel>{howWeWorkLabel}</SectionLabel>
 
       <div className={`relative grid grid-cols-2 gap-y-12 gap-x-4 ${colClass}`}>
 
@@ -357,7 +186,7 @@ function HowWeWork({ steps }: { steps: Step[] }) {
 }
 
 /* ── Service section ─────────────────────────────────────── */
-function ServiceSection({ service, idx }: { service: ServiceData; idx: number }) {
+function ServiceSection({ service, idx, howWeWorkLabel }: { service: ServiceData; idx: number; howWeWorkLabel: string }) {
   const isEven = idx % 2 === 0;
   const bg = isEven ? PAGE_BG : PAGE_BG_ALT;
 
@@ -413,7 +242,7 @@ function ServiceSection({ service, idx }: { service: ServiceData; idx: number })
         </p>
 
         {/* Timeline */}
-        <HowWeWork steps={service.steps} />
+        <HowWeWork steps={service.steps} howWeWorkLabel={howWeWorkLabel} />
 
         {/* Benefits — 3 cols */}
         <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -455,7 +284,7 @@ function ServiceSection({ service, idx }: { service: ServiceData; idx: number })
                 {title}
               </h3>
 
-              {/* Desc — larger font, slightly shorter content */}
+              {/* Desc */}
               <p
                 className="text-base leading-relaxed"
                 style={{ color: IVORY, opacity: 0.72 }}
@@ -492,6 +321,71 @@ function ServicesPage() {
     []
   );
 
+  const sv = t.services;
+
+  /* Build service data from translations */
+  const SERVICES: ServiceData[] = [
+    {
+      id:       "ai-advisory",
+      badge:    sv.advisory.badge,
+      headline: sv.advisory.headline,
+      sub:      sv.advisory.sub,
+      intro:    sv.advisory.intro,
+      steps: sv.advisory.steps.map((s, i) => ({
+        number: String(i + 1).padStart(2, "0"),
+        icon:   ADVISORY_STEP_ICONS[i] ?? Phone,
+        title:  s.title,
+        desc:   s.desc,
+        isHighlight: i === sv.advisory.steps.length - 1,
+      })),
+      benefits: sv.advisory.benefits.map((b, i) => ({
+        icon:  ADVISORY_BENEFIT_ICONS[i] ?? Compass,
+        title: b.title,
+        desc:  b.desc,
+      })),
+    },
+    {
+      id:       "automation",
+      badge:    sv.automation.badge,
+      headline: sv.automation.headline,
+      sub:      sv.automation.sub,
+      intro:    sv.automation.intro,
+      steps: sv.automation.steps.map((s, i) => ({
+        number: String(i + 1).padStart(2, "0"),
+        icon:   AUTOMATION_STEP_ICONS[i] ?? Phone,
+        title:  s.title,
+        desc:   s.desc,
+        isHighlight: i === sv.automation.steps.length - 1,
+      })),
+      benefits: sv.automation.benefits.map((b, i) => ({
+        icon:  AUTOMATION_BENEFIT_ICONS[i] ?? Clock,
+        stat:  b.stat,
+        title: b.title,
+        desc:  b.desc,
+      })),
+    },
+    {
+      id:       "ai-agents",
+      badge:    sv.agents.badge,
+      headline: sv.agents.headline,
+      sub:      sv.agents.sub,
+      intro:    sv.agents.intro,
+      steps: sv.agents.steps.map((s, i) => ({
+        number: String(i + 1).padStart(2, "0"),
+        icon:   AGENT_STEP_ICONS[i] ?? Phone,
+        title:  s.title,
+        desc:   s.desc,
+        isHighlight: i === sv.agents.steps.length - 1,
+      })),
+      benefits: sv.agents.benefits.map((b, i) => ({
+        icon:  AGENT_BENEFIT_ICONS[i] ?? Users,
+        stat:  b.stat,
+        title: b.title,
+        desc:  b.desc,
+      })),
+    },
+  ];
+
   return (
     <div className="min-h-screen text-foreground" style={{ backgroundColor: PAGE_BG }}>
       <SiteHeader />
@@ -504,20 +398,20 @@ function ServicesPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-7 text-center">
-          <SectionLabel>Services</SectionLabel>
+          <SectionLabel>{sv.heroLabel}</SectionLabel>
           <h1
             className="metallic-rose text-5xl leading-[1.08] md:text-6xl lg:text-7xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            AI That Works the Way
+            {sv.heroH1[0]}
             <br />
-            Your Business Does.
+            {sv.heroH1[1]}
           </h1>
           <p
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed md:text-lg"
             style={{ color: IVORY, opacity: 0.82 }}
           >
-            {nb("Three focused services — advisory, automation, and agents — each built to deliver measurable results without the complexity that usually comes with AI adoption.")}
+            {nb(sv.heroBody)}
           </p>
 
           {/* Service jump cards */}
@@ -544,7 +438,7 @@ function ServicesPage() {
                   {s.sub}
                 </p>
                 <p className="text-xs uppercase tracking-wider pt-2" style={{ color: ROSE, opacity: 0.7 }}>
-                  ↓ Explore
+                  {sv.exploreLabel}
                 </p>
               </a>
             ))}
@@ -558,7 +452,7 @@ function ServicesPage() {
 
       {SERVICES.map((service, idx) => (
         <div key={service.id}>
-          <ServiceSection service={service} idx={idx} />
+          <ServiceSection service={service} idx={idx} howWeWorkLabel={sv.howWeWork} />
           {idx < SERVICES.length - 1 && (
             <div className="mx-auto max-w-7xl px-5 md:px-7">
               <RoseDivider />
