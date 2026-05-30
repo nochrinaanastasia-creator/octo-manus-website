@@ -259,7 +259,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                 return (
                   <div
                     key={title}
-                    className="rounded-2xl p-7"
+                    className="rounded-2xl p-7 flex flex-col"
                     style={{
                       backgroundColor: "#08131F",
                       border: "1px solid rgba(233,181,166,0.16)",
@@ -267,7 +267,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                     }}
                   >
                     <div
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-xl mb-5"
+                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl mb-4"
                       style={{
                         background: "linear-gradient(135deg, rgba(233,181,166,0.13) 0%, rgba(244,199,185,0.04) 100%)",
                         border: "1px solid rgba(233,181,166,0.2)",
@@ -303,7 +303,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
               return (
                 <div
                   key={title}
-                  className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+                  className="rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1"
                   style={{
                     backgroundColor: "#08131F",
                     border: "1px solid rgba(233,181,166,0.18)",
@@ -311,7 +311,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                   }}
                 >
                   <div
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl mb-6"
+                    className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl mb-4"
                     style={{
                       background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
                       border: "1px solid rgba(233,181,166,0.25)",
