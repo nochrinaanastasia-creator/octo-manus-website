@@ -57,7 +57,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain ── */
       {
         badge:    "Supply Chain · Logistics · Warehousing",
-        headline: ["When Operations Depend on Timing, Manual Coordination Becomes Risky."],
+        headline: ["When Operations Depend on Timing,", "Manual Coordination Becomes Risky."],
         sub:      "AI for logistics, warehousing and supply chain teams who run on precision — not promises.",
         intro:    "Your operation runs on information. When that information is fragmented across platforms, inboxes and supplier relationships, the cost shows up in delays, excess stock and decisions made without the full picture. We build AI systems that give your team visibility and response time — not workarounds.",
         pains: [
@@ -156,7 +156,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain IT ── */
       {
         badge:    "Supply Chain · Logistica · Magazzino",
-        headline: ["Quando la consegna è in ritardo,", "le buone intenzioni non scaricano i camion."],
+        headline: ["Quando le operazioni dipendono dai tempi,", "il coordinamento manuale diventa un rischio."],
         sub:      "AI per team logistici e di supply chain che operano con precisione — non con promesse.",
         intro:    "La tua operazione dipende dalle informazioni. Quando questi dati sono frammentati su piattaforme diverse, caselle di posta e relazioni con i fornitori, il costo si vede nei ritardi e nelle decisioni prese senza il quadro completo. Costruiamo sistemi AI che danno al tuo team visibilità e reattività — non soluzioni provvisorie.",
         pains: [
@@ -255,7 +255,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain ES ── */
       {
         badge:    "Supply Chain · Logística · Almacén",
-        headline: ["Cuando una entrega llega tarde,", "las buenas intenciones no descargan el camión."],
+        headline: ["Cuando las operaciones dependen del tiempo,", "la coordinación manual se convierte en un riesgo."],
         sub:      "IA para equipos de logística, almacén y supply chain que operan con precisión — no con promesas.",
         intro:    "Tu operación depende de la información. Cuando esa información está fragmentada en plataformas, bandejas de entrada y relaciones con proveedores, el coste se traduce en retrasos y decisiones sin el panorama completo. Construimos sistemas de IA que dan a tu equipo visibilidad y capacidad de respuesta — no parches.",
         pains: [
