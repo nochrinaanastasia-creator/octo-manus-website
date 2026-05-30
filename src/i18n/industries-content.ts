@@ -93,10 +93,10 @@ export const industriesContent: Record<string, IndustriesLang> = {
           { title: "Scattered Product Images",       desc: "Product visuals are spread across supplier websites, folders, marketplaces, archives, or chats, making them slow to collect and match." },
         ],
         solutions: [
-          { title: "Product Content at Scale",         desc: "Descriptions, titles, SEO metadata and size guidance written in your brand voice — for as many SKUs as you need, with consistent quality." },
-          { title: "AI Customer Service Agents",       desc: "Brand-trained agents handling inquiries around the clock, escalating edge cases and reducing response times without adding headcount." },
-          { title: "Returns Intelligence",             desc: "Structured returns processing with automatic data capture — feeding product insights into your buying decisions, not just the warehouse system." },
-          { title: "Demand & Inventory Forecasting",   desc: "Sell-through monitoring and reorder recommendations built on your actual sales data — so you're stocking with a plan, not a hunch." },
+          { title: "Product Content Automation",         desc: "AI workflows that generate, adapt, translate, and structure product descriptions, SEO titles, size details, marketplace copy, and attributes as your catalogue grows." },
+          { title: "Customer Support Assistants",       desc: "AI assistants that answer recurring questions about size, availability, delivery, returns, product details, and order status — with escalation when human support is needed." },
+          { title: "Stock Data Alignment",             desc: "Workflows that help keep product availability, warehouse stock, marketplace data, and internal files more consistent, reducing overselling and manual checks." },
+          { title: "Image Collection & Matching",   desc: "Systems that collect, organize, and match product visuals from supplier websites, folders, marketplaces, archives, or chats, making catalogue preparation faster." },
         ],
         insight: {
           hook:  "15–25%",
@@ -108,7 +108,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
 
       /* ── Beauty ── */
       {
-        badge:    "Beauty · Wellness · Services",
+        badge:    "Beauty · Wellness · Service Providers",
         headline: ["Your Clients Come for the Experience.", "Let AI Handle the Rest."],
         sub:      "AI for salons, spas, clinics and wellness businesses that want to grow — without the admin growing alongside them.",
         intro:    "Your business is built around presence — being fully engaged with whoever is in the room. The problem is that the before and after of each appointment create a constant stream of tasks that compete directly with that focus. We build the systems that handle them so you don't have to.",
@@ -119,10 +119,10 @@ export const industriesContent: Record<string, IndustriesLang> = {
           { title: "Manual Client Admin", desc: "Client notes, preferences, intake forms, aftercare messages, review requests, and follow-ups are often handled manually — taking time away from client-facing work." },
         ],
         solutions: [
-          { title: "Booking & Reminder Automation",   desc: "Confirmation messages, pre-appointment reminders and post-visit follow-ups that run without manual effort — reducing no-shows across the board." },
-          { title: "Client Retention Workflows",      desc: "Personalised rebooking nudges and loyalty touchpoints timed around your actual client visit patterns — not generic intervals." },
-          { title: "Digital Intake & Records",        desc: "Client preferences, history and consent captured digitally before the appointment — searchable, consistent and ready when you are." },
-          { title: "Content Scheduling",              desc: "Posts drafted in your tone and aesthetic, scheduled and published consistently — without your evenings disappearing into content planning." },
+          { title: "Booking & Reminder Automation",   desc: "Automated reminders, confirmations, cancellation flows, and waitlist messages that help reduce empty slots and missed appointments." },
+          { title: "Client Response Assistants",      desc: "AI assistants that answer common questions about availability, prices, treatments, preparation, aftercare, policies, and location." },
+          { title: "Rebooking & Follow-Up Flows",        desc: "Personalized follow-ups that encourage clients to book their next visit, leave a review, or follow the right aftercare steps." },
+          { title: "Client Admin Workflows",              desc: "Systems for intake forms, client notes, preferences, treatment history, aftercare messages, and review requests — organized in one smoother process." },
         ],
         insight: {
           hook:  "8–12h",
