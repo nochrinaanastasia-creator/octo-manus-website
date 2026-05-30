@@ -200,7 +200,7 @@ const en: Translations = {
     services: [
       {
         title: "AI Advisory",
-        desc: "Unsure where AI can make the biggest difference in your business? We map your operations, identify high-value opportunities, and build an AI roadmap your team can actually implement — and stick to.",
+        desc: "Before you spend a single euro on AI tools, you need to know which ones are actually worth it for your business. We run a customised AI masterclass built around your specific operations — then stay with you for 3 months while you apply it.",
       },
       {
         title: "Automation & Workflows",
@@ -488,7 +488,7 @@ const es: Translations = {
     services: [
       {
         title: "Asesoría de IA",
-        desc: "¿No tienes claro dónde la IA puede marcar mayor diferencia en tu negocio? Analizamos tus operaciones, identificamos las oportunidades de mayor valor y construimos una hoja de ruta que tu equipo pueda implementar de verdad.",
+        desc: "Antes de gastar un solo euro en herramientas de IA, necesitas saber cuáles merecen realmente la pena para tu negocio. Llevamos a cabo una masterclass de IA personalizada y construida en torno a tus operaciones específicas — y nos quedamos contigo 3 meses mientras la aplicas.",
       },
       {
         title: "Automatización de Procesos",
@@ -776,7 +776,7 @@ const it: Translations = {
     services: [
       {
         title: "Consulenza IA",
-        desc: "Non sai dove l'IA può fare la differenza più grande nella tua azienda? Analizziamo le tue operazioni, identifichiamo le opportunità di maggior valore e costruiamo una roadmap che il tuo team può davvero implementare.",
+        desc: "Prima di spendere un solo euro in strumenti di IA, devi sapere quali valgono davvero per la tua azienda. Conduciamo una masterclass di IA personalizzata e costruita attorno alle tue specifiche operazioni — poi restiamo con te per 3 mesi mentre la metti in pratica.",
       },
       {
         title: "Automazione dei Processi",
