@@ -61,10 +61,10 @@ export const industriesContent: Record<string, IndustriesLang> = {
         sub:      "AI for logistics, warehousing and supply chain teams who run on precision — not promises.",
         intro:    "Your operation runs on information. When that information is fragmented across platforms, inboxes and supplier relationships, the cost shows up in delays, excess stock and decisions made without the full picture. We build AI systems that give your team visibility and response time — not workarounds.",
         pains: [
-          { title: "Demand Outpaces Forecasts",      desc: "Seasonal shifts and sudden market changes leave procurement reacting rather than planning — with inventory positions you didn't want." },
-          { title: "Supplier Delays Arrive Too Late", desc: "By the time a disruption is confirmed, your customer already expects delivery. That gap is where supplier trust erodes." },
-          { title: "Reporting Eats Hours",            desc: "The data exists. It's spread across three platforms, two spreadsheets and someone's inbox — assembling it takes hours that don't exist." },
-          { title: "Errors Compound Downstream",     desc: "Every manual rekeying is a risk. In supply chain, small errors don't stay small." },
+          { title: "Disconnected Systems & Manual Checks",      desc: "ERP, warehouse tools, carrier portals, spreadsheets, and inboxes often do not speak to each other. Teams lose time checking the same shipment, order, or stock movement in multiple places." },
+          { title: "Reactive Problem-Solving", desc: "Delays, shortages, blocked orders, or missing documents are often discovered too late — when the customer is already asking, the warehouse is waiting, or the shipment is stuck." },
+          { title: "Repetitive Follow-Ups",            desc: "Teams spend hours chasing confirmations, ETAs, missing information, shipment updates, and operational approvals that could be automated or pre-structured." },
+          { title: "Reports Built by Hand",     desc: "Operational reports often require exporting data, cleaning spreadsheets, checking exceptions, and preparing updates manually — which slows down decision-making and increases error risk." },
         ],
         solutions: [
           { title: "Demand Forecasting",              desc: "AI models built on your historical data, seasonal patterns and supplier lead times — so your buying decisions have a real foundation, not a gut feeling." },
