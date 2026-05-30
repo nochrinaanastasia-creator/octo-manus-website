@@ -57,7 +57,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain ── */
       {
         badge:    "Supply Chain · Logistics · Warehousing",
-        headline: ["When a Delivery Is Late,", "Good Intentions Won't Unload the Truck."],
+        headline: ["When Operations Depend on Timing, Manual Coordination Becomes Risky."],
         sub:      "AI for logistics, warehousing and supply chain teams who run on precision — not promises.",
         intro:    "Your operation runs on information. When that information is fragmented across platforms, inboxes and supplier relationships, the cost shows up in delays, excess stock and decisions made without the full picture. We build AI systems that give your team visibility and response time — not workarounds.",
         pains: [
