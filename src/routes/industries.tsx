@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
 import {
-  BarChart2, AlertCircle, FileText, RefreshCw, Brain, Bot,
-  FileBarChart, Zap, Package, MessageCircle, TrendingDown, PenTool,
+  BarChart2, AlertCircle, AlertTriangle, FileText, RefreshCw, Brain, Bot,
+  FileBarChart, MessageCircle, TrendingDown, PenTool,
   Headphones, BarChart3, Calendar, MessageSquare,
-  ClipboardList, Camera, Clock, Heart, Layers, Bell, ArrowDown, ArrowRight,
+  ClipboardList, Camera, Clock, Heart, Bell, ArrowDown, ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -72,14 +72,14 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 /* ── Static icon maps (order matches sections[0,1,2]) ─────── */
 const PAIN_ICONS: LucideIcon[][] = [
-  [BarChart2, AlertCircle, FileText, RefreshCw],     // Supply Chain
-  [Package, MessageCircle, TrendingDown, BarChart3], // Retail
-  [Calendar, MessageSquare, ClipboardList, Camera],  // Beauty
+  [BarChart2, AlertCircle, FileText, AlertTriangle], // Supply Chain: forecast / delay / reporting / errors
+  [PenTool, MessageCircle, TrendingDown, BarChart3], // Retail: content / support / returns / inventory
+  [Calendar, MessageSquare, ClipboardList, Camera],  // Beauty: no-shows / follow-up / intake / content
 ];
 const SOLUTION_ICONS: LucideIcon[][] = [
-  [Brain, Bot, FileBarChart, Zap],             // Supply Chain
-  [PenTool, Headphones, RefreshCw, BarChart3], // Retail
-  [Bell, Heart, Layers, Clock],                // Beauty
+  [Brain, Bot, FileBarChart, RefreshCw],       // Supply Chain: forecasting / agents / reporting / sync
+  [PenTool, Headphones, RefreshCw, BarChart3], // Retail: content / service / returns / forecasting
+  [Bell, Heart, FileText, Clock],              // Beauty: reminders / retention / records / scheduling
 ];
 const SECTION_IDS = ["supply-chain", "retail", "beauty"];
 
