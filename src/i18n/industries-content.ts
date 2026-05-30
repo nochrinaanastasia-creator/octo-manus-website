@@ -87,10 +87,10 @@ export const industriesContent: Record<string, IndustriesLang> = {
         sub:      "AI for retailers, e-commerce brands and fashion businesses that need to move fast — without the errors that come with moving fast.",
         intro:    "Speed matters in retail — every day a product isn't live, listed correctly or available to buy is lost margin. The problem isn't your team. It's that a disproportionate share of their time goes into work that doesn't require human judgement. We automate the operational layer so attention goes where it needs to be.",
         pains: [
-          { title: "Content Creation Delays Launches", desc: "Writing product listings for hundreds of SKUs is slow and error-prone. Delays here cost revenue every day the product isn't live." },
-          { title: "Volume Spikes Overwhelm Support",  desc: "Launch days and sale events are when customers have the most questions and patience is shortest. Response time directly affects conversion." },
-          { title: "Returns Data Goes Unread",         desc: "Return patterns — which sizes, which products, which claims — contain valuable buying intelligence that almost no team captures." },
-          { title: "Inventory Runs on Instinct",       desc: "Without demand forecasting, your buy depth and markdown timing are educated guesses. In fashion, the cost of guessing wrong is significant." },
+          { title: "Slow Product Content", desc: "Descriptions, SEO titles, size details, translations, marketplace texts, and product attributes become heavy as the catalogue grows." },
+          { title: "Recurring Customer Questions",  desc: "Customers ask the same things about size, availability, delivery, returns, product details, and order status — often through different platforms." },
+          { title: "Unaligned Stock Data",         desc: "Website, marketplace, warehouse, and internal stock data may not update cleanly, creating overselling, wrong expectations, or unnecessary manual checks." },
+          { title: "Scattered Product Images",       desc: "Product visuals are spread across supplier websites, folders, marketplaces, archives, or chats, making them slow to collect and match." },
         ],
         solutions: [
           { title: "Product Content at Scale",         desc: "Descriptions, titles, SEO metadata and size guidance written in your brand voice — for as many SKUs as you need, with consistent quality." },
@@ -113,10 +113,10 @@ export const industriesContent: Record<string, IndustriesLang> = {
         sub:      "AI for salons, spas, clinics and wellness businesses that want to grow — without the admin growing alongside them.",
         intro:    "Your business is built around presence — being fully engaged with whoever is in the room. The problem is that the before and after of each appointment create a constant stream of tasks that compete directly with that focus. We build the systems that handle them so you don't have to.",
         pains: [
-          { title: "No-Shows Have a Real Cost",       desc: "A missed appointment is lost revenue and a disrupted day. At scale, no-show rates quietly become one of your largest operational costs." },
-          { title: "Follow-Up Falls Away When Busy",  desc: "Rebooking nudges and post-appointment check-ins improve retention — but only if they happen consistently. Busy weeks mean they don't." },
-          { title: "Client Intake Is Still Too Slow", desc: "Paper forms, repeated questions, preferences not carried forward. The client experience starts before the appointment — and so does your first impression." },
-          { title: "Content Competes With Client Time", desc: "Consistent social presence matters for growth. Creating it well takes hours that directly compete with bookings, rest, and everything else." },
+          { title: "No-Shows Have a Real Cost",       desc: "Empty slots, late cancellations, and forgotten appointments directly reduce revenue — especially when there is no automated reminder, deposit, or waitlist flow." },
+          { title: "Slow Replies to Clients",  desc: "Clients often ask about availability, prices, treatments, preparation, aftercare, and policies while the team is busy with appointments, causing delays and lost bookings." },
+          { title: "Weak Rebooking Flow", desc: "Many clients leave happy but do not immediately book their next visit. Without smart follow-ups, reminders, or personalized rebooking prompts, repeat revenue is easily lost." },
+          { title: "Manual Client Admin", desc: "Client notes, preferences, intake forms, aftercare messages, review requests, and follow-ups are often handled manually — taking time away from client-facing work." },
         ],
         solutions: [
           { title: "Booking & Reminder Automation",   desc: "Confirmation messages, pre-appointment reminders and post-visit follow-ups that run without manual effort — reducing no-shows across the board." },
