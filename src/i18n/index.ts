@@ -272,7 +272,7 @@ const en: Translations = {
         {
           title: "Practical Over Hype",
           highlight: "Results, not buzzwords.",
-          desc: "We skip the buzzword bingo. Every solution we recommend solves a real problem, saves real hours, and delivers a real return — or we don't recommend it.",
+          desc: "We do not recommend AI because it sounds impressive. We recommend it when it solves a real business problem: saving time, reducing manual work, improving consistency, or helping a team make better decisions.",
         },
         {
           title: "Growth Without Friction",
@@ -282,7 +282,7 @@ const en: Translations = {
         {
           title: "Industry Fluency",
           highlight: "We speak your language.",
-          desc: "Logistics or lashes, supply chains or client journeys — we immerse ourselves in your world before recommending a single tool. Context is everything.",
+          desc: "From logistics to beauty, supply chains to client journeys — we immerse ourselves in your world before recommending a single tool. Context is everything.",
         },
         {
           title: "Long-Term Partnership",
