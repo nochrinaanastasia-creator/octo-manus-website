@@ -61,16 +61,16 @@ export const industriesContent: Record<string, IndustriesLang> = {
         sub:      "AI for logistics, warehousing and supply chain teams who run on precision — not promises.",
         intro:    "Your operation runs on information. When that information is fragmented across platforms, inboxes and supplier relationships, the cost shows up in delays, excess stock and decisions made without the full picture. We build AI systems that give your team visibility and response time — not workarounds.",
         pains: [
-          { title: "Disconnected Systems & Manual Checks",      desc: "ERP, warehouse tools, carrier portals, spreadsheets, and inboxes often do not speak to each other. Teams lose time checking the same shipment, order, or stock movement in multiple places." },
-          { title: "Reactive Problem-Solving", desc: "Delays, shortages, blocked orders, or missing documents are often discovered too late — when the customer is already asking, the warehouse is waiting, or the shipment is stuck." },
-          { title: "Repetitive Follow-Ups",            desc: "Teams spend hours chasing confirmations, ETAs, missing information, shipment updates, and operational approvals that could be automated or pre-structured." },
-          { title: "Reports Built by Hand",     desc: "Operational reports often require exporting data, cleaning spreadsheets, checking exceptions, and preparing updates manually — which slows down decision-making and increases error risk." },
+          { title: "Demand Uncertainty",      desc: "Sales, seasonality, promotions, and market changes make it difficult to predict what stock, capacity, or replenishment will be needed next." },
+          { title: "Disconnected Systems & Manual Checks", desc: "ERP, warehouse tools, carrier portals, spreadsheets, and inboxes often do not speak to each other. Teams lose time checking the same shipment, order, or stock movement in multiple places." },
+          { title: "Reports Built by Hand",            desc: "Operational reports often require exporting data, cleaning spreadsheets, checking exceptions, and preparing updates manually — which slows down decision-making and increases error risk." },
+          { title: "Repetitive Follow-Up",     desc: "Teams spend hours chasing confirmations, ETAs, missing information, shipment updates, and operational approvals that could be automated or pre-structured." },
         ],
         solutions: [
           { title: "Demand Forecasting",              desc: "AI models built on your historical data, seasonal patterns and supplier lead times — so your buying decisions have a real foundation, not a gut feeling." },
-          { title: "Supplier Communication Agents",   desc: "Automated follow-up sequences that track commitments, chase updates and flag delays — without anyone manually managing a single email thread." },
-          { title: "Automated Reporting",             desc: "Reports generated, formatted and delivered on schedule. No manual data pulling, no ad-hoc spreadsheet assembly, no Friday afternoon scramble." },
-          { title: "Data Synchronisation",            desc: "Cross-platform monitoring with anomaly detection that flags inconsistencies before they cascade into something larger." },
+          { title: "Operations Data Alignment",   desc: "Workflows that connect and structure data from ERP systems, warehouse files, carrier updates, spreadsheets, and internal tools, so teams work from cleaner and more consistent information." },
+          { title: "Automated Reporting",             desc: "Reporting systems that collect, clean, and structure operational data, so your team spends less time building reports manually and more time acting on the results." },
+          { title: "Follow-Up Automation",            desc: "Automated workflows that chase confirmations, ETAs, missing details, shipment updates, and approvals — so your team spends less time asking for the same information twice." },
         ],
         insight: {
           hook:  "3–5",
