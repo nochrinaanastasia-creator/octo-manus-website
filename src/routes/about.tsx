@@ -171,7 +171,7 @@ function AboutPage() {
           </div>
 
           {/* Right — founder cards */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:pt-14">
             {/* Founder 1 */}
             <div
               className="rounded-2xl p-8 md:p-10"
