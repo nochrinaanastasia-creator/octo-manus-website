@@ -181,20 +181,20 @@ const en: Translations = {
     exploreServices: "Explore Services",
   },
   footer: {
-    tagline: "No buzzwords. No overwhelm. Just AI that works for your business.",
+    tagline: "Practical AI consulting for businesses that run on real operations, not theory.",
     company: "Company",
     services: "Services",
     getInTouch: "Get in touch",
     email: "info@octomanus.com",
-    slogan: "Practical AI consulting for businesses that run on real operations, not theory.",
+    slogan: "AI consulting for the way business actually works.",
     copyright: `© ${new Date().getFullYear()} Octo Manus. All rights reserved.`,
     aiAdvisory: "AI Advisory",
     workflowAuto: "Workflow Automation",
     aiAgents: "AI Agents",
   },
   home: {
-    heroH1: ["Adopt AI.", "Automate Work.", "Build What's Next."],
-    heroSubtitle: "Turn Manual Work Into Intelligent Systems",
+    heroH1: ["Turn Manual Work Into Intelligent Systems"],
+    heroSubtitle: "AI — a Competitive Advantage for Every Business.",
     heroBody:
       "We help small and medium businesses use AI where it actually matters: repetitive admin, operational reporting, customer support, supplier follow-ups, product content, and workflow coordination. We advise, design, and build practical AI systems around your existing operations — without requiring your team to become technical or hire an internal engineering department.",
     services: [
@@ -319,13 +319,13 @@ const en: Translations = {
   services: {
     heroLabel: "Services",
     heroH1: ["AI That Works the Way", "Your Business Does."],
-    heroBody: "Advisory, automation, and AI agents — three services, one goal: less manual work and more output, without disrupting how your team already operates.",
+    heroBody: "Advisory, automation, and AI agents — three services, one goal: less manual work and more output, designed with responsible AI, human oversight, and EU compliance in mind.",
     exploreLabel: "↓ Explore",
     howWeWork: "How we work",
     advisory: {
       badge: "AI Advisory",
       headline: ["Understand AI Before", "You Invest in It."],
-      sub: "For businesses that want their people ready — not left behind.",
+      sub: "For teams that need a strategy before they need a tool.",
       intro: "Knowing AI exists isn't the same as knowing how to use it. We run practical training sessions tailored to your business and your team's roles — so when we leave, they know exactly which tools to use, how, and why it matters.",
       steps: [
         { title: "Discovery Call", desc: "We understand your operations, your team, and where AI fits." },
@@ -359,7 +359,7 @@ const en: Translations = {
     agents: {
       badge: "AI Agents",
       headline: ["Some Work Doesn't Need", "to Wait for a Human."],
-      sub: "For businesses that want things handled, not just scheduled.",
+      sub: "For businesses where response time and consistency are non-negotiable.",
       intro: "An AI agent handles a specific task — customer inquiries, data processing, reporting, supplier follow-ups — without human intervention at every step. We design agents that understand your business context, operate within defined boundaries, and escalate to humans precisely when they should. Consistent, high-quality output at a scale your team couldn't maintain manually.",
       steps: [
         { title: "Discovery Call", desc: "We identify the task, scope, and boundaries." },
