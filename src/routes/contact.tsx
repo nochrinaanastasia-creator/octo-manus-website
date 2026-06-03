@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import {
   Building2, User, Mail, Phone, Briefcase, Users,
-  FileText, Paperclip, Clock, Send, CheckCircle2,
+  FileText, Clock, Send, CheckCircle2,
 } from "lucide-react";
 import {
   SiteHeader, SiteFooter, IVORY, PAGE_BG, ROSE, ctaButtonStyle,
@@ -116,7 +116,6 @@ function ContactPage() {
 
   const [form, setForm] = useState<FormData>(EMPTY);
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
-  const [fileName, setFileName] = useState<string>("");
   const [focusedField, setFocusedField] = useState<string>("");
 
   const heroStars = useMemo(
@@ -463,42 +462,7 @@ function ContactPage() {
             </Field>
           </div>
 
-          {/* ── File attachment ── */}
-          <div>
-            <label style={labelStyle}>
-              <span className="flex items-center gap-1.5">
-                <Paperclip className="h-3.5 w-3.5" />
-                {ct.fields.attachLabel}
-              </span>
-            </label>
-            <label
-              className="flex cursor-pointer items-center gap-3 rounded-xl px-4 py-3.5 transition-colors hover:bg-white/5"
-              style={{
-                backgroundColor: "#08131F",
-                border: "1px dashed rgba(233,181,166,0.25)",
-                color: fileName ? ROSE : IVORY,
-              }}
-            >
-              <Paperclip className="h-4 w-4 flex-shrink-0" style={{ color: ROSE, opacity: 0.65 }} />
-              <span className="text-base" style={{ opacity: fileName ? 1 : 0.5 }}>
-                {fileName || ct.fields.attachPlaceholder}
-              </span>
-              <input
-                type="file"
-                className="sr-only"
-                accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.txt,.xlsx,.csv"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) setFileName(file.name);
-                }}
-              />
-            </label>
-            <p className="mt-1.5 text-xs" style={{ color: IVORY, opacity: 0.38 }}>
-              {ct.fields.attachHint}
-            </p>
-          </div>
 
-          {/* ── Privacy consent ── */}
           <button
             type="button"
             onClick={() => setForm((f) => ({ ...f, privacy: !f.privacy }))}

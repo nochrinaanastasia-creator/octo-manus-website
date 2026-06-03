@@ -156,11 +156,13 @@ function AboutPage() {
             </h2>
             <div className="mt-10 space-y-6 text-base leading-relaxed md:text-lg" style={{ color: IVORY, opacity: 0.85 }}>
               <p>
-                {nb(ta.history.p1)}{" "}
-                <strong style={{ color: ROSE }}>{ta.history.p1Bold1}</strong>{" "}
-                and{" "}
-                <strong style={{ color: ROSE }}>{ta.history.p1Bold2}</strong>{" "}
-                — but arrived at the same wall. The one made of manual processes, copy-pasted reports, and the quiet dread of another status-update meeting.
+                {nb(ta.history.p1)}
+                {ta.history.p1Bold1 && (
+                  <>{" "}<strong style={{ color: ROSE }}>{ta.history.p1Bold1}</strong>{" "}
+                  and{" "}
+                  <strong style={{ color: ROSE }}>{ta.history.p1Bold2}</strong>{" "}
+                  — but arrived at the same wall. The one made of manual processes, copy-pasted reports, and the quiet dread of another status-update meeting.</>
+                )}
               </p>
               <p>{nb(ta.history.p2)}</p>
               <p>{nb(ta.history.p3)}</p>
