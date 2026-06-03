@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
 import {
   Phone, BookOpen, LifeBuoy,
-  GitBranch, Settings, Layers, CheckCircle2, ShieldCheck,
+  GitBranch, Settings, ShieldCheck,
   Bot, Brain, Rocket,
   Compass, Map, Award,
   Clock, RefreshCw, TrendingUp,
@@ -100,7 +100,7 @@ type ServiceData = {
 
 /* ── Icon maps (static) ──────────────────────────────────── */
 const ADVISORY_STEP_ICONS: LucideIcon[] = [Phone, BookOpen, LifeBuoy];
-const AUTOMATION_STEP_ICONS: LucideIcon[] = [Phone, GitBranch, Settings, Layers, CheckCircle2, ShieldCheck];
+const AUTOMATION_STEP_ICONS: LucideIcon[] = [Phone, GitBranch, Settings, Rocket, ShieldCheck];
 const AGENT_STEP_ICONS: LucideIcon[] = [Phone, GitBranch, Bot, Brain, Rocket];
 
 const ADVISORY_BENEFIT_ICONS: LucideIcon[] = [Compass, Map, Award];
