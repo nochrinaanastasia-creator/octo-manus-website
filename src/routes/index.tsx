@@ -161,14 +161,14 @@ function Index() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/contact"
-                className="rounded-md px-8 py-3.5 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
+                className="rounded-md px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
                 style={ctaButtonStyle}
               >
                 {t.cta.bookCall}
               </Link>
               <Link
                 to="/services"
-                className="rounded-md border px-8 py-3.5 text-base font-medium transition-colors hover:bg-primary/10"
+                className="rounded-md border px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium transition-colors hover:bg-primary/10"
                 style={{ borderColor: "rgba(233,181,166,0.45)", color: ROSE }}
               >
                 {t.cta.exploreServices}
@@ -200,7 +200,7 @@ function Index() {
               <a
                 key={title}
                 href={SERVICE_HREFS[idx]}
-                className="group rounded-2xl p-10 text-center transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group rounded-2xl p-7 md:p-10 text-center transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{
                   backgroundColor: "#08131F",
                   border: "1px solid rgba(233,181,166,0.18)",

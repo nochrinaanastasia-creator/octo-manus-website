@@ -174,7 +174,7 @@ function AboutPage() {
           <div className="flex flex-col gap-6 lg:pt-14">
             {/* Founder 1 */}
             <div
-              className="rounded-2xl p-8 md:p-10"
+              className="rounded-2xl p-6 md:p-10"
               style={{
                 backgroundColor: "#08131F",
                 border: "1px solid rgba(233,181,166,0.18)",
@@ -207,7 +207,7 @@ function AboutPage() {
 
             {/* Founder 2 */}
             <div
-              className="rounded-2xl p-8 md:p-10"
+              className="rounded-2xl p-6 md:p-10"
               style={{
                 backgroundColor: "#08131F",
                 border: "1px solid rgba(233,181,166,0.18)",
@@ -321,13 +321,17 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile carousel, desktop grid */}
+        <div 
+          className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-5 px-5 gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:mx-0 md:px-0 md:gap-6"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           {ta.values.items.map(({ title, highlight, desc }, idx) => {
             const Icon = VALUE_ICONS[idx];
             return (
               <div
                 key={title}
-                className="group rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1"
+                className="min-w-[85vw] md:min-w-0 snap-center group rounded-2xl p-7 md:p-9 transition-all duration-300 hover:-translate-y-1"
                 style={{
                   backgroundColor: "#08131F",
                   border: "1px solid rgba(233,181,166,0.18)",

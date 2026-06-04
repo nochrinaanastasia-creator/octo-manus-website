@@ -22,7 +22,7 @@ export function CtaButton({
 }) {
   return (
     <button
-      className={`rounded-md px-7 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5 ${className}`}
+      className={`rounded-md px-5 py-2.5 md:px-7 md:py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5 ${className}`}
       style={ctaButtonStyle}
     >
       {children}

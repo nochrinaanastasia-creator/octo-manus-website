@@ -90,7 +90,7 @@ function JumpCard({
   return (
     <a
       href={`#${id}`}
-      className="group flex flex-col gap-4 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+      className="group flex flex-col gap-4 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
       style={{
         backgroundColor: "#08131F",
         border: "1px solid rgba(233,181,166,0.18)",
@@ -123,7 +123,7 @@ function FourthCard({ title, sub, exploreLabel }: { title: string; sub: string; 
   return (
     <a
       href="#lets-talk"
-      className="group flex flex-col gap-4 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+      className="group flex flex-col gap-4 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
       style={{
         backgroundColor: "rgba(233,181,166,0.06)",
         border: "1px solid rgba(233,181,166,0.28)",
@@ -223,7 +223,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
 
           {/* Left — insight callout (fills full left column, balanced vs right) */}
           <div
-            className="rounded-2xl p-7 flex flex-col justify-center"
+            className="rounded-2xl p-6 md:p-7 flex flex-col justify-center"
             style={{
               backgroundColor: "rgba(233,181,166,0.055)",
               border: "1px solid rgba(233,181,166,0.18)",
@@ -259,7 +259,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                 return (
                   <div
                     key={title}
-                    className="rounded-2xl p-7 flex flex-col"
+                    className="rounded-2xl p-6 md:p-7 flex flex-col"
                     style={{
                       backgroundColor: "#08131F",
                       border: "1px solid rgba(233,181,166,0.16)",
@@ -303,7 +303,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
               return (
                 <div
                   key={title}
-                  className="rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1"
+                  className="rounded-2xl p-6 md:p-8 flex flex-col transition-all duration-300 hover:-translate-y-1"
                   style={{
                     backgroundColor: "#08131F",
                     border: "1px solid rgba(233,181,166,0.18)",

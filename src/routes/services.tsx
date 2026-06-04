@@ -118,7 +118,7 @@ function HowWeWork({ steps, howWeWorkLabel }: { steps: Step[]; howWeWorkLabel: s
     <div className="mt-14">
       <SectionLabel>{howWeWorkLabel}</SectionLabel>
 
-      <div className={`relative grid grid-cols-2 gap-y-12 gap-x-4 ${colClass}`}>
+      <div className={`relative flex flex-col gap-10 md:grid md:gap-y-12 md:gap-x-4 ${colClass}`}>
 
         {/* Horizontal connector — desktop only */}
         <div
@@ -133,50 +133,73 @@ function HowWeWork({ steps, howWeWorkLabel }: { steps: Step[]; howWeWorkLabel: s
           }}
         />
 
+        {/* Vertical connector — mobile only */}
+        <div
+          className="pointer-events-none absolute md:hidden z-0"
+          style={{
+            top: "2rem",
+            bottom: "2rem",
+            left: "3.25rem", /* centered behind 6.5rem icons */
+            width: "1px",
+            background:
+              "linear-gradient(to bottom, transparent 0%, rgba(233,181,166,0.2) 5%, rgba(233,181,166,0.2) 95%, transparent 100%)",
+          }}
+        />
+
         {steps.map((step) => {
           const Icon = step.icon;
           return (
             <div
               key={step.number}
-              className="relative flex flex-col items-center text-center px-1"
+              className="relative flex flex-row items-center text-left gap-6 px-2 md:flex-col md:items-center md:text-center md:px-1 md:gap-0"
             >
               <div
                 className="relative z-10 flex h-[6.5rem] w-[6.5rem] flex-col items-center justify-center rounded-full flex-shrink-0"
                 style={{
                   background: step.isHighlight
                     ? "radial-gradient(circle, rgba(233,181,166,0.22), rgba(233,181,166,0.06))"
-                    : "radial-gradient(circle, rgba(233,181,166,0.12), rgba(233,181,166,0.03))",
+                    : "radial-gradient(circle, #01060F, #01060F)", /* Solid background to hide line behind icon */
                   border: step.isHighlight
                     ? "1px solid rgba(233,181,166,0.45)"
                     : "1px solid rgba(233,181,166,0.25)",
                 }}
               >
+                <div 
+                  className="absolute inset-0 rounded-full z-[-1]" 
+                  style={{ 
+                    background: step.isHighlight 
+                      ? "transparent" 
+                      : "radial-gradient(circle, rgba(233,181,166,0.12), rgba(233,181,166,0.03))" 
+                  }} 
+                />
                 <Icon
-                  className="h-7 w-7"
+                  className="h-7 w-7 relative z-10"
                   style={{ color: ROSE, opacity: step.isHighlight ? 1 : 0.8 }}
                   strokeWidth={1.5}
                 />
                 <span
-                  className="text-[10px] font-medium tracking-widest mt-2"
+                  className="text-[10px] font-medium tracking-widest mt-2 relative z-10"
                   style={{ color: ROSE, opacity: 0.5 }}
                 >
                   {step.number}
                 </span>
               </div>
 
-              <h4
-                className="metallic-rose mt-5 text-2xl leading-snug"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {step.title}
-              </h4>
+              <div>
+                <h4
+                  className="metallic-rose mt-0 md:mt-5 text-xl md:text-2xl leading-snug"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {step.title}
+                </h4>
 
-              <p
-                className="mt-2 text-sm leading-relaxed max-w-[180px]"
-                style={{ color: IVORY, opacity: 0.65 }}
-              >
-                {step.desc}
-              </p>
+                <p
+                  className="mt-2 text-sm leading-relaxed max-w-[200px]"
+                  style={{ color: IVORY, opacity: 0.65 }}
+                >
+                  {step.desc}
+                </p>
+              </div>
             </div>
           );
         })}
@@ -249,7 +272,7 @@ function ServiceSection({ service, idx, howWeWorkLabel }: { service: ServiceData
           {service.benefits.map(({ icon: Icon, stat, title, desc }) => (
             <div
               key={title}
-              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+              className="rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
               style={{
                 backgroundColor: "#08131F",
                 border: "1px solid rgba(233,181,166,0.18)",
