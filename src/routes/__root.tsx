@@ -9,8 +9,12 @@ import {
 } from "@tanstack/react-router";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { FloatingCta, CookieBar } from "@/components/site-chrome";
+import type { Lang } from "@/i18n";
+import { translations } from "@/i18n";
 
 import appCss from "../styles.css?url";
+
+type RootSearch = { lang?: Lang };
 
 function NotFoundComponent() {
   return (
@@ -70,53 +74,67 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      // Fallback title — each page route overrides this
-      { title: "Octo Manus — AI Consulting for Business Professionals" },
-      {
-        name: "description",
-        content:
-          "Octo Manus is an AI consulting studio helping small and medium businesses adopt AI, automate workflows, and deploy intelligent agents — no coding required.",
-      },
-      { name: "author", content: "Octo Manus" },
-      { name: "robots", content: "index, follow" },
-      {
-        name: "keywords",
-        content:
-          "AI consulting, AI advisory, business automation, AI agents, workflow automation, logistics AI, customer support AI, operations AI, SMB AI, no-code AI",
-      },
-      { name: "theme-color", content: "#01060F" },
-      // Open Graph
-      { property: "og:site_name", content: "Octo Manus" },
-      { property: "og:title", content: "Octo Manus — AI Consulting for Business Professionals" },
-      {
-        property: "og:description",
-        content:
-          "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://octomanus.ai" },
-      // Twitter / X
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@OctoManus" },
-      { name: "twitter:title", content: "Octo Manus — AI Consulting for Business Professionals" },
-      {
-        name: "twitter:description",
-        content:
-          "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
-      },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "canonical", href: "https://octomanus.ai" },
-    ],
-  }),
+  validateSearch: (search: Record<string, unknown>): RootSearch => {
+    const l = search.lang as string;
+    return {
+      lang: (l === "en" || l === "es" || l === "it") ? l : "en",
+    };
+  },
+  head: ({ search }) => {
+    const lang = search?.lang || "en";
+    const t = translations[lang];
+    
+    // Check if we have SEO translations, otherwise fallback
+    const seo = t.seo || translations.en.seo;
+
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        // Fallback title — each page route overrides this
+        { title: seo?.title || "Octo Manus — AI Consulting for Business Professionals" },
+        {
+          name: "description",
+          content: seo?.description || "Octo Manus is an AI consulting studio helping small and medium businesses adopt AI, automate workflows, and deploy intelligent agents — no coding required.",
+        },
+        { name: "author", content: "Octo Manus" },
+        { name: "robots", content: "index, follow" },
+        {
+          name: "keywords",
+          content: seo?.keywords || "AI consulting, AI advisory, business automation, AI agents, workflow automation, logistics AI, customer support AI, operations AI, SMB AI, no-code AI",
+        },
+        { name: "theme-color", content: "#01060F" },
+        // Open Graph
+        { property: "og:site_name", content: "Octo Manus" },
+        { property: "og:title", content: seo?.title || "Octo Manus — AI Consulting for Business Professionals" },
+        {
+          property: "og:description",
+          content: seo?.description || "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: `https://octomanus.com/?lang=${lang}` },
+        // Twitter / X
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@OctoManus" },
+        { name: "twitter:title", content: seo?.title || "Octo Manus — AI Consulting for Business Professionals" },
+        {
+          name: "twitter:description",
+          content: seo?.description || "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
+        },
+      ],
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        { rel: "canonical", href: `https://octomanus.com/?lang=${lang}` },
+        { rel: "alternate", hrefLang: "en", href: "https://octomanus.com/?lang=en" },
+        { rel: "alternate", hrefLang: "es", href: "https://octomanus.com/?lang=es" },
+        { rel: "alternate", hrefLang: "it", href: "https://octomanus.com/?lang=it" },
+        { rel: "alternate", hrefLang: "x-default", href: "https://octomanus.com/?lang=en" },
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

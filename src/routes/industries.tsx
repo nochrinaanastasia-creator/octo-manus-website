@@ -12,32 +12,31 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 import { industriesContent } from "@/i18n/industries-content";
 
 export const Route = createFileRoute("/industries")({
   component: IndustriesPage,
-  head: () => ({
-    meta: [
-      { title: "Industries — AI for Supply Chain, Retail, Fashion & Beauty | Octo Manus" },
-      {
-        name: "description",
-        content:
-          "Octo Manus builds AI advisory, workflow automation and AI agents for Supply Chain, Logistics & Warehousing; Retail, E-commerce & Fashion; and Beauty & Wellness businesses.",
-      },
-      {
-        name: "keywords",
-        content:
-          "AI for supply chain, AI for logistics, AI for warehousing, supply chain automation, logistics AI agents, warehouse AI, AI for retail, AI for e-commerce, AI for fashion, retail automation, e-commerce AI agents, fashion inventory AI, AI for beauty salon, AI for wellness center, AI for spa, beauty booking automation, wellness AI, SMB AI automation",
-      },
-      { property: "og:title", content: "Industries — AI Built for Your Sector | Octo Manus" },
-      {
-        property: "og:description",
-        content:
-          "Industry-specific AI for Supply Chain & Logistics, Retail, E-commerce & Fashion, and Beauty & Wellness. Purpose-built, not generic.",
-      },
-      { property: "og:url", content: "https://octomanus.ai/industries" },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.industries;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 /* ── Preposition orphan guard ────────────────────────────── */

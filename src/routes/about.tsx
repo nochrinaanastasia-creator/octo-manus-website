@@ -11,6 +11,7 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 
 /** Bind short prepositions/articles to next word to prevent line-break orphaning */
 function nb(text: string): string {
@@ -22,37 +23,26 @@ function nb(text: string): string {
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About Octo Manus — Founders, Mission & Values | AI Consulting for SMBs" },
-      {
-        name: "description",
-        content:
-          "Meet the founders of Octo Manus — an AI consulting studio built by business professionals, for business professionals. We make AI adoption practical, human, and genuinely useful for SMBs.",
-      },
-      {
-        name: "keywords",
-        content:
-          "about Octo Manus, AI consulting founders, AI for SMB, AI without coding, business AI mission, AI for small business, AI consulting women founded, AI adoption practical, SMB AI consulting Europe, AI consulting Italy, AI consulting Spain",
-      },
-      { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "About Octo Manus — Founders, Mission & Values" },
-      {
-        property: "og:description",
-        content:
-          "Meet the founders of Octo Manus — AI consulting built by business professionals, for business professionals. No technical background required.",
-      },
-      { property: "og:url", content: "https://octomanus.com/about" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "About Octo Manus — Founders, Mission & Values" },
-      {
-        name: "twitter:description",
-        content:
-          "AI consulting built by business professionals for business professionals. Practical AI adoption for SMBs.",
-      },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.about;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 

@@ -12,6 +12,7 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 
 // No constellation color override — using brand ROSE from default
 
@@ -25,37 +26,26 @@ function nb(text: string): string {
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "Octo Manus — AI Advisory, Automation & AI Agents for SMBs" },
-      {
-        name: "description",
-        content:
-          "Octo Manus helps small and medium businesses adopt AI without the technical overwhelm. AI Advisory, workflow automation, and custom AI agents for Supply Chain, Retail, Beauty & Wellness.",
-      },
-      {
-        name: "keywords",
-        content:
-          "AI consulting small business, AI advisory SMB, workflow automation consulting, AI agents for SMB, AI adoption without coding, AI for supply chain, AI for retail, AI for beauty wellness, no-code AI, AI strategy for business, AI consulting Europe, AI consulting Italy, AI consulting Spain",
-      },
-      { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Octo Manus — AI Advisory, Automation & AI Agents for SMBs" },
-      {
-        property: "og:description",
-        content:
-          "AI Advisory, workflow automation and custom agents for SMBs. No coding required. Strategic AI adoption built around how your business actually works.",
-      },
-      { property: "og:url", content: "https://octomanus.com" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Octo Manus — AI Advisory, Automation & AI Agents for SMBs" },
-      {
-        name: "twitter:description",
-        content:
-          "Practical AI adoption for SMBs — advisory, workflow automation, and AI agents. No coding required.",
-      },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.home;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 
@@ -139,7 +129,7 @@ function Index() {
           {/* ── Text column ── */}
           <div className="relative z-20 max-w-xl lg:col-span-6 lg:-ml-4">
             <h1
-              className="metallic-rose text-5xl leading-[1.05] md:text-6xl lg:text-7xl"
+              className="metallic-rose text-4xl leading-[1.1] md:text-5xl lg:text-6xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {t.home.heroH1.map((line, i) => (
@@ -210,7 +200,7 @@ function Index() {
               >
                 <div className="flex items-start justify-between gap-4 mb-2">
                   <h3
-                    className="metallic-rose text-[1.75rem] leading-tight md:text-3xl text-left"
+                    className="metallic-rose text-[1.5rem] leading-tight md:text-3xl text-left"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {title}

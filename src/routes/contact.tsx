@@ -9,33 +9,30 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact Octo Manus — Book a Strategy Call or Send an Enquiry" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Octo Manus. Tell us about your business and the challenges you want to solve with AI. We'll come back to you within 1 business day.",
-      },
-      {
-        name: "keywords",
-        content:
-          "contact Octo Manus, AI consulting enquiry, book AI strategy call, AI consulting for SMB, AI advisory contact, AI automation enquiry",
-      },
-      { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Contact Octo Manus — AI Advisory & Automation" },
-      {
-        property: "og:description",
-        content:
-          "Tell us about your business and what you'd like to automate or improve. We'll be in touch within 1 business day.",
-      },
-      { property: "og:url", content: "https://octomanus.com/contact" },
-      { property: "og:type", content: "website" },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.contact;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 type FormData = {

@@ -9,16 +9,30 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Octo Manus" },
-      { name: "description", content: "Privacy Policy of Octo Manus." },
-      { name: "robots", content: "noindex, follow" },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.privacy;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 interface PolicyText {
@@ -28,7 +42,7 @@ interface PolicyText {
   sections: { title: string; body: string }[];
 }
 
-const translations: Record<"en" | "es" | "it", PolicyText> = {
+const privacyTranslations: Record<"en" | "es" | "it", PolicyText> = {
   en: {
     title: "Privacy Policy",
     subtitle: "How we collect, use, and protect your personal data.",

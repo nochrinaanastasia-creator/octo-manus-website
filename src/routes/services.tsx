@@ -14,34 +14,30 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n";
 
 export const Route = createFileRoute("/services")({
   component: ServicesPage,
-  head: () => ({
-    meta: [
-      { title: "Services — AI Advisory, Workflow Automation & AI Agents | Octo Manus" },
-      {
-        name: "description",
-        content:
-          "Octo Manus offers AI Advisory with a customised masterclass, workflow automation for SMBs, and bespoke AI agents. Practical AI adoption — no coding required.",
-      },
-      {
-        name: "keywords",
-        content:
-          "AI advisory SMB, AI masterclass business, AI strategy consulting, workflow automation small business, process automation, AI agents for business, intelligent agents, AI roadmap, operations automation, AI adoption consulting, no-code AI solutions",
-      },
-      { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Services — AI Advisory, Automation & AI Agents | Octo Manus" },
-      {
-        property: "og:description",
-        content:
-          "AI Advisory with masterclass, workflow automation, and custom AI agents — built for how your business actually operates.",
-      },
-      { property: "og:url", content: "https://octomanus.com/services" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ search }) => {
+    const lang = (search as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
+    const seo = t.seo.services;
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.desc },
+        { name: "keywords", content: seo.keys },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.desc },
+        { property: "og:url", content: `https://octomanus.com/${seoKey === 'home' ? '' : seoKey}?lang=${lang}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.desc },
+      ],
+    };
+  },
 });
 
 const PAGE_BG_ALT = "#020A14";
