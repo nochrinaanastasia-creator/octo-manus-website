@@ -152,13 +152,7 @@ function Index() {
             >
               {nb(t.home.heroSubtitle)}
             </p>
-            <p
-              className="mt-6 max-w-lg text-base leading-relaxed md:text-lg"
-              style={{ color: IVORY, opacity: 0.85 }}
-            >
-              {nb(t.home.heroBody)}
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 to="/contact"
                 className="rounded-md px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
@@ -174,6 +168,12 @@ function Index() {
                 {t.cta.exploreServices}
               </Link>
             </div>
+            <p
+              className="mt-8 max-w-lg text-base leading-relaxed md:text-lg"
+              style={{ color: IVORY, opacity: 0.85 }}
+            >
+              {nb(t.home.heroBody)}
+            </p>
           </div>
 
           {/* Spacer column — keeps text left-aligned on lg */}
@@ -200,7 +200,7 @@ function Index() {
               <a
                 key={title}
                 href={SERVICE_HREFS[idx]}
-                className="group rounded-2xl p-7 md:p-10 text-center transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group rounded-2xl p-7 md:p-10 text-left transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{
                   backgroundColor: "#08131F",
                   border: "1px solid rgba(233,181,166,0.18)",
@@ -208,14 +208,16 @@ function Index() {
                   textDecoration: "none",
                 }}
               >
-                <Icon className="mx-auto h-11 w-11 text-primary" strokeWidth={1.2} />
-                <h3
-                  className="metallic-rose mt-6 text-3xl"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {title}
-                </h3>
-                <div className="mx-auto mt-4 h-px w-10 bg-primary/50" />
+                <div className="flex items-start justify-between gap-4 mb-2">
+                  <h3
+                    className="metallic-rose text-[1.75rem] leading-tight md:text-3xl text-left"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {title}
+                  </h3>
+                  <Icon className="h-10 w-10 text-primary shrink-0" strokeWidth={1.2} />
+                </div>
+                <div className="mt-4 h-px w-10 bg-primary/50" />
                 <p className="mt-5 text-base leading-relaxed" style={{ color: IVORY, opacity: 0.8 }}>
                   {nb(desc)}
                 </p>

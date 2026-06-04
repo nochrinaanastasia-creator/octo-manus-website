@@ -139,7 +139,7 @@ function HowWeWork({ steps, howWeWorkLabel }: { steps: Step[]; howWeWorkLabel: s
           style={{
             top: "2rem",
             bottom: "2rem",
-            left: "3.25rem", /* centered behind 6.5rem icons */
+            left: "3rem", /* centered behind 6rem icons (w-24) */
             width: "1px",
             background:
               "linear-gradient(to bottom, transparent 0%, rgba(233,181,166,0.2) 5%, rgba(233,181,166,0.2) 95%, transparent 100%)",
@@ -154,7 +154,7 @@ function HowWeWork({ steps, howWeWorkLabel }: { steps: Step[]; howWeWorkLabel: s
               className="relative flex flex-row items-center text-left gap-6 px-2 md:flex-col md:items-center md:text-center md:px-1 md:gap-0"
             >
               <div
-                className="relative z-10 flex h-[6.5rem] w-[6.5rem] flex-col items-center justify-center rounded-full flex-shrink-0"
+                className="relative z-10 flex h-24 w-24 flex-col items-center justify-center rounded-full flex-shrink-0"
                 style={{
                   background: step.isHighlight
                     ? "radial-gradient(circle, rgba(233,181,166,0.22), rgba(233,181,166,0.06))"
@@ -279,33 +279,34 @@ function ServiceSection({ service, idx, howWeWorkLabel }: { service: ServiceData
                 boxShadow: "0 4px 28px rgba(0,0,0,0.4)",
               }}
             >
-              <div
-                className="inline-flex h-12 w-12 items-center justify-center rounded-xl mb-5"
-                style={{
-                  background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
-                  border: "1px solid rgba(233,181,166,0.25)",
-                }}
-              >
-                <Icon className="h-6 w-6" style={{ color: ROSE }} strokeWidth={1.4} />
-              </div>
-
-              {/* Stat — only render when defined */}
-              {stat && (
-                <p
-                  className="metallic-rose text-5xl mb-2 leading-none"
-                  style={{ fontFamily: "var(--font-display)" }}
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex flex-col">
+                  {stat && (
+                    <p
+                      className="metallic-rose text-[2rem] md:text-[2.5rem] mb-1 leading-none"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {stat}
+                    </p>
+                  )}
+                  <h3
+                    className="metallic-rose text-[1.5rem] md:text-3xl leading-snug"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {title}
+                  </h3>
+                </div>
+                
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
+                    border: "1px solid rgba(233,181,166,0.25)",
+                  }}
                 >
-                  {stat}
-                </p>
-              )}
-
-              {/* Title */}
-              <h3
-                className="metallic-rose text-3xl mb-4 leading-snug"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {title}
-              </h3>
+                  <Icon className="h-6 w-6" style={{ color: ROSE }} strokeWidth={1.4} />
+                </div>
+              </div>
 
               {/* Desc */}
               <p

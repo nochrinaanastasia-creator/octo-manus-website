@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Target, Lightbulb, Users, Zap, Shield, Globe, TrendingUp, Heart } from "lucide-react";
 import {
   SiteHeader,
@@ -82,6 +82,7 @@ const VALUE_ICONS = [Zap, Users, Shield, TrendingUp, Globe, Heart];
 function AboutPage() {
   const { t } = useLanguage();
   const ta = t.about;
+  const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);
 
   // Our Story — 450 stars total: galaxy field + brighter deep layer
   const introStars = useMemo(
@@ -154,7 +155,7 @@ function AboutPage() {
                 </span>
               ))}
             </h2>
-            <div className="mt-10 space-y-6 text-base leading-relaxed md:text-lg" style={{ color: IVORY, opacity: 0.85 }}>
+            <div className="mt-6 md:mt-10 space-y-6 text-base leading-relaxed md:text-lg" style={{ color: IVORY, opacity: 0.85 }}>
               <p>
                 {nb(ta.history.p1)}
                 {ta.history.p1Bold1 && (
@@ -164,9 +165,20 @@ function AboutPage() {
                   — but arrived at the same wall. The one made of manual processes, copy-pasted reports, and the quiet dread of another status-update meeting.</>
                 )}
               </p>
-              <p>{nb(ta.history.p2)}</p>
-              <p>{nb(ta.history.p3)}</p>
-              <p style={{ color: ROSE, fontStyle: "italic", opacity: 1 }}>{nb(ta.history.p4)}</p>
+
+              <div className={`space-y-6 overflow-hidden transition-all duration-500 md:max-h-[2000px] md:opacity-100 md:mt-6 ${isHistoryExpanded ? "max-h-[2000px] opacity-100 mt-6" : "max-h-0 opacity-0 m-0"}`}>
+                <p>{nb(ta.history.p2)}</p>
+                <p>{nb(ta.history.p3)}</p>
+                <p style={{ color: ROSE, fontStyle: "italic", opacity: 1 }}>{nb(ta.history.p4)}</p>
+              </div>
+
+              <button 
+                onClick={() => setIsHistoryExpanded(!isHistoryExpanded)}
+                className="text-[11px] font-semibold uppercase tracking-widest md:hidden mt-2"
+                style={{ color: ROSE }}
+              >
+                {isHistoryExpanded ? "Read less ↑" : "Read more ↓"}
+              </button>
             </div>
           </div>
 
@@ -181,27 +193,24 @@ function AboutPage() {
                 boxShadow: "0 4px 30px rgba(0,0,0,0.5)",
               }}
             >
-              <div className="flex items-start gap-5">
-                <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(233,181,166,0.2) 0%, rgba(244,199,185,0.08) 100%)",
-                    border: "1px solid rgba(233,181,166,0.3)",
-                  }}
-                >
-                  <Lightbulb className="h-7 w-7" style={{ color: ROSE }} strokeWidth={1.4} />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: ROSE, opacity: 0.7 }}>
-                    {ta.history.founder1Role}
-                  </p>
-                  <h3 className="metallic-rose text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+              <div className="flex flex-col">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="metallic-rose text-[1.65rem] leading-tight md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
                     {ta.history.founder1Title}
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed" style={{ color: IVORY, opacity: 0.8 }}>
-                    {nb(ta.history.founder1Desc)}
-                  </p>
+                  <div
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(233,181,166,0.2) 0%, rgba(244,199,185,0.08) 100%)",
+                      border: "1px solid rgba(233,181,166,0.3)",
+                    }}
+                  >
+                    <Lightbulb className="h-6 w-6" style={{ color: ROSE }} strokeWidth={1.4} />
+                  </div>
                 </div>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: IVORY, opacity: 0.8 }}>
+                  {nb(ta.history.founder1Desc)}
+                </p>
               </div>
             </div>
 
@@ -214,27 +223,24 @@ function AboutPage() {
                 boxShadow: "0 4px 30px rgba(0,0,0,0.5)",
               }}
             >
-              <div className="flex items-start gap-5">
-                <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(233,181,166,0.2) 0%, rgba(244,199,185,0.08) 100%)",
-                    border: "1px solid rgba(233,181,166,0.3)",
-                  }}
-                >
-                  <Target className="h-7 w-7" style={{ color: ROSE }} strokeWidth={1.4} />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: ROSE, opacity: 0.7 }}>
-                    {ta.history.founder2Role}
-                  </p>
-                  <h3 className="metallic-rose text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+              <div className="flex flex-col">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="metallic-rose text-[1.65rem] leading-tight md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
                     {ta.history.founder2Title}
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed" style={{ color: IVORY, opacity: 0.8 }}>
-                    {nb(ta.history.founder2Desc)}
-                  </p>
+                  <div
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(233,181,166,0.2) 0%, rgba(244,199,185,0.08) 100%)",
+                      border: "1px solid rgba(233,181,166,0.3)",
+                    }}
+                  >
+                    <Target className="h-6 w-6" style={{ color: ROSE }} strokeWidth={1.4} />
+                  </div>
                 </div>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: IVORY, opacity: 0.8 }}>
+                  {nb(ta.history.founder2Desc)}
+                </p>
               </div>
             </div>
           </div>
@@ -322,10 +328,11 @@ function AboutPage() {
         </div>
 
         {/* Mobile carousel, desktop grid */}
-        <div 
-          className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-5 px-5 gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:mx-0 md:px-0 md:gap-6"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
+        <div className="relative">
+          <div 
+            className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-5 px-5 gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:mx-0 md:px-0 md:gap-6"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
           {ta.values.items.map(({ title, highlight, desc }, idx) => {
             const Icon = VALUE_ICONS[idx];
             return (
@@ -338,22 +345,22 @@ function AboutPage() {
                   boxShadow: "0 4px 28px rgba(0,0,0,0.4)",
                 }}
               >
-                <div
-                  className="inline-flex h-14 w-14 items-center justify-center rounded-xl mb-6"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
-                    border: "1px solid rgba(233,181,166,0.25)",
-                  }}
-                >
-                  <Icon className="h-7 w-7" style={{ color: ROSE }} strokeWidth={1.4} />
+                <div className="flex items-start justify-between gap-4 mb-5">
+                  <h3 className="metallic-rose text-[1.75rem] leading-tight md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+                    {title}
+                  </h3>
+                  <div
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
+                      border: "1px solid rgba(233,181,166,0.25)",
+                    }}
+                  >
+                    <Icon className="h-6 w-6" style={{ color: ROSE }} strokeWidth={1.4} />
+                  </div>
                 </div>
 
-                {/* ↑ Enlarged title — text-3xl (was text-2xl) */}
-                <h3 className="metallic-rose text-3xl mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                  {title}
-                </h3>
-
-                <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: ROSE, opacity: 0.65 }}>
+                <p className="text-[10px] font-semibold uppercase tracking-widest mb-4" style={{ color: ROSE, opacity: 0.65 }}>
                   {highlight}
                 </p>
 
@@ -362,9 +369,13 @@ function AboutPage() {
                 <p className="text-base leading-relaxed" style={{ color: IVORY, opacity: 0.78 }}>
                   {desc}
                 </p>
-              </div>
+                </div>
             );
           })}
+          </div>
+          
+          {/* Subtle swipe hint gradient on mobile right edge */}
+          <div className="pointer-events-none absolute right-0 top-0 bottom-8 w-12 bg-gradient-to-l from-[#01060F] to-transparent md:hidden" />
         </div>
       </section>
 

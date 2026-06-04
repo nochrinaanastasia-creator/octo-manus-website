@@ -266,21 +266,23 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                       boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
                     }}
                   >
-                    <div
-                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl mb-4"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(233,181,166,0.13) 0%, rgba(244,199,185,0.04) 100%)",
-                        border: "1px solid rgba(233,181,166,0.2)",
-                      }}
-                    >
-                      <Icon className="h-5 w-5" style={{ color: ROSE }} strokeWidth={1.4} />
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h3
+                        className="metallic-rose text-[1.5rem] md:text-[1.75rem] leading-snug"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {title}
+                      </h3>
+                      <div
+                        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(233,181,166,0.13) 0%, rgba(244,199,185,0.04) 100%)",
+                          border: "1px solid rgba(233,181,166,0.2)",
+                        }}
+                      >
+                        <Icon className="h-5 w-5" style={{ color: ROSE }} strokeWidth={1.4} />
+                      </div>
                     </div>
-                    <h3
-                      className="metallic-rose text-3xl mb-3 leading-snug"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      {title}
-                    </h3>
                     <p
                       className="text-sm leading-relaxed md:text-base"
                       style={{ color: IVORY, opacity: 0.72 }}
@@ -310,21 +312,23 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
                     boxShadow: "0 4px 28px rgba(0,0,0,0.4)",
                   }}
                 >
-                  <div
-                    className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl mb-4"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
-                      border: "1px solid rgba(233,181,166,0.25)",
-                    }}
-                  >
-                    <Icon className="h-5 w-5" style={{ color: ROSE }} strokeWidth={1.4} />
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3
+                      className="metallic-rose text-[1.5rem] md:text-[1.75rem] leading-snug"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {title}
+                    </h3>
+                    <div
+                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(233,181,166,0.15) 0%, rgba(244,199,185,0.05) 100%)",
+                        border: "1px solid rgba(233,181,166,0.25)",
+                      }}
+                    >
+                      <Icon className="h-5 w-5" style={{ color: ROSE }} strokeWidth={1.4} />
+                    </div>
                   </div>
-                  <h3
-                    className="metallic-rose text-3xl mb-4 leading-snug"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {title}
-                  </h3>
                   <p
                     className="text-sm leading-relaxed md:text-base"
                     style={{ color: IVORY, opacity: 0.75 }}
