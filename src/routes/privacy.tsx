@@ -237,6 +237,22 @@ function PrivacyPage() {
     <div className="min-h-screen text-foreground" style={{ backgroundColor: PAGE_BG }}>
       <SiteHeader />
 
+      {/* ── Floating close (✕) — sticks top-right while scrolling ── */}
+      <button
+        onClick={() => window.history.back()}
+        aria-label="Close privacy policy"
+        className="fixed top-24 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full text-lg transition-all duration-200 hover:scale-110"
+        style={{
+          backgroundColor: "rgba(8,19,31,0.92)",
+          border: "1px solid rgba(233,181,166,0.35)",
+          color: ROSE,
+          backdropFilter: "blur(8px)",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+        }}
+      >
+        ✕
+      </button>
+
       <section className="relative overflow-hidden pb-12 pt-20 md:pt-28">
         <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
           <StarField stars={stars} />
@@ -289,6 +305,21 @@ function PrivacyPage() {
                 </div>
               ))}
             </div>
+          </div>
+          {/* ── Back link at the bottom of the text ── */}
+          <div className="flex justify-center pb-4">
+            <button
+              onClick={() => window.history.back()}
+              className="flex items-center gap-2 rounded-xl px-7 py-3 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                backgroundColor: "rgba(233,181,166,0.08)",
+                border: "1px solid rgba(233,181,166,0.28)",
+                color: ROSE,
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              ← Back
+            </button>
           </div>
         </div>
       </section>
