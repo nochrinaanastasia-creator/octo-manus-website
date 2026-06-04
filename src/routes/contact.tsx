@@ -175,6 +175,9 @@ function ContactPage() {
       const data = await res.json().catch(() => ({ success: false }));
       if (data.success) {
         setStatus("success");
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "generate_lead");
+        }
       } else {
         throw new Error(data.message || "Submission failed — please try again.");
       }

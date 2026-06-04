@@ -153,8 +153,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+              
+              // Default to denied
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied'
+              });
 
+              gtag('js', new Date());
               gtag('config', 'G-KWSP0VZ936');
             `,
           }}

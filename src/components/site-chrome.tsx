@@ -67,6 +67,11 @@ export function FloatingCta() {
         transform: visible ? "translateY(0) scale(1)" : "translateY(16px) scale(0.96)",
         pointerEvents: visible ? "auto" : "none",
       }}
+      onClick={() => {
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "book_strategy_call_click");
+        }
+      }}
     >
       <Phone className="h-3.5 w-3.5" strokeWidth={2} />
       {t.cta.bookCall}
@@ -80,16 +85,24 @@ export function CookieBar() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
+    const consent = localStorage.getItem(STORAGE_KEY);
+    if (!consent) {
       // Slight delay so it doesn’t flash on first render
       const t = setTimeout(() => setShow(true), 1200);
       return () => clearTimeout(t);
+    } else if (consent === "accepted") {
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("consent", "update", { analytics_storage: "granted" });
+      }
     }
   }, []);
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
     setShow(false);
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("consent", "update", { analytics_storage: "granted" });
+    }
   }
   function reject() {
     localStorage.setItem(STORAGE_KEY, "rejected");
@@ -636,7 +649,19 @@ export function SiteFooter() {
                 {t.footer.getInTouch}
               </h4>
               <ul className="mt-4 space-y-3 text-sm" style={{ color: IVORY }}>
-                <li className="opacity-65">{t.footer.email}</li>
+                <li>
+                  <a
+                    href="mailto:info@octomanus.com"
+                    className="opacity-65 transition-opacity hover:opacity-100"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "email_click");
+                      }
+                    }}
+                  >
+                    {t.footer.email}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
