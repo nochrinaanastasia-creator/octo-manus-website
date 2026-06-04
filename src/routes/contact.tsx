@@ -144,21 +144,25 @@ function ContactPage() {
 
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  // ── Formspree ──────────────────────────────────────────────
-  // 1. Go to https://formspree.io  →  sign up with info@octomanus.com
-  // 2. Create a new form (name it "Octo Manus Website")
-  // 3. Copy the 8-char form ID from the endpoint URL and paste it below
-  const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // ← replace this
+  // ── Web3Forms ─────────────────────────────────────────────────────────
+  // 1. Go to https://web3forms.com  (no account creation needed)
+  // 2. Enter  info@octomanus.com  and click "Create Access Key"
+  // 3. Open info@octomanus.com inbox and copy the access key from the email
+  // 4. Replace YOUR_WEB3FORMS_ACCESS_KEY below with that key
+  const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // replace this
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
     setSubmitError(null);
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key:     WEB3FORMS_KEY,
+          subject:        `New enquiry from ${form.name} — ${form.company}`,
+          from_name:      "Octo Manus Website",
           "Company":      form.company,
           "Name":         form.name,
           "Email":        form.email,
@@ -171,15 +175,17 @@ function ContactPage() {
           "Message":      form.description,
         }),
       });
-      if (res.ok) {
+      const data = await res.json().catch(() => ({ success: false }));
+      if (data.success) {
         setStatus("success");
       } else {
-        const data = await res.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error || "Submission failed");
+        throw new Error(data.message || "Submission failed — please try again.");
       }
     } catch (err) {
       setStatus("idle");
-      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setSubmitError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
     }
   }
 
