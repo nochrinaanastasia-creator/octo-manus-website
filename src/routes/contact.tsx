@@ -149,7 +149,7 @@ function ContactPage() {
   // 2. Enter  info@octomanus.com  and click "Create Access Key"
   // 3. Open info@octomanus.com inbox and copy the access key from the email
   // 4. Replace YOUR_WEB3FORMS_ACCESS_KEY below with that key
-  const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // replace this
+  const WEB3FORMS_KEY = "99086939-c669-430a-b46c-97bcfbf8d8f1";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
