@@ -201,7 +201,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Octo Manus"
-            className="h-14 w-auto md:h-[140px] lg:h-[170px]"
+            className="h-10 w-auto md:h-[90px] lg:h-[110px]"
             style={{ imageRendering: "auto" }}
             loading="eager"
           />
@@ -557,7 +557,7 @@ export function SiteFooter() {
       }}
     >
       {/* Same hard-left / hard-right padding as header */}
-      <div className="py-14 px-5 md:py-18 md:px-7">
+      <div className="py-8 px-5 md:py-12 md:px-7">
 
         {/* Brand LEFT — columns RIGHT */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-0">
@@ -567,7 +567,7 @@ export function SiteFooter() {
             <img
               src={logo}
               alt="Octo Manus"
-              className="h-14 w-auto md:h-[110px]"
+              className="h-10 w-auto md:h-[75px]"
               style={{ imageRendering: "auto" }}
               loading="lazy"
             />
@@ -644,7 +644,7 @@ export function SiteFooter() {
 
         {/* Bottom bar */}
         <div
-          className="mt-14 flex flex-col gap-2 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between"
+          className="mt-9 flex flex-col gap-2 border-t pt-5 text-xs md:flex-row md:items-center md:justify-between"
           style={{
             borderColor: "rgba(233,181,166,0.12)",
             color: IVORY,
