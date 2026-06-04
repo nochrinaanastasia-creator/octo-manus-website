@@ -68,7 +68,7 @@ export function FloatingCta() {
         pointerEvents: visible ? "auto" : "none",
       }}
       onClick={() => {
-        if (typeof window !== "undefined" && (window as any).gtag) {
+        if (typeof window !== "undefined" && localStorage.getItem("octo-cookie-consent") === "accepted" && (window as any).gtag) {
           (window as any).gtag("event", "book_strategy_call_click");
         }
       }}
@@ -84,6 +84,23 @@ export function CookieBar() {
   const STORAGE_KEY = "octo-cookie-consent";
   const [show, setShow] = useState(false);
 
+  const loadGA = () => {
+    if (typeof window === "undefined") return;
+    if (document.getElementById("ga-script")) return;
+
+    const script = document.createElement("script");
+    script.id = "ga-script";
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-KWSP0VZ936";
+    document.head.appendChild(script);
+
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(){(window as any).dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWSP0VZ936');
+    (window as any).gtag = gtag;
+  };
+
   useEffect(() => {
     const consent = localStorage.getItem(STORAGE_KEY);
     if (!consent) {
@@ -91,18 +108,14 @@ export function CookieBar() {
       const t = setTimeout(() => setShow(true), 1200);
       return () => clearTimeout(t);
     } else if (consent === "accepted") {
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("consent", "update", { analytics_storage: "granted" });
-      }
+      loadGA();
     }
   }, []);
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
     setShow(false);
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("consent", "update", { analytics_storage: "granted" });
-    }
+    loadGA();
   }
   function reject() {
     localStorage.setItem(STORAGE_KEY, "rejected");
@@ -654,7 +667,7 @@ export function SiteFooter() {
                     href="mailto:info@octomanus.com"
                     className="opacity-65 transition-opacity hover:opacity-100"
                     onClick={() => {
-                      if (typeof window !== "undefined" && (window as any).gtag) {
+                      if (typeof window !== "undefined" && localStorage.getItem("octo-cookie-consent") === "accepted" && (window as any).gtag) {
                         (window as any).gtag("event", "email_click");
                       }
                     }}

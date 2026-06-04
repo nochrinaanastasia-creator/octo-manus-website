@@ -148,7 +148,7 @@ function Index() {
                 className="rounded-md px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
                 style={ctaButtonStyle}
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
+                  if (typeof window !== "undefined" && localStorage.getItem("octo-cookie-consent") === "accepted" && (window as any).gtag) {
                     (window as any).gtag("event", "book_strategy_call_click");
                   }
                 }}

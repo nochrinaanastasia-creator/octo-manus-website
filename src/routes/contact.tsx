@@ -175,7 +175,7 @@ function ContactPage() {
       const data = await res.json().catch(() => ({ success: false }));
       if (data.success) {
         setStatus("success");
-        if (typeof window !== "undefined" && (window as any).gtag) {
+        if (typeof window !== "undefined" && localStorage.getItem("octo-cookie-consent") === "accepted" && (window as any).gtag) {
           (window as any).gtag("event", "generate_lead");
         }
       } else {

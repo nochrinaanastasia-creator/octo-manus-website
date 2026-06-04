@@ -146,24 +146,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWSP0VZ936"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              
-              // Default to denied
-              gtag('consent', 'default', {
-                'analytics_storage': 'denied'
-              });
 
-              gtag('js', new Date());
-              gtag('config', 'G-KWSP0VZ936');
-            `,
-          }}
-        />
       </head>
       <body>
         {children}
