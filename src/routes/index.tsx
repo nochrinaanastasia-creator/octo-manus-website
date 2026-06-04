@@ -142,7 +142,9 @@ function Index() {
               className="metallic-rose text-5xl leading-[1.05] md:text-6xl lg:text-7xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              {t.home.heroH1.join(" ")}
+              {t.home.heroH1.map((line, i) => (
+                <span key={i} style={{ display: "block" }}>{line}</span>
+              ))}
             </h1>
             <p
               className="mt-6 text-lg italic metallic-rose md:text-xl"

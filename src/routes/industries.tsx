@@ -105,7 +105,7 @@ function JumpCard({
         {title}
       </h3>
       <p className="text-sm leading-relaxed" style={{ color: IVORY, opacity: 0.6 }}>
-        {sub}
+        {nb(sub)}
       </p>
       <div
         className="flex items-center gap-2 mt-auto pt-2"
@@ -138,7 +138,7 @@ function FourthCard({ title, sub, exploreLabel }: { title: string; sub: string; 
         {title}
       </h3>
       <p className="text-sm leading-relaxed" style={{ color: IVORY, opacity: 0.6 }}>
-        {sub}
+        {nb(sub)}
       </p>
       <div
         className="flex items-center gap-2 mt-auto pt-2"
@@ -214,7 +214,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
             className="mt-5 text-lg md:text-xl"
             style={{ color: ROSE, fontStyle: "italic", opacity: 0.85 }}
           >
-            {content.sub}
+            {nb(content.sub)}
           </p>
         </div>
 

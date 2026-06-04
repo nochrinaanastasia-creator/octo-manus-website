@@ -193,8 +193,8 @@ const en: Translations = {
     aiAgents: "AI Agents",
   },
   home: {
-    heroH1: ["Turn Manual Work Into Intelligent Systems"],
-    heroSubtitle: "AI — a Competitive Advantage for Every Business.",
+    heroH1: ["Turn Manual Work", "Into", "Intelligent Systems"],
+    heroSubtitle: "AI built for the way your business actually operates.",
     heroBody:
       "We help small and medium businesses use AI where it actually matters: repetitive admin, operational reporting, customer support, supplier follow-ups, product content, and workflow coordination. We advise, design, and build practical AI systems around your existing operations — without requiring your team to become technical or hire an internal engineering department.",
     services: [
@@ -219,7 +219,7 @@ const en: Translations = {
       label: "Our Story",
       h1: ["AI Is Not Magic.", "But the Results?", "Pretty Close."],
       body:
-        "Octo Manus was created to help SMEs move from AI curiosity to practical implementation: clear use cases, realistic workflows, and tools your team can actually use.",
+        "Octo Manus was created to help SMEs move from AI curiosity to practical implementation: clear use cases, realistic workflows, and tools your team can actually use.",
       bodyStrong: "",
     },
     history: {
@@ -244,13 +244,13 @@ const en: Translations = {
       label: "Our Mission",
       h2: ["Make AI Your", "Most Productive", "Team Member."],
       p1: "Our mission is to democratise AI for small and medium businesses — guiding professionals to work hand-in-hand with intelligent systems that take over the repetitive, the time-consuming, and the frankly boring.",
-      p2: "Because you didn't start your business to spend three hours formatting a report or chasing a supplier for an update that's already somewhere in your inbox.",
+      p2: "Because you didn't start your business to spend three hours formatting a report or chasing a supplier for an update that's already somewhere in your inbox.",
       p3: "You started it to build something. Let's give you back the time to do exactly that.",
       stats: [
         { stat: "80%", label: "of repetitive tasks", sub: "can be automated with the right AI workflows" },
         { stat: "10×", label: "faster processes", sub: "when AI agents handle the manual grunt work" },
         { stat: "0", label: "lines of code needed", sub: "from you — we handle the technical heavy lifting" },
-        { stat: "∞", label: "industry curiosity", sub: "we learn your world before we touch your workflows" },
+        { stat: "∞", label: "industry curiosity", sub: "we learn your world before we touch your workflows" },
       ],
     },
     values: {
@@ -277,12 +277,12 @@ const en: Translations = {
         {
           title: "Growth Without Friction",
           highlight: "Start small, grow fast.",
-          desc: "Our workflows are designed to scale with you. Start with one process, expand across the business. Small wins compound into major competitive advantage.",
+          desc: "Our workflows are designed to scale with you. Start with one process, expand across the business. Small wins compound into major competitive advantage.",
         },
         {
           title: "Industry Fluency",
           highlight: "We speak your language.",
-          desc: "From logistics to beauty, supply chains to client journeys — we immerse ourselves in your world before recommending a single tool. Context is everything.",
+          desc: "From logistics to beauty, supply chains to client journeys — we immerse ourselves in your world before recommending a single tool. Context is everything.",
         },
         {
           title: "Long-Term Partnership",
@@ -302,7 +302,7 @@ const en: Translations = {
     heroLabel: "Industries",
     heroH1: ["The AI That Speaks", "Your Industry's Language."],
     heroBody:
-      "Not every business runs the same way. Not every sector has the same pace, the same pressure points, or the same definition of a productive day. That's why our AI solutions are built around your industry — not around a generic use case.",
+      "Not every business runs the same way. Not every sector has the same pace, the same pressure points, or the same definition of a productive day. That's why our AI solutions are built around your industry — not around a generic use case.",
     supplyChain: {
       navLabel: "Supply Chain",
       shortLabel: "Supply Chain",
@@ -335,7 +335,7 @@ const en: Translations = {
       benefits: [
         { title: "Clarity Before You Spend", desc: "Know exactly where AI fits — and where it doesn't. No guesswork, no wasted budget on tools that don't match your business." },
         { title: "A Roadmap Built Around You", desc: "Not a generic framework. A prioritised plan based on your actual operations, team size, and real constraints." },
-        { title: "Confidence at Every Step", desc: "Expert guidance before you commit — not a consultant who disappears after the deck is delivered." },
+        { title: "Confidence at Every Step", desc: "Expert guidance before you commit — not a consultant who disappears after the deck is delivered." },
       ],
     },
     automation: {
@@ -348,7 +348,7 @@ const en: Translations = {
         { title: "Process Mapping", desc: "We document exactly how it's done, by whom, and where things break down." },
         { title: "Build & Integrate", desc: "We select the right tools, build the automations, and connect them to your existing stack." },
         { title: "Test & Launch", desc: "We run every automation against real data, resolve edge cases, and go live only when results are reliable." },
-        { title: "20h Free Support", desc: "20 free hours within 2 months to answer questions, refine sessions, and make sure the learning sticks." },
+        { title: "20h Free Support", desc: "20 free hours within 2 months to answer questions, refine sessions, and make sure the learning sticks." },
       ],
       benefits: [
         { stat: "8–15h", title: "Recovered Every Week", desc: "Teams typically recover 8–15 hours per week once key manual processes are automated — every week, without anyone managing them." },
@@ -371,7 +371,7 @@ const en: Translations = {
       benefits: [
         { title: "Always Available", desc: "Your agent handles enquiries around the clock — weekends, evenings, and holidays. Consistent quality, every time, without adding headcount." },
         { stat: "80%", title: "Routine Handled", desc: "Agents handle up to 80% of routine interactions, freeing your team for work that requires human judgement." },
-        { title: "Consistent at Scale", desc: "Unlike humans, agents don't have off days. Every interaction is handled with the same quality, tone, and accuracy — regardless of volume." },
+        { title: "Consistent at Scale", desc: "Unlike humans, agents don't have off days. Every interaction is handled with the same quality, tone, and accuracy — regardless of volume." },
       ],
     },
   },
@@ -480,10 +480,10 @@ const es: Translations = {
     aiAgents: "Agentes de IA",
   },
   home: {
-    heroH1: ["Adopta la IA.", "Automatiza el Trabajo.", "Construye el Futuro."],
-    heroSubtitle: "Convierte el Trabajo Manual en Sistemas Inteligentes",
+    heroH1: ["Convierte el Trabajo Manual", "en", "Sistemas Inteligentes"],
+    heroSubtitle: "IA construida para el modo en que tu negocio opera de\u00A0verdad.",
     heroBody:
-      "Ayudamos a las pequeñas y medianas empresas a usar la IA donde realmente importa: administración repetitiva, informes operativos, atención al cliente, seguimiento a proveedores, contenido de producto y coordinación de flujos de trabajo. Asesoramos, diseñamos y construimos sistemas de IA prácticos en torno a tus operaciones actuales — sin necesidad de que tu equipo se vuelva técnico ni de contratar un departamento de ingeniería interna.",
+      "Ayudamos a las pequeñas y medianas empresas a usar la IA donde realmente importa: administración repetitiva, informes operativos, atención al cliente, seguimiento a proveedores, contenido de producto y coordinación de flujos de trabajo. Asesoramos, diseñamos y construimos sistemas de IA prácticos en torno a tus operaciones actuales — sin necesidad de que tu equipo se vuelva técnico ni de contratar un departamento de ingeniería\u00A0interna.",
     services: [
       {
         title: "Asesoría de IA",
@@ -506,22 +506,22 @@ const es: Translations = {
       label: "Nuestra Historia",
       h1: ["La IA no es magia.", "¿Pero los resultados?", "Casi."],
       body:
-        "Octo Manus fue creada para ayudar a las pymes a pasar de la curiosidad por la IA a la implementación práctica: casos de uso claros, flujos de trabajo realistas y herramientas que tu equipo puede usar de verdad.",
+        "Octo Manus fue creada para ayudar a las pymes a pasar de la curiosidad por la IA a la implementación práctica: casos de uso claros, flujos de trabajo realistas y herramientas que tu equipo puede usar de\u00A0verdad.",
       bodyStrong: "",
     },
     history: {
       label: "Nuestra Historia",
       h2: ["Dos Profesionales.", "Una Frustración.", "Demasiadas Hojas de Cálculo."],
-      p1: "Octo Manus fue fundada en Malta por dos profesionales de distintas áreas de negocio: producto, gestión de proyectos y operaciones. Lo que teníamos en común era simple: ambas habíamos visto cómo los equipos perdían horas cada semana en informes manuales, coordinación repetida, herramientas desconectadas y procesos que dependían demasiado del esfuerzo individual.",
+      p1: "Octo Manus fue fundada en Malta por dos profesionales de distintas áreas de negocio: producto, gestión de proyectos y operaciones. Lo que teníamos en común era simple: ambas habíamos visto cómo los equipos perdían horas cada semana en informes manuales, coordinación repetida, herramientas desconectadas y procesos que dependían demasiado del esfuerzo\u00A0individual.",
       p1Bold1: "",
       p1Bold2: "",
-      p2: "Malta fue el lugar idóneo para que esa idea tomara forma. A medida que el país invierte en cultura de IA y hace que herramientas avanzadas como ChatGPT Plus y Microsoft 365 Personal Copilot sean más accesibles para los residentes a través de iniciativas nacionales, algo queda claro: tener acceso a la IA ya no es la parte más difícil. Saber cómo aplicarla bien dentro de un negocio real, sí lo es.",
-      p3: "También vimos la brecha entre las demostraciones de IA y la implementación real. La IA parecía impresionante en teoría, pero en muchas empresas fracasaba porque se introducía sin contexto, sin comprensión de los procesos ni un plan de adopción claro.",
-      p4: "Octo Manus nació para cerrar esa brecha — convirtiendo la IA de una oportunidad vaga en sistemas prácticos que ahorran tiempo, mejoran la consistencia y apoyan la forma en que los equipos ya trabajan.",
+      p2: "Malta fue el lugar idóneo para que esa idea tomara forma. A medida que el país invierte en cultura de IA y hace que herramientas avanzadas como ChatGPT Plus y Microsoft 365 Personal Copilot sean más accesibles para los residentes a través de iniciativas nacionales, algo queda claro: tener acceso a la IA ya no es la parte más difícil. Saber cómo aplicarla bien dentro de un negocio real, sí\u00A0lo\u00A0es.",
+      p3: "También vimos la brecha entre las demostraciones de IA y la implementación real. La IA parecía impresionante en teoría, pero en muchas empresas fracasaba porque se introducía sin contexto, sin comprensión de los procesos ni un plan de adopción\u00A0claro.",
+      p4: "Octo Manus nació para cerrar esa brecha — convirtiendo la IA de una oportunidad vaga en sistemas prácticos que ahorran tiempo, mejoran la consistencia y apoyan la forma en que los equipos ya\u00A0trabajan.",
       founder1Role: "Co-Fundadora",
       founder1Title: "Producto y Estrategia",
       founder1Desc:
-        "Con experiencia en desarrollo de producto y planificación estratégica en los sectores de moda, e-commerce y operaciones de almacén, convertimos necesidades empresariales complejas en planes de implementación estructurados. Definimos los casos de uso de IA adecuados, establecemos prioridades, trazamos el plan de despliegue y nos aseguramos de que las ideas pasen del concepto a la ejecución sin dejar al equipo atrás.",
+        "Con experiencia en desarrollo de producto y planificación estratégica en los sectores de moda, e-commerce y operaciones de almacén, convertimos necesidades empresariales complejas en planes de implementación estructurados. Definimos los casos de uso de IA adecuados, establecemos prioridades, trazamos el plan de despliegue y nos aseguramos de que las ideas pasen del concepto a la ejecución sin dejar al equipo\u00A0atrás.",
       founder2Role: "Co-Fundadora",
       founder2Title: "Operaciones y Entrega",
       founder2Desc:
@@ -606,17 +606,17 @@ const es: Translations = {
   services: {
     heroLabel: "Servicios",
     heroH1: ["Una IA que Funciona", "Como tu Negocio."],
-    heroBody: "Asesoría, automatización y agentes de IA — tres servicios, un único objetivo: menos trabajo manual y más resultados, sin interrumpir el funcionamiento actual de tu equipo.",
+    heroBody: "Asesoría, automatización y agentes de IA — tres servicios, un único objetivo: menos trabajo manual y más resultados, sin interrumpir el funcionamiento actual de tu\u00A0equipo.",
     exploreLabel: "↓ Explorar",
     howWeWork: "Cómo trabajamos",
     advisory: {
       badge: "Asesoría de IA",
       headline: ["Entiende la IA Antes", "de Invertir en Ella."],
-      sub: "Para empresas que quieren que su equipo esté preparado — no dejado atrás.",
-      intro: "Saber que existe la IA no es lo mismo que saber cómo usarla. Llevamos a cabo sesiones de formación práctica adaptadas a tu negocio y a los roles de tu equipo — para que cuando nos vayamos, sepan exactamente qué herramientas usar, cómo usarlas y por qué importa.",
+      sub: "Para empresas que quieren que su equipo esté preparado — no dejado\u00A0atrás.",
+      intro: "Saber que existe la IA no es lo mismo que saber cómo usarla. Llevamos a cabo sesiones de formación práctica adaptadas a tu negocio y a los roles de tu equipo — para que cuando nos vayamos, sepan exactamente qué herramientas usar, cómo usarlas y por qué\u00A0importa.",
       steps: [
-        { title: "Llamada de Descubrimiento", desc: "Entendemos tus operaciones, tu equipo y dónde encaja la IA." },
-        { title: "Masterclass Personalizada", desc: "Una sesión práctica construida íntegramente en torno a tu negocio. Sin diapositivas genéricas." },
+        { title: "Llamada de Descubrimiento", desc: "Entendemos tus operaciones, tu equipo y dónde encaja la\u00A0IA." },
+        { title: "Masterclass Personalizada", desc: "Una sesión práctica construida íntegramente en torno a tu negocio. Sin diapositivas\u00A0genéricas." },
         { title: "Soporte de 3 Meses", desc: "Orientación continua mientras aplicas la IA." },
       ],
       benefits: [
@@ -627,30 +627,30 @@ const es: Translations = {
     },
     automation: {
       badge: "Automatización de Procesos",
-      headline: ["Menos Trabajo Manual.", "Más de lo que Importa."],
-      sub: "Para operaciones que funcionan con esfuerzo cuando deberían funcionar con sistemas.",
+      headline: ["Menos Trabajo Manual.", "Más de lo que\u00A0Importa."],
+      sub: "Para operaciones que funcionan con esfuerzo cuando deberían funcionar con\u00A0sistemas.",
       intro: "Los procesos manuales son costosos de formas que no aparecen en una hoja de cálculo — tiempo, motivación, tasas de error, decisiones retrasadas. Identificamos los flujos de trabajo listos para automatizarse, construimos los sistemas que los reemplazan y nos aseguramos de que encajen con la forma en que tu equipo trabaja realmente. El objetivo no es la automatización por sí misma. Es más capacidad para el trabajo que importa.",
       steps: [
         { title: "Llamada de Descubrimiento", desc: "Encontramos dónde el trabajo manual está costando más a tu operación." },
-        { title: "Mapeo de Procesos", desc: "Documentamos exactamente cómo se hace, quién lo hace y dónde las cosas fallan." },
+        { title: "Mapeo de Procesos", desc: "Documentamos exactamente cómo se hace, quién lo hace y dónde las cosas\u00A0fallan." },
         { title: "Construcción e Integración", desc: "Seleccionamos las herramientas adecuadas, construimos las automatizaciones y las conectamos a tu stack actual." },
         { title: "Prueba y Lanzamiento", desc: "Ejecutamos cada automatización con datos reales, resolvemos casos límite y lanzamos solo cuando los resultados son fiables." },
-        { title: "20h de Soporte Gratuito", desc: "20 horas gratuitas en 2 meses para responder preguntas, ajustar lo construido y asegurarnos de que el aprendizaje quede consolidado." },
+        { title: "20h de Soporte Gratuito", desc: "20 horas gratuitas en 2 meses para responder preguntas, ajustar lo construido y asegurarnos de que el aprendizaje quede\u00A0consolidado." },
       ],
       benefits: [
         { stat: "8–15h", title: "Recuperadas Cada Semana", desc: "Los equipos suelen recuperar entre 8 y 15 horas semanales una vez que se automatizan los procesos manuales clave — cada semana, sin que nadie los gestione." },
-        { stat: "99.9%", title: "Tasa de Precisión", desc: "La entrada manual de datos falla entre un 1 y un 4% de las veces — llegando al 40% bajo presión. Las pipelines automatizadas no se equivocan, no omiten pasos ni se olvidan." },
-        { stat: "30–40%", title: "Más Producción. Mismo Equipo", desc: "Las empresas reportan una mejora de productividad del 30–40% en el primer año — gestionando más volumen sin aumentar el equipo ni el trabajo extra." },
+        { stat: "99.9%", title: "Tasa de Precisión", desc: "La entrada manual de datos falla entre un 1 y un 4% de las veces — llegando al 40% bajo presión. Las pipelines automatizadas no se equivocan, no omiten pasos ni se\u00A0olvidan." },
+        { stat: "30–40%", title: "Más Producción. Mismo Equipo", desc: "Las empresas reportan una mejora de productividad del 30–40% en el primer año — gestionando más volumen sin aumentar el equipo ni el trabajo\u00A0extra." },
       ],
     },
     agents: {
       badge: "Agentes de IA",
       headline: ["Hay Trabajo que No Necesita", "Esperar a una Persona."],
-      sub: "Para empresas que quieren que las cosas se gestionen, no solo que se programen.",
+      sub: "Para empresas que quieren que las cosas se gestionen, no solo que se\u00A0programen.",
       intro: "Un agente de IA gestiona una tarea específica — consultas de clientes, procesamiento de datos, informes, seguimiento de proveedores — sin intervención humana en cada paso. Diseñamos agentes que entienden el contexto de tu negocio, operan dentro de límites definidos y escalan a personas exactamente cuando deben. Resultados consistentes y de alta calidad a una escala que tu equipo no podría mantener manualmente.",
       steps: [
         { title: "Llamada de Descubrimiento", desc: "Identificamos la tarea, el alcance y los límites." },
-        { title: "Mapeo de Datos y Lógica", desc: "Los inputs, outputs y decisiones que el agente necesita tomar." },
+        { title: "Mapeo de Datos y Lógica", desc: "Los inputs, outputs y decisiones que el agente necesita\u00A0tomar." },
         { title: "Diseño del Agente", desc: "Límites, tono y escalada — antes del código." },
         { title: "Entrenamiento y Pruebas", desc: "Entrenado con tus datos, probado en casos extremos." },
         { title: "Despliegue y Monitorización", desc: "En producción, con seguimiento y listo para reentrenarse." },
@@ -760,17 +760,17 @@ const it: Translations = {
     services: "Servizi",
     getInTouch: "Contattaci",
     email: "info@octomanus.com",
-    slogan: "Consulenza IA pratica per aziende che operano nel mondo reale, non nella teoria.",
+    slogan: "Consulenza IA pratica per aziende che operano nel mondo reale, non nella\u00A0teoria.",
     copyright: `© ${new Date().getFullYear()} Octo Manus. Tutti i diritti riservati.`,
     aiAdvisory: "Consulenza IA",
     workflowAuto: "Automazione dei Processi",
     aiAgents: "Agenti IA",
   },
   home: {
-    heroH1: ["Adotta l'IA.", "Automatizza il Lavoro.", "Costruisci il Futuro."],
-    heroSubtitle: "Trasforma il Lavoro Manuale in Sistemi Intelligenti",
+    heroH1: ["Trasforma il Lavoro Manuale", "in", "Sistemi Intelligenti"],
+    heroSubtitle: "IA costruita per il modo in cui la tua azienda opera\u00A0davvero.",
     heroBody:
-      "Aiutiamo le piccole e medie imprese a usare l'IA dove conta davvero: amministrazione ripetitiva, reportistica operativa, assistenza clienti, follow-up con fornitori, contenuti di prodotto e coordinamento dei flussi di lavoro. Consigliamo, progettiamo e costruiamo sistemi IA pratici attorno alle tue operazioni esistenti — senza che il tuo team debba diventare tecnico o assumere un reparto ingegneristico interno.",
+      "Aiutiamo le piccole e medie imprese a usare l'IA dove conta davvero: amministrazione ripetitiva, reportistica operativa, assistenza clienti, follow-up con fornitori, contenuti di prodotto e coordinamento dei flussi di lavoro. Consigliamo, progettiamo e costruiamo sistemi IA pratici attorno alle tue operazioni esistenti — senza che il tuo team debba diventare tecnico o assumere un reparto ingegneristico\u00A0interno.",
     services: [
       {
         title: "Consulenza IA",

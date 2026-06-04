@@ -142,12 +142,45 @@ function ContactPage() {
     }));
   }
 
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // ── Formspree ──────────────────────────────────────────────
+  // 1. Go to https://formspree.io  →  sign up with info@octomanus.com
+  // 2. Create a new form (name it "Octo Manus Website")
+  // 3. Copy the 8-char form ID from the endpoint URL and paste it below
+  const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // ← replace this
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
-    // TODO: Connect to email service (Formspree / EmailJS)
-    await new Promise((r) => setTimeout(r, 1400)); // simulate
-    setStatus("success");
+    setSubmitError(null);
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          "Company":      form.company,
+          "Name":         form.name,
+          "Email":        form.email,
+          "Phone":        form.phone || "—",
+          "Industry":     form.industry === "Other" ? form.industryOther : form.industry,
+          "Company size": form.companySize,
+          "Services":     form.services.join(", ") || "—",
+          "Timeline":     form.timeline,
+          "Budget":       form.budget || "—",
+          "Message":      form.description,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error || "Submission failed");
+      }
+    } catch (err) {
+      setStatus("idle");
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   }
 
   const focusStyle = (field: string): React.CSSProperties => ({
@@ -518,6 +551,11 @@ function ContactPage() {
                 </>
               )}
             </button>
+            {submitError && (
+              <p className="mt-3 text-sm" style={{ color: "#ff6b6b" }}>
+                ⚠ {submitError}
+              </p>
+            )}
             <p className="mt-4 text-sm italic" style={{ color: IVORY, opacity: 0.4 }}>
               {ct.noPitch}
             </p>
