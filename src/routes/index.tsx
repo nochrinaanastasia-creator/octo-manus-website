@@ -129,7 +129,7 @@ function Index() {
           {/* ── Text column ── */}
           <div className="relative z-20 max-w-xl lg:col-span-6 lg:-ml-4">
             <h1
-              className="metallic-rose text-4xl leading-[1.1] md:text-5xl lg:text-6xl"
+              className="metallic-rose text-[clamp(2.5rem,10vw,3.5rem)] leading-[1.05] md:text-6xl lg:text-7xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {t.home.heroH1.map((line, i) => (
