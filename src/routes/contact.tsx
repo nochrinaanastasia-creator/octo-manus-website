@@ -523,13 +523,15 @@ function ContactPage() {
             </span>
             <span className="text-base leading-relaxed" style={{ color: IVORY, opacity: 0.65 }}>
               {ct.privacyText}{" "}
-              <Link
-                to="/privacy"
+              <a
+                href="/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="underline underline-offset-2 transition-opacity hover:opacity-100"
                 style={{ color: ROSE, opacity: 0.85 }}
               >
                 {ct.privacyLink}
-              </Link>
+              </a>
               . <span style={{ color: ROSE, opacity: 0.85 }}>*</span>
             </span>
           </button>
