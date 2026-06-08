@@ -235,7 +235,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
 
   /* ─────────────── ESPAÑOL ─────────────── */
   es: {
-    jumpTitles:    ["Supply Chain", "Retail & E-commerce", "Beauty & Wellness", "Tu sector"],
+    jumpTitles:    ["Cadena De Suministro", "Retail y Comercio Digital", "Belleza y Bienestar", "Tu sector"],
     jumpSubs: [
       "Previsión, coordinación de proveedores e informes operativos.",
       "Contenido de producto, atención al cliente e inteligencia de inventario.",
