@@ -684,7 +684,7 @@ export const es: Translations = {
     advisory: {
       badge: "Asesoría de IA",
       headline: ["Entiende la IA Antes", "de Invertir en Ella."],
-      sub: "Para empresas que quieren que su equipo esté preparado — no dejado\u00A0atrás.",
+      sub: "Para empresas que quieren que su equipo avance — no que se quede atrás.",
       intro: "Conocer la IA no es lo mismo que saber aplicarla. Diseñamos sesiones de formación a medida para tu negocio y tu equipo — para que al terminar, cada persona sepa exactamente qué herramienta usar, cuándo usarla y por qué marca la diferencia.",
       steps: [
         { title: "Llamada de Descubrimiento", desc: "Entendemos tus operaciones, tu equipo y dónde encaja la\u00A0IA." },
