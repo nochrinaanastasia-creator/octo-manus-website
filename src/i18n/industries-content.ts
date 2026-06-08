@@ -246,7 +246,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
     solutionLabel: "Lo que construimos para ti",
     exploreLabel:  "Explorar",
     exploreFourthLabel: "Contáctanos",
-    ctaLabel:      "Reserva una Llamada Estratégica",
+    ctaLabel:      "Agenda una llamada",
     ctaNoPitch:    "Sin ventas. Solo una conversación honesta.",
     ctaFitLabel:   "¿No encuentras tu sector?",
     ctaFitH2:      ["Si tu negocio vive de las operaciones,", "hay un caso de uso de IA en él."],
