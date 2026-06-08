@@ -536,7 +536,7 @@ export const es: Translations = {
     contact: "Contacto",
   },
   cta: {
-    bookCall: "Reservar una Llamada Estratégica",
+    bookCall: "Agenda una llamada",
     exploreServices: "Ver Servicios",
   },
   footer: {
