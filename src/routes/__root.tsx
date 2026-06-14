@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         { property: "og:type", content: "website" },
         { property: "og:url", content: `https://octomanus.com/${lang}` },
-        { property: "og:image", content: "https://octomanus.com/logo.png" },
+        { property: "og:image", content: "https://octomanus.com/og-image.jpg" },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
         { property: "og:locale", content: lang === "it" ? "it_IT" : lang === "es" ? "es_ES" : "en_US" },
@@ -119,7 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "twitter:description",
           content: seo?.description || "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
         },
-        { name: "twitter:image", content: "https://octomanus.com/logo.png" },
+        { name: "twitter:image", content: "https://octomanus.com/og-image.jpg" },
       ],
       links: [
         {
