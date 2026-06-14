@@ -23,6 +23,7 @@ export interface Translations {
   cta: {
     bookCall: string;
     exploreServices: string;
+    explore: string;
   };
   footer: {
     tagline: string;
@@ -219,6 +220,7 @@ export const en: Translations = {
   cta: {
     bookCall: "Book a Strategy Call",
     exploreServices: "Explore Services",
+    explore: "Explore →",
   },
   footer: {
     tagline: "Practical AI consulting for businesses that run on real operations, not theory.",
@@ -538,6 +540,7 @@ export const es: Translations = {
   cta: {
     bookCall: "Reservar una Llamada Estratégica",
     exploreServices: "Ver Servicios",
+    explore: "Explorar →",
   },
   footer: {
     tagline: "Sin complicaciones. Sin agobios. Solo IA que trabaja para tu negocio.",
@@ -855,8 +858,9 @@ export const it: Translations = {
     contact: "Contatti",
   },
   cta: {
-    bookCall: "Prenota una Chiamata Strategica",
+    bookCall: "Prenota una Chiamata",
     exploreServices: "Scopri i Servizi",
+    explore: "Scopri →",
   },
   footer: {
     tagline: "Niente fronzoli. Nessuna complessità. Solo IA che lavora davvero per te.",
@@ -1018,27 +1022,27 @@ export const it: Translations = {
     },
     automation: {
       badge: "Automazione dei Processi",
-      headline: ["Meno Lavoro Manuale.", "Più di Ciò che Conta."],
-      sub: "Per le operazioni che funzionano a forza di impegno quando dovrebbero funzionare con sistemi.",
+      headline: ["Meno Lavoro Manuale.", "Più di Ciò che\u00A0Conta."],
+      sub: "Per le operazioni che funzionano a forza di impegno quando dovrebbero funzionare con\u00A0sistemi.",
       intro: "I processi manuali sono costosi in modi che non compaiono in un foglio di calcolo — tempo, morale, tassi di errore, decisioni ritardate. Identifichiamo i flussi di lavoro pronti per essere automatizzati, costruiamo i sistemi che li sostituiscono e ci assicuriamo che si adattino a come il tuo team lavora davvero. L'obiettivo non è l'automazione in sé. È più capacità per il lavoro che conta.",
       steps: [
         { title: "Discovery Call", desc: "Troviamo dove il lavoro manuale sta costando di più alla tua operazione." },
-        { title: "Mappatura dei Processi", desc: "Documentiamo esattamente come viene fatto, da chi e dove le cose si bloccano." },
+        { title: "Mappatura dei Processi", desc: "Documentiamo esattamente come viene fatto, da chi e dove le cose si\u00A0bloccano." },
         { title: "Costruzione e Integrazione", desc: "Selezioniamo gli strumenti giusti, costruiamo le automazioni e le colleghiamo al tuo stack esistente." },
         { title: "Test e Lancio", desc: "Eseguiamo ogni automazione su dati reali, risolviamo i casi limite e andiamo live solo quando i risultati sono affidabili." },
-        { title: "20h di Supporto Gratuito", desc: "20 ore gratuite in 2 mesi per rispondere a domande, perfezionare il lavoro svolto e assicurarci che l'apprendimento sia consolidato." },
+        { title: "20h di Supporto Gratuito", desc: "20 ore gratuite in 2 mesi per rispondere a domande, perfezionare il lavoro svolto e assicurarci che l'apprendimento sia\u00A0consolidato." },
       ],
       benefits: [
         { stat: "8–15h", title: "Recuperate Ogni Settimana", desc: "I team recuperano tipicamente 8–15 ore a settimana una volta che i principali processi manuali sono stati automatizzati — ogni settimana, senza che nessuno li gestisca." },
-        { stat: "99.9%", title: "Tasso di Precisione", desc: "L'inserimento manuale dei dati sbaglia tra l'1 e il 4% delle volte — raggiungendo il 40% sotto pressione. Le pipeline automatizzate non commettono errori, non saltano passaggi e non dimenticano." },
-        { stat: "30–40%", title: "Più Output. Stesso Team", desc: "Le aziende riportano un aumento della produttività del 30–40% nel primo anno — gestendo più volume senza aggiungere personale né straordinari." },
+        { stat: "99.9%", title: "Tasso di Precisione", desc: "L'inserimento manuale dei dati sbaglia tra l'1 e il 4% delle volte — raggiungendo il 40% sotto pressione. Le pipeline automatizzate non commettono errori, non saltano passaggi e non\u00A0dimenticano." },
+        { stat: "30–40%", title: "Più Output. Stesso Team", desc: "Le aziende riportano un aumento della produttività del 30–40% nel primo anno — gestendo più volume senza aggiungere personale né\u00A0straordinari." },
       ],
     },
     agents: {
       badge: "Agenti IA",
-      headline: ["Certo Lavoro Non Ha", "Bisogno di Aspettare una Persona."],
-      sub: "Per le aziende che vogliono che le cose vengano gestite, non solo pianificate.",
-      intro: "Un agente IA gestisce un compito specifico — richieste dei clienti, elaborazione dati, reportistica, follow-up con i fornitori — senza intervento umano ad ogni passaggio. Progettiamo agenti che comprendono il contesto del tuo business, operano entro limiti definiti ed escalano agli esseri umani esattamente quando dovrebbero. Output consistente e di alta qualità a una scala che il tuo team non potrebbe mantenere manualmente.",
+      headline: ["Alcuni Tipi di Lavoro", "Non Hanno Bisogno di Una Persona"],
+      sub: "Per le aziende per cui tempi di risposta e consistenza non sono negoziabili.",
+      intro: "Un agente IA gestisce un compito specifico — richieste dei clienti, elaborazione dati, reportistica, follow-up con i fornitori — senza intervento umano ad ogni passaggio. Progettiamo agenti che comprendono il contesto del tuo business, operano entro limiti definiti e notificano gli esseri umani solo quando è necessario. Output consistente e di alta qualità a una scala che il tuo team non potrebbe mantenere manualmente.",
       steps: [
         { title: "Discovery Call", desc: "Identifichiamo il compito, l'ambito e i limiti." },
         { title: "Mappatura Dati e Logica", desc: "Gli input, gli output e le decisioni che l'agente deve prendere." },

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect } from "react";
 import type { Lang } from "@/i18n";
 import { translations } from "@/i18n";
 
@@ -16,13 +16,48 @@ const LanguageContext = createContext<LanguageContextValue>({
 
 import { useNavigate, useSearch } from "@tanstack/react-router";
 
+const STORAGE_KEY = "octo-lang-detected";
+
+/** Detect preferred language from browser locale. Only runs on first visit. */
+function detectLangFromBrowser(): Lang {
+  if (typeof navigator === "undefined") return "en";
+  const browserLang = (navigator.language || "").toLowerCase();
+  if (browserLang.startsWith("it")) return "it";
+  if (
+    browserLang.startsWith("es") ||
+    browserLang.startsWith("ca") ||   // Catalan / Spain
+    browserLang.startsWith("gl")      // Galician / Spain
+  ) return "es";
+  return "en";
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const search = useSearch({ strict: false }) as { lang?: string };
   const navigate = useNavigate();
 
   const lang: Lang = (search.lang === "es" || search.lang === "it") ? search.lang : "en";
 
+  // On first visit (no lang param in URL), auto-detect from browser locale.
+  // Store in localStorage so we only redirect once — manual switches are respected.
+  useEffect(() => {
+    if (search.lang) return; // user already has a lang param, don't override
+    const alreadyDetected = typeof localStorage !== "undefined" && localStorage.getItem(STORAGE_KEY);
+    if (alreadyDetected) return; // already ran detection before
+    const detected = detectLangFromBrowser();
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, detected);
+    }
+    if (detected !== "en") {
+      navigate({ search: (prev: any) => ({ ...prev, lang: detected }), replace: true });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const setLang = (l: Lang) => {
+    // When user manually picks a language, store it so detection doesn't re-trigger
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, l);
+    }
     navigate({ search: (prev: any) => ({ ...prev, lang: l }), replace: true });
   };
 

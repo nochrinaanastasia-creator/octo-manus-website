@@ -220,7 +220,7 @@ function Index() {
                   className="mt-6 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   style={{ color: ROSE }}
                 >
-                  Explore →
+                  {t.cta.explore}
                 </p>
               </a>
             );

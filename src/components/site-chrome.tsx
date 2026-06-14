@@ -58,6 +58,7 @@ export function FloatingCta() {
   return (
     <Link
       to="/contact"
+      search={(prev: any) => ({ ...prev })}
       aria-label="Book a strategy call"
       className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 rounded-2xl px-5 py-3.5 text-sm font-medium text-primary-foreground shadow-2xl transition-all duration-500"
       style={{
@@ -223,7 +224,7 @@ export function SiteHeader() {
       <div className="flex items-center justify-between py-1 px-5 md:px-7">
 
         {/* ── Logo ── */}
-        <Link to="/" className="flex shrink-0 items-center">
+        <Link to="/" search={(prev: any) => ({ ...prev })} className="flex shrink-0 items-center">
           <img
             src={logo}
             alt="Octo Manus"
@@ -245,7 +246,7 @@ export function SiteHeader() {
               boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
             }}
           >
-            <Link to="/about" className={navBase} style={navStyle(isAbout)}>
+            <Link to="/about" search={(prev: any) => ({ ...prev })} className={navBase} style={navStyle(isAbout)}>
               {t.nav.about}
             </Link>
 
@@ -257,6 +258,7 @@ export function SiteHeader() {
             >
               <Link
                 to="/services"
+                search={(prev: any) => ({ ...prev })}
                 className={`${navBase} flex items-center gap-1.5`}
                 style={navStyle(isServices)}
               >
@@ -284,7 +286,7 @@ export function SiteHeader() {
                     {serviceLinks.map((item, idx) => (
                       <a
                         key={item.hash}
-                        href={`/services#${item.hash}`}
+                        href={`/services?lang=${lang}#${item.hash}`}
                         className="block px-5 py-3 text-sm transition-colors hover:bg-white/5"
                         style={{
                           color: IVORY,
@@ -311,6 +313,7 @@ export function SiteHeader() {
             >
               <Link
                 to="/industries"
+                search={(prev: any) => ({ ...prev })}
                 className={`${navBase} flex items-center gap-1.5`}
                 style={navStyle(isIndustries)}
               >
@@ -338,7 +341,7 @@ export function SiteHeader() {
                     {industryLinks.map((item, idx) => (
                       <a
                         key={item.hash}
-                        href={`/industries#${item.hash}`}
+                        href={`/industries?lang=${lang}#${item.hash}`}
                         className="block px-5 py-3 text-sm transition-colors hover:bg-white/5"
                         style={{
                           color: IVORY,
@@ -351,7 +354,7 @@ export function SiteHeader() {
                     ))}
                     {/* 4th entry — Your Industry */}
                     <a
-                      href="/industries#lets-talk"
+                      href={`/industries?lang=${lang}#lets-talk`}
                       className="block px-5 py-3 text-sm transition-colors hover:bg-white/5"
                       style={{
                         color: ROSE,
@@ -367,7 +370,7 @@ export function SiteHeader() {
               )}
             </div>
 
-            <Link to="/contact" className={navBase} style={navStyle(path === "/contact")}>
+            <Link to="/contact" search={(prev: any) => ({ ...prev })} className={navBase} style={navStyle(path === "/contact")}>
               {t.nav.contact}
             </Link>
           </nav>
@@ -446,6 +449,7 @@ export function SiteHeader() {
           <nav className="flex flex-col gap-1 px-4 py-4">
             <Link
               to="/about"
+              search={(prev: any) => ({ ...prev })}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-4 py-3 text-sm tracking-wide transition-colors"
               style={{
@@ -460,6 +464,7 @@ export function SiteHeader() {
               <div className="flex items-center">
                 <Link
                   to="/services"
+                  search={(prev: any) => ({ ...prev })}
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 rounded-l-lg px-4 py-3 text-sm tracking-wide"
                   style={{
@@ -488,7 +493,7 @@ export function SiteHeader() {
                   {serviceLinks.map((item) => (
                     <a
                       key={item.hash}
-                      href={`/services#${item.hash}`}
+                      href={`/services?lang=${lang}#${item.hash}`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileServicesOpen(false);
@@ -507,6 +512,7 @@ export function SiteHeader() {
               <div className="flex items-center">
                 <Link
                   to="/industries"
+                  search={(prev: any) => ({ ...prev })}
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 rounded-l-lg px-4 py-3 text-sm tracking-wide"
                   style={{
@@ -535,7 +541,7 @@ export function SiteHeader() {
                   {industryLinks.map((item) => (
                     <a
                       key={item.hash}
-                      href={`/industries#${item.hash}`}
+                      href={`/industries?lang=${lang}#${item.hash}`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileIndustriesOpen(false);
@@ -552,6 +558,7 @@ export function SiteHeader() {
 
             <Link
               to="/contact"
+              search={(prev: any) => ({ ...prev })}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-4 py-3 text-sm tracking-wide transition-colors hover:bg-white/5"
               style={{ color: IVORY }}
@@ -620,6 +627,7 @@ export function SiteFooter() {
                   <li key={l.label}>
                     <Link
                       to={l.to}
+                      search={(prev: any) => ({ ...prev })}
                       className="opacity-65 transition-opacity hover:opacity-100"
                     >
                       {l.label}
@@ -642,13 +650,13 @@ export function SiteFooter() {
                 style={{ color: IVORY, opacity: 0.65 }}
               >
                 <li>
-                  <a href="/services#ai-advisory" className="transition-opacity hover:opacity-100">{t.footer.aiAdvisory}</a>
+                  <a href={`/services?lang=${lang}#ai-advisory`} className="transition-opacity hover:opacity-100">{t.footer.aiAdvisory}</a>
                 </li>
                 <li>
-                  <a href="/services#automation" className="transition-opacity hover:opacity-100">{t.footer.workflowAuto}</a>
+                  <a href={`/services?lang=${lang}#automation`} className="transition-opacity hover:opacity-100">{t.footer.workflowAuto}</a>
                 </li>
                 <li>
-                  <a href="/services#ai-agents" className="transition-opacity hover:opacity-100">{t.footer.aiAgents}</a>
+                  <a href={`/services?lang=${lang}#ai-agents`} className="transition-opacity hover:opacity-100">{t.footer.aiAgents}</a>
                 </li>
               </ul>
             </div>

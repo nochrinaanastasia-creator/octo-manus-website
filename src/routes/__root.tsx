@@ -113,6 +113,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         { property: "og:type", content: "website" },
         { property: "og:url", content: `https://octomanus.com/?lang=${lang}` },
+        { property: "og:image", content: "https://octomanus.com/logo.png" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:locale", content: lang === "it" ? "it_IT" : lang === "es" ? "es_ES" : "en_US" },
         // Twitter / X
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@OctoManus" },
@@ -121,6 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "twitter:description",
           content: seo?.description || "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
         },
+        { name: "twitter:image", content: "https://octomanus.com/logo.png" },
       ],
       links: [
         {
@@ -146,7 +151,31 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-
+        {/* Favicons */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* JSON-LD — tells Google which image to use as the organisation logo */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Octo Manus",
+              url: "https://octomanus.com",
+              logo: "https://octomanus.com/logo.png",
+              sameAs: ["https://www.linkedin.com/company/octomanus"],
+              description:
+                "Practical AI consulting for small and medium businesses. AI Advisory, Workflow Automation and AI Agents.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "info@octomanus.com",
+                contactType: "customer service",
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         {children}
