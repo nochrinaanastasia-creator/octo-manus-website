@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://octomanus.com/en/</loc>
+    <loc>https://octomanus.com/en</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://octomanus.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://octomanus.com/it/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://octomanus.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://octomanus.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://octomanus.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://octomanus.com/es"/>
   </url>
   <url>
-    <loc>https://octomanus.com/it/</loc>
+    <loc>https://octomanus.com/it</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://octomanus.com/es/</loc>
+    <loc>https://octomanus.com/es</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
