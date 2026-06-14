@@ -573,7 +573,7 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const navLinks = [
     { label: t.nav.about, to: "/about" },
