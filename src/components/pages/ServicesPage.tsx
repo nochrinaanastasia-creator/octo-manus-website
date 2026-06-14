@@ -403,6 +403,12 @@ export function ServicesPage() {
             {sv.heroH1[1]}
           </h1>
           <p
+            className="mt-3 text-sm uppercase tracking-[0.18em]"
+            style={{ color: ROSE, opacity: 0.65, fontFamily: "var(--font-body)" }}
+          >
+            {sv.heroSubtitle}
+          </p>
+          <p
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed md:text-lg"
             style={{ color: IVORY, opacity: 0.82 }}
           >

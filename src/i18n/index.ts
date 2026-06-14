@@ -365,7 +365,7 @@ export const en: Translations = {
   services: {
     heroLabel: "Services",
     heroH1: ["AI That Works the Way", "Your Business Does."],
-    heroSubtitle: ["Trusted by SMBs across Malta and Europe."],
+    heroSubtitle: "Trusted by SMBs across Malta and Europe.",
     heroBody: "Advisory, automation, and AI agents — three services, one goal: less manual work and more output, designed with responsible AI, human oversight, and EU compliance in mind — for SMBs across Malta and Europe.",
     exploreLabel: "↓ Explore",
     howWeWork: "How we work",
@@ -689,7 +689,7 @@ export const es: Translations = {
   services: {
     heroLabel: "Servicios",
     heroH1: ["Una IA que Funciona", "Como tu Negocio."],
-    heroSubtitle: ["Elegido por pymes en España y toda Europa."],
+    heroSubtitle: "Elegido por pymes en España y toda Europa.",
     heroBody: "Asesoría, automatización y agentes de IA — tres servicios, un único objetivo: menos trabajo manual y más resultados, sin interrumpir el funcionamiento actual de tu\u00A0equipo — para pymes en España y toda Europa.",
     exploreLabel: "↓ Explorar",
     howWeWork: "Cómo trabajamos",
@@ -1013,7 +1013,7 @@ export const it: Translations = {
   services: {
     heroLabel: "Servizi",
     heroH1: ["Una IA che Funziona", "Come la Tua Azienda."],
-    heroSubtitle: ["Scelto dalle PMI in Italia e in tutta Europa."],
+    heroSubtitle: "Scelto dalle PMI in Italia e in tutta Europa.",
     heroBody: "Consulenza, automazione e agenti IA — tre servizi, un unico obiettivo: meno lavoro manuale e più output, senza stravolgere il modo in cui il tuo team già opera — per le PMI in Italia e in tutta Europa.",
     exploreLabel: "↓ Scopri",
     howWeWork: "Come lavoriamo",
