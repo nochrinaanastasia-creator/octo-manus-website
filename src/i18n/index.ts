@@ -181,7 +181,7 @@ export interface Translations {
 export const en: Translations = {
   seo: {
     home: {
-      title: "Octo Manus — AI Advisory, Automation & AI Agents for SMBs",
+      title: "Octo Manus — AI Advisory Malta & Europe | Automation for SMBs",
       desc: "Octo Manus helps small and medium businesses adopt AI without the technical overwhelm. AI Advisory, workflow automation, and custom AI agents for Supply Chain, Retail, Beauty & Wellness.",
       keys: "AI consulting small business, AI advisory SMB, workflow automation consulting, AI agents for SMB, AI adoption without coding, AI for supply chain, AI for retail, AI for beauty wellness, no-code AI, AI strategy for business, AI consulting Europe, AI consulting Italy, AI consulting Spain"
     },
@@ -821,7 +821,7 @@ export const es: Translations = {
 export const it: Translations = {
   seo: {
     home: {
-      title: "Octo Manus — Consulenza IA, Automazione e Agenti IA per PMI",
+      title: "Octo Manus — Consulenza IA Italia ed Europa | Automazione per PMI",
       desc: "Octo Manus aiuta le piccole e medie imprese ad adottare l'IA senza complessità tecniche. Consulenza IA, automazione dei processi e agenti IA per Logistica, Retail e Bellezza.",
       keys: "consulenza IA pmi, consulenza intelligenza artificiale, automazione processi aziendali, agenti IA per pmi, adozione IA senza codice, IA per logistica, IA per retail, IA per centri estetici, strategia IA"
     },
