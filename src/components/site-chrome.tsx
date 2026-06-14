@@ -57,7 +57,7 @@ export function FloatingCta() {
 
   return (
     <Link
-      to={`/${lang}/contact`}
+      to={getLocalizedPath(lang, "contact")}
       aria-label="Book a strategy call"
       className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 rounded-2xl px-5 py-3.5 text-sm font-medium text-primary-foreground shadow-2xl transition-all duration-500"
       style={{
@@ -142,7 +142,7 @@ export function CookieBar() {
           By continuing to use this site, you agree to our use of cookies.
           {" "}
           <Link
-            to={`/${lang}/privacy`}
+            to={getLocalizedPath(lang, "privacy")}
             className="underline underline-offset-2 transition-opacity hover:opacity-100"
             style={{ color: ROSE, opacity: 0.85 }}
           >
@@ -246,7 +246,7 @@ export function SiteHeader() {
               boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
             }}
           >
-            <Link to={`/${lang}/about`} className={navBase} style={navStyle(isAbout)}>
+            <Link to={getLocalizedPath(lang, "about")} className={navBase} style={navStyle(isAbout)}>
               {t.nav.about}
             </Link>
 
@@ -257,7 +257,7 @@ export function SiteHeader() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <Link
-                to={`/${lang}/services`}
+                to={getLocalizedPath(lang, "services")}
                 className={`${navBase} flex items-center gap-1.5`}
                 style={navStyle(isServices)}
               >
@@ -311,7 +311,7 @@ export function SiteHeader() {
               onMouseLeave={() => setIndustriesOpen(false)}
             >
               <Link
-                to={`/${lang}/industries`}
+                to={getLocalizedPath(lang, "industries")}
                 className={`${navBase} flex items-center gap-1.5`}
                 style={navStyle(isIndustries)}
               >
@@ -368,7 +368,7 @@ export function SiteHeader() {
               )}
             </div>
 
-            <Link to={`/${lang}/contact`} className={navBase} style={navStyle(path === "/contact")}>
+            <Link to={getLocalizedPath(lang, "contact")} className={navBase} style={navStyle(path === "/contact")}>
               {t.nav.contact}
             </Link>
           </nav>
@@ -446,7 +446,7 @@ export function SiteHeader() {
         >
           <nav className="flex flex-col gap-1 px-4 py-4">
             <Link
-              to={`/${lang}/about`}
+              to={getLocalizedPath(lang, "about")}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-4 py-3 text-sm tracking-wide transition-colors"
               style={{
@@ -460,7 +460,7 @@ export function SiteHeader() {
             <div>
               <div className="flex items-center">
                 <Link
-                  to={`/${lang}/services`}
+                  to={getLocalizedPath(lang, "services")}
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 rounded-l-lg px-4 py-3 text-sm tracking-wide"
                   style={{
@@ -507,7 +507,7 @@ export function SiteHeader() {
             <div>
               <div className="flex items-center">
                 <Link
-                  to={`/${lang}/industries`}
+                  to={getLocalizedPath(lang, "industries")}
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 rounded-l-lg px-4 py-3 text-sm tracking-wide"
                   style={{
@@ -552,7 +552,7 @@ export function SiteHeader() {
             </div>
 
             <Link
-              to={`/${lang}/contact`}
+              to={getLocalizedPath(lang, "contact")}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-4 py-3 text-sm tracking-wide transition-colors hover:bg-white/5"
               style={{ color: IVORY }}
@@ -643,13 +643,13 @@ export function SiteFooter() {
                 style={{ color: IVORY, opacity: 0.65 }}
               >
                 <li>
-                  <a href={`/${lang}/services#ai-advisory`} className="transition-opacity hover:opacity-100">{t.footer.aiAdvisory}</a>
+                  <a href={`${getLocalizedPath(lang, "services")}#ai-advisory`} className="transition-opacity hover:opacity-100">{t.footer.aiAdvisory}</a>
                 </li>
                 <li>
-                  <a href={`/${lang}/services#automation`} className="transition-opacity hover:opacity-100">{t.footer.workflowAuto}</a>
+                  <a href={`${getLocalizedPath(lang, "services")}#automation`} className="transition-opacity hover:opacity-100">{t.footer.workflowAuto}</a>
                 </li>
                 <li>
-                  <a href={`/${lang}/services#ai-agents`} className="transition-opacity hover:opacity-100">{t.footer.aiAgents}</a>
+                  <a href={`${getLocalizedPath(lang, "services")}#ai-agents`} className="transition-opacity hover:opacity-100">{t.footer.aiAgents}</a>
                 </li>
               </ul>
             </div>
@@ -677,8 +677,7 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li className="opacity-65 pt-2">
-                  <p>Valletta, Malta</p>
-                  <p className="text-xs mt-0.5 opacity-80">(Serving Europe)</p>
+                  <p>Sliema, Malta</p>
                 </li>
               </ul>
             </div>

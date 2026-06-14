@@ -11,7 +11,7 @@ import {
   ctaButtonStyle,
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, getLocalizedPath } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
 // No constellation color override — using brand ROSE from default
@@ -144,7 +144,7 @@ function Index() {
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
-                to={`/${lang}/contact`}
+                to={getLocalizedPath(lang, "contact")}
                 className="rounded-md px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5"
                 style={ctaButtonStyle}
                 onClick={() => {
@@ -156,7 +156,7 @@ function Index() {
                 {t.cta.bookCall}
               </Link>
               <Link
-                to={`/${lang}/services`}
+                to={getLocalizedPath(lang, "services")}
                 className="rounded-md border px-6 py-3 text-sm md:px-8 md:py-3.5 md:text-base font-medium transition-colors hover:bg-primary/10"
                 style={{ borderColor: "rgba(233,181,166,0.45)", color: ROSE }}
               >

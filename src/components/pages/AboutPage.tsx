@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Target, Lightbulb, Users, Zap, Shield, Globe, TrendingUp, Heart } from "lucide-react";
 import {
@@ -20,31 +19,6 @@ function nb(text: string): string {
     (_, word) => ` ${word}\u00A0`
   );
 }
-
-export const Route = createFileRoute("/$lang/about")({
-  component: AboutPage,
-  head: ({ params }) => {
-    const lang = (params as any)?.lang || "en";
-    const t = translations[lang as keyof typeof translations] || translations.en;
-    const seo = t.seo.about;
-    return {
-      meta: [
-        { title: seo.title },
-        { name: "description", content: seo.desc },
-        { name: "keywords", content: seo.keys },
-        { name: "robots", content: "index, follow" },
-        { property: "og:title", content: seo.title },
-        { property: "og:description", content: seo.desc },
-        { property: "og:url", content: `https://octomanus.com/about?lang=${lang}` },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: seo.title },
-        { name: "twitter:description", content: seo.desc },
-      ],
-    };
-  },
-});
-
 
 function RoseDivider() {
   return (
@@ -69,7 +43,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 const VALUE_ICONS = [Zap, Users, Shield, TrendingUp, Globe, Heart];
 
-function AboutPage() {
+export function AboutPage() {
   const { t, lang } = useLanguage();
   const ta = t.about;
   const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);

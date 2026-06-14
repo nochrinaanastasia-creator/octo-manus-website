@@ -31,6 +31,24 @@ function detectLangFromBrowser(): Lang {
   return "en";
 }
 
+
+export const ROUTE_MAP: Record<string, Record<Lang, string>> = {
+  about: { en: "about", es: "sobre-nosotros", it: "chi-siamo" },
+  services: { en: "services", es: "servicios", it: "servizi" },
+  industries: { en: "industries", es: "sectores", it: "settori" },
+  contact: { en: "contact", es: "contacto", it: "contatti" },
+  privacy: { en: "privacy", es: "privacidad", it: "privacy" },
+};
+
+export function getLocalizedPath(lang: Lang, baseSlug: string) {
+  if (!baseSlug) return `/${lang}`;
+  const mapped = ROUTE_MAP[baseSlug];
+  if (mapped && mapped[lang]) {
+    return `/${lang}/${mapped[lang]}`;
+  }
+  return `/${lang}/${baseSlug}`;
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const params = useParams({ strict: false }) as { lang?: string };
   const location = useLocation();
@@ -56,25 +74,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const setLang = (l: Lang) => {
-    // When user manually picks a language, store it so detection doesn't re-trigger
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, l);
-    }
-    
-    // Replace the first segment of the pathname with the new lang
-    // E.g. /en/about -> /it/about
-    const parts = location.pathname.split("/").filter(Boolean);
-    if (parts.length > 0 && (parts[0] === "en" || parts[0] === "it" || parts[0] === "es")) {
-      parts[0] = l;
-    } else {
-      parts.unshift(l);
-    }
-    const newPath = "/" + parts.join("/") + location.hash;
-    navigate({ to: newPath });
-  };
-
-  return (
+return (
     <LanguageContext.Provider value={{ lang, setLang, t: translations[lang] }}>
       {children}
     </LanguageContext.Provider>

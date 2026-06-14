@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
 import {
   BarChart2, AlertCircle, FileText, RefreshCw, Brain, Bot,
@@ -14,30 +13,6 @@ import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 import { industriesContent } from "@/i18n/industries-content";
-
-export const Route = createFileRoute("/$lang/industries")({
-  component: IndustriesPage,
-  head: ({ params }) => {
-    const lang = (params as any)?.lang || "en";
-    const t = translations[lang as keyof typeof translations] || translations.en;
-    const seo = t.seo.industries;
-    return {
-      meta: [
-        { title: seo.title },
-        { name: "description", content: seo.desc },
-        { name: "keywords", content: seo.keys },
-        { name: "robots", content: "index, follow" },
-        { property: "og:title", content: seo.title },
-        { property: "og:description", content: seo.desc },
-        { property: "og:url", content: `https://octomanus.com/industries?lang=${lang}` },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: seo.title },
-        { name: "twitter:description", content: seo.desc },
-      ],
-    };
-  },
-});
 
 /* ── Preposition orphan guard ────────────────────────────── */
 function nb(text: string): string {
@@ -345,7 +320,7 @@ function IndustrySection({ id, idx, content, painIcons, solIcons, painLabel, sol
 }
 
 /* ── Page ─────────────────────────────────────────────────── */
-function IndustriesPage() {
+export function IndustriesPage() {
   const { t, lang } = useLanguage();
 
   const c = industriesContent[lang] ?? industriesContent.en;

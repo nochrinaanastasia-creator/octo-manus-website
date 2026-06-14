@@ -11,30 +11,6 @@ import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
-export const Route = createFileRoute("/$lang/contact")({
-  component: ContactPage,
-  head: ({ params }) => {
-    const lang = (params as any)?.lang || "en";
-    const t = translations[lang as keyof typeof translations] || translations.en;
-    const seo = t.seo.contact;
-    return {
-      meta: [
-        { title: seo.title },
-        { name: "description", content: seo.desc },
-        { name: "keywords", content: seo.keys },
-        { name: "robots", content: "index, follow" },
-        { property: "og:title", content: seo.title },
-        { property: "og:description", content: seo.desc },
-        { property: "og:url", content: `https://octomanus.com/contact?lang=${lang}` },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: seo.title },
-        { name: "twitter:description", content: seo.desc },
-      ],
-    };
-  },
-});
-
 type FormData = {
   company:      string;
   name:         string;
@@ -107,7 +83,7 @@ function Field({
 }
 
 /* ── Page ────────────────────────────────────────────────── */
-function ContactPage() {
+export function ContactPage() {
   const { t, lang } = useLanguage();
   const ct = t.contact;
 

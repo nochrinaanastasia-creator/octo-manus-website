@@ -236,7 +236,7 @@ export const en: Translations = {
   },
   home: {
     heroH1: ["Turn Manual Work", "Into", "Intelligent Systems"],
-    heroSubtitle: "AI built for the way your business actually operates.",
+    heroSubtitle: "AI built for the way your business actually\u00A0operates. Leading AI Advisory for SMBs in Malta and across Europe.",
     heroBody:
       "We help small and medium businesses use AI where it actually matters: repetitive admin, operational reporting, customer support, supplier follow-ups, product content, and workflow coordination. We advise, design, and build practical AI systems around your existing operations — without requiring your team to become technical or hire an internal engineering department.",
     services: [
@@ -556,7 +556,7 @@ export const es: Translations = {
   },
   home: {
     heroH1: ["Convierte el Trabajo Manual", "en", "Sistemas Inteligentes"],
-    heroSubtitle: "IA construida para el modo en que tu negocio opera de\u00A0verdad.",
+    heroSubtitle: "IA construida para el modo en que tu negocio opera de\u00A0verdad. Asesor\u00EDa l\u00EDder en IA para pymes en Espa\u00F1a y toda Europa.",
     heroBody:
       "Ayudamos a las pequeñas y medianas empresas a usar la IA donde realmente importa: administración repetitiva, informes operativos, atención al cliente, seguimiento a proveedores, contenido de producto y coordinación de flujos de trabajo. Asesoramos, diseñamos y construimos sistemas de IA prácticos en torno a tus operaciones actuales — sin necesidad de que tu equipo se vuelva técnico ni de contratar un departamento de ingeniería\u00A0interna.",
     services: [
@@ -876,7 +876,7 @@ export const it: Translations = {
   },
   home: {
     heroH1: ["Trasforma il Lavoro Manuale", "in", "Sistemi Intelligenti"],
-    heroSubtitle: "IA costruita per il modo in cui la tua azienda opera\u00A0davvero.",
+    heroSubtitle: "IA costruita per il modo in cui la tua azienda opera\u00A0davvero. Consulenza leader in IA per le PMI in Italia e in tutta Europa.",
     heroBody:
       "Aiutiamo le piccole e medie imprese a usare l'IA dove conta davvero: amministrazione ripetitiva, reportistica operativa, assistenza clienti, follow-up con fornitori, contenuti di prodotto e coordinamento dei flussi di lavoro. Consigliamo, progettiamo e costruiamo sistemi IA pratici attorno alle tue operazioni esistenti — senza che il tuo team debba diventare tecnico o assumere un reparto ingegneristico\u00A0interno.",
     services: [

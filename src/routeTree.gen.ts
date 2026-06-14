@@ -11,11 +11,21 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
-import { Route as LangServicesRouteImport } from './routes/$lang/services'
-import { Route as LangPrivacyRouteImport } from './routes/$lang/privacy'
-import { Route as LangIndustriesRouteImport } from './routes/$lang/industries'
-import { Route as LangContactRouteImport } from './routes/$lang/contact'
-import { Route as LangAboutRouteImport } from './routes/$lang/about'
+import { Route as ItSettoriRouteImport } from './routes/it/settori'
+import { Route as ItServiziRouteImport } from './routes/it/servizi'
+import { Route as ItPrivacyRouteImport } from './routes/it/privacy'
+import { Route as ItContattiRouteImport } from './routes/it/contatti'
+import { Route as ItChiSiamoRouteImport } from './routes/it/chi-siamo'
+import { Route as EsSobreNosotrosRouteImport } from './routes/es/sobre-nosotros'
+import { Route as EsServiciosRouteImport } from './routes/es/servicios'
+import { Route as EsSectoresRouteImport } from './routes/es/sectores'
+import { Route as EsPrivacidadRouteImport } from './routes/es/privacidad'
+import { Route as EsContactoRouteImport } from './routes/es/contacto'
+import { Route as EnServicesRouteImport } from './routes/en/services'
+import { Route as EnPrivacyRouteImport } from './routes/en/privacy'
+import { Route as EnIndustriesRouteImport } from './routes/en/industries'
+import { Route as EnContactRouteImport } from './routes/en/contact'
+import { Route as EnAboutRouteImport } from './routes/en/about'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -27,97 +37,217 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/$lang/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LangServicesRoute = LangServicesRouteImport.update({
-  id: '/$lang/services',
-  path: '/$lang/services',
+const ItSettoriRoute = ItSettoriRouteImport.update({
+  id: '/it/settori',
+  path: '/it/settori',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LangPrivacyRoute = LangPrivacyRouteImport.update({
-  id: '/$lang/privacy',
-  path: '/$lang/privacy',
+const ItServiziRoute = ItServiziRouteImport.update({
+  id: '/it/servizi',
+  path: '/it/servizi',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LangIndustriesRoute = LangIndustriesRouteImport.update({
-  id: '/$lang/industries',
-  path: '/$lang/industries',
+const ItPrivacyRoute = ItPrivacyRouteImport.update({
+  id: '/it/privacy',
+  path: '/it/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LangContactRoute = LangContactRouteImport.update({
-  id: '/$lang/contact',
-  path: '/$lang/contact',
+const ItContattiRoute = ItContattiRouteImport.update({
+  id: '/it/contatti',
+  path: '/it/contatti',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LangAboutRoute = LangAboutRouteImport.update({
-  id: '/$lang/about',
-  path: '/$lang/about',
+const ItChiSiamoRoute = ItChiSiamoRouteImport.update({
+  id: '/it/chi-siamo',
+  path: '/it/chi-siamo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsSobreNosotrosRoute = EsSobreNosotrosRouteImport.update({
+  id: '/es/sobre-nosotros',
+  path: '/es/sobre-nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsServiciosRoute = EsServiciosRouteImport.update({
+  id: '/es/servicios',
+  path: '/es/servicios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsSectoresRoute = EsSectoresRouteImport.update({
+  id: '/es/sectores',
+  path: '/es/sectores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPrivacidadRoute = EsPrivacidadRouteImport.update({
+  id: '/es/privacidad',
+  path: '/es/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsContactoRoute = EsContactoRouteImport.update({
+  id: '/es/contacto',
+  path: '/es/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnServicesRoute = EnServicesRouteImport.update({
+  id: '/en/services',
+  path: '/en/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnPrivacyRoute = EnPrivacyRouteImport.update({
+  id: '/en/privacy',
+  path: '/en/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndustriesRoute = EnIndustriesRouteImport.update({
+  id: '/en/industries',
+  path: '/en/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/en/contact',
+  path: '/en/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/en/about',
+  path: '/en/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/contact': typeof LangContactRoute
-  '/$lang/industries': typeof LangIndustriesRoute
-  '/$lang/privacy': typeof LangPrivacyRoute
-  '/$lang/services': typeof LangServicesRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/industries': typeof EnIndustriesRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/services': typeof EnServicesRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/privacidad': typeof EsPrivacidadRoute
+  '/es/sectores': typeof EsSectoresRoute
+  '/es/servicios': typeof EsServiciosRoute
+  '/es/sobre-nosotros': typeof EsSobreNosotrosRoute
+  '/it/chi-siamo': typeof ItChiSiamoRoute
+  '/it/contatti': typeof ItContattiRoute
+  '/it/privacy': typeof ItPrivacyRoute
+  '/it/servizi': typeof ItServiziRoute
+  '/it/settori': typeof ItSettoriRoute
   '/$lang/': typeof LangIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/contact': typeof LangContactRoute
-  '/$lang/industries': typeof LangIndustriesRoute
-  '/$lang/privacy': typeof LangPrivacyRoute
-  '/$lang/services': typeof LangServicesRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/industries': typeof EnIndustriesRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/services': typeof EnServicesRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/privacidad': typeof EsPrivacidadRoute
+  '/es/sectores': typeof EsSectoresRoute
+  '/es/servicios': typeof EsServiciosRoute
+  '/es/sobre-nosotros': typeof EsSobreNosotrosRoute
+  '/it/chi-siamo': typeof ItChiSiamoRoute
+  '/it/contatti': typeof ItContattiRoute
+  '/it/privacy': typeof ItPrivacyRoute
+  '/it/servizi': typeof ItServiziRoute
+  '/it/settori': typeof ItSettoriRoute
   '/$lang': typeof LangIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$lang/about': typeof LangAboutRoute
-  '/$lang/contact': typeof LangContactRoute
-  '/$lang/industries': typeof LangIndustriesRoute
-  '/$lang/privacy': typeof LangPrivacyRoute
-  '/$lang/services': typeof LangServicesRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/industries': typeof EnIndustriesRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/services': typeof EnServicesRoute
+  '/es/contacto': typeof EsContactoRoute
+  '/es/privacidad': typeof EsPrivacidadRoute
+  '/es/sectores': typeof EsSectoresRoute
+  '/es/servicios': typeof EsServiciosRoute
+  '/es/sobre-nosotros': typeof EsSobreNosotrosRoute
+  '/it/chi-siamo': typeof ItChiSiamoRoute
+  '/it/contatti': typeof ItContattiRoute
+  '/it/privacy': typeof ItPrivacyRoute
+  '/it/servizi': typeof ItServiziRoute
+  '/it/settori': typeof ItSettoriRoute
   '/$lang/': typeof LangIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/$lang/about'
-    | '/$lang/contact'
-    | '/$lang/industries'
-    | '/$lang/privacy'
-    | '/$lang/services'
+    | '/en/about'
+    | '/en/contact'
+    | '/en/industries'
+    | '/en/privacy'
+    | '/en/services'
+    | '/es/contacto'
+    | '/es/privacidad'
+    | '/es/sectores'
+    | '/es/servicios'
+    | '/es/sobre-nosotros'
+    | '/it/chi-siamo'
+    | '/it/contatti'
+    | '/it/privacy'
+    | '/it/servizi'
+    | '/it/settori'
     | '/$lang/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/$lang/about'
-    | '/$lang/contact'
-    | '/$lang/industries'
-    | '/$lang/privacy'
-    | '/$lang/services'
+    | '/en/about'
+    | '/en/contact'
+    | '/en/industries'
+    | '/en/privacy'
+    | '/en/services'
+    | '/es/contacto'
+    | '/es/privacidad'
+    | '/es/sectores'
+    | '/es/servicios'
+    | '/es/sobre-nosotros'
+    | '/it/chi-siamo'
+    | '/it/contatti'
+    | '/it/privacy'
+    | '/it/servizi'
+    | '/it/settori'
     | '/$lang'
   id:
     | '__root__'
     | '/'
-    | '/$lang/about'
-    | '/$lang/contact'
-    | '/$lang/industries'
-    | '/$lang/privacy'
-    | '/$lang/services'
+    | '/en/about'
+    | '/en/contact'
+    | '/en/industries'
+    | '/en/privacy'
+    | '/en/services'
+    | '/es/contacto'
+    | '/es/privacidad'
+    | '/es/sectores'
+    | '/es/servicios'
+    | '/es/sobre-nosotros'
+    | '/it/chi-siamo'
+    | '/it/contatti'
+    | '/it/privacy'
+    | '/it/servizi'
+    | '/it/settori'
     | '/$lang/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LangAboutRoute: typeof LangAboutRoute
-  LangContactRoute: typeof LangContactRoute
-  LangIndustriesRoute: typeof LangIndustriesRoute
-  LangPrivacyRoute: typeof LangPrivacyRoute
-  LangServicesRoute: typeof LangServicesRoute
+  EnAboutRoute: typeof EnAboutRoute
+  EnContactRoute: typeof EnContactRoute
+  EnIndustriesRoute: typeof EnIndustriesRoute
+  EnPrivacyRoute: typeof EnPrivacyRoute
+  EnServicesRoute: typeof EnServicesRoute
+  EsContactoRoute: typeof EsContactoRoute
+  EsPrivacidadRoute: typeof EsPrivacidadRoute
+  EsSectoresRoute: typeof EsSectoresRoute
+  EsServiciosRoute: typeof EsServiciosRoute
+  EsSobreNosotrosRoute: typeof EsSobreNosotrosRoute
+  ItChiSiamoRoute: typeof ItChiSiamoRoute
+  ItContattiRoute: typeof ItContattiRoute
+  ItPrivacyRoute: typeof ItPrivacyRoute
+  ItServiziRoute: typeof ItServiziRoute
+  ItSettoriRoute: typeof ItSettoriRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
@@ -137,39 +267,109 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$lang/services': {
-      id: '/$lang/services'
-      path: '/$lang/services'
-      fullPath: '/$lang/services'
-      preLoaderRoute: typeof LangServicesRouteImport
+    '/it/settori': {
+      id: '/it/settori'
+      path: '/it/settori'
+      fullPath: '/it/settori'
+      preLoaderRoute: typeof ItSettoriRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$lang/privacy': {
-      id: '/$lang/privacy'
-      path: '/$lang/privacy'
-      fullPath: '/$lang/privacy'
-      preLoaderRoute: typeof LangPrivacyRouteImport
+    '/it/servizi': {
+      id: '/it/servizi'
+      path: '/it/servizi'
+      fullPath: '/it/servizi'
+      preLoaderRoute: typeof ItServiziRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$lang/industries': {
-      id: '/$lang/industries'
-      path: '/$lang/industries'
-      fullPath: '/$lang/industries'
-      preLoaderRoute: typeof LangIndustriesRouteImport
+    '/it/privacy': {
+      id: '/it/privacy'
+      path: '/it/privacy'
+      fullPath: '/it/privacy'
+      preLoaderRoute: typeof ItPrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$lang/contact': {
-      id: '/$lang/contact'
-      path: '/$lang/contact'
-      fullPath: '/$lang/contact'
-      preLoaderRoute: typeof LangContactRouteImport
+    '/it/contatti': {
+      id: '/it/contatti'
+      path: '/it/contatti'
+      fullPath: '/it/contatti'
+      preLoaderRoute: typeof ItContattiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$lang/about': {
-      id: '/$lang/about'
-      path: '/$lang/about'
-      fullPath: '/$lang/about'
-      preLoaderRoute: typeof LangAboutRouteImport
+    '/it/chi-siamo': {
+      id: '/it/chi-siamo'
+      path: '/it/chi-siamo'
+      fullPath: '/it/chi-siamo'
+      preLoaderRoute: typeof ItChiSiamoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/sobre-nosotros': {
+      id: '/es/sobre-nosotros'
+      path: '/es/sobre-nosotros'
+      fullPath: '/es/sobre-nosotros'
+      preLoaderRoute: typeof EsSobreNosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/servicios': {
+      id: '/es/servicios'
+      path: '/es/servicios'
+      fullPath: '/es/servicios'
+      preLoaderRoute: typeof EsServiciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/sectores': {
+      id: '/es/sectores'
+      path: '/es/sectores'
+      fullPath: '/es/sectores'
+      preLoaderRoute: typeof EsSectoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/privacidad': {
+      id: '/es/privacidad'
+      path: '/es/privacidad'
+      fullPath: '/es/privacidad'
+      preLoaderRoute: typeof EsPrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/contacto': {
+      id: '/es/contacto'
+      path: '/es/contacto'
+      fullPath: '/es/contacto'
+      preLoaderRoute: typeof EsContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/services': {
+      id: '/en/services'
+      path: '/en/services'
+      fullPath: '/en/services'
+      preLoaderRoute: typeof EnServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/privacy': {
+      id: '/en/privacy'
+      path: '/en/privacy'
+      fullPath: '/en/privacy'
+      preLoaderRoute: typeof EnPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/industries': {
+      id: '/en/industries'
+      path: '/en/industries'
+      fullPath: '/en/industries'
+      preLoaderRoute: typeof EnIndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/en/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/about': {
+      id: '/en/about'
+      path: '/en/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -177,11 +377,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LangAboutRoute: LangAboutRoute,
-  LangContactRoute: LangContactRoute,
-  LangIndustriesRoute: LangIndustriesRoute,
-  LangPrivacyRoute: LangPrivacyRoute,
-  LangServicesRoute: LangServicesRoute,
+  EnAboutRoute: EnAboutRoute,
+  EnContactRoute: EnContactRoute,
+  EnIndustriesRoute: EnIndustriesRoute,
+  EnPrivacyRoute: EnPrivacyRoute,
+  EnServicesRoute: EnServicesRoute,
+  EsContactoRoute: EsContactoRoute,
+  EsPrivacidadRoute: EsPrivacidadRoute,
+  EsSectoresRoute: EsSectoresRoute,
+  EsServiciosRoute: EsServiciosRoute,
+  EsSobreNosotrosRoute: EsSobreNosotrosRoute,
+  ItChiSiamoRoute: ItChiSiamoRoute,
+  ItContattiRoute: ItContattiRoute,
+  ItPrivacyRoute: ItPrivacyRoute,
+  ItServiziRoute: ItServiziRoute,
+  ItSettoriRoute: ItSettoriRoute,
   LangIndexRoute: LangIndexRoute,
 }
 export const routeTree = rootRouteImport

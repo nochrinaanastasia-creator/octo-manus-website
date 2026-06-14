@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
 import {
   Phone, BookOpen, LifeBuoy,
@@ -15,30 +14,6 @@ import {
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
-
-export const Route = createFileRoute("/$lang/services")({
-  component: ServicesPage,
-  head: ({ params }) => {
-    const lang = (params as any)?.lang || "en";
-    const t = translations[lang as keyof typeof translations] || translations.en;
-    const seo = t.seo.services;
-    return {
-      meta: [
-        { title: seo.title },
-        { name: "description", content: seo.desc },
-        { name: "keywords", content: seo.keys },
-        { name: "robots", content: "index, follow" },
-        { property: "og:title", content: seo.title },
-        { property: "og:description", content: seo.desc },
-        { property: "og:url", content: `https://octomanus.com/services?lang=${lang}` },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: seo.title },
-        { name: "twitter:description", content: seo.desc },
-      ],
-    };
-  },
-});
 
 const PAGE_BG_ALT = "#020A14";
 
@@ -320,7 +295,7 @@ function ServiceSection({ service, idx, howWeWorkLabel }: { service: ServiceData
 }
 
 /* ── Page ────────────────────────────────────────────────── */
-function ServicesPage() {
+export function ServicesPage() {
   const { t, lang } = useLanguage();
 
   useEffect(() => {
