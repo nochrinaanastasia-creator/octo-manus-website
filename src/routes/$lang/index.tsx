@@ -140,7 +140,9 @@ function Index() {
               className="mt-6 text-lg italic metallic-rose md:text-xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              {nb(t.home.heroSubtitle)}
+              {t.home.heroSubtitle.map((line, i) => (
+                <span key={i} style={{ display: "block" }}>{line}</span>
+              ))}
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
