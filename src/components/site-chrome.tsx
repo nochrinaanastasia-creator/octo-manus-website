@@ -32,7 +32,7 @@ export function CtaButton({
 
 /** Sticky bottom-right floating CTA — hides on /industries only after reaching #lets-talk */
 export function FloatingCta() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [visible, setVisible] = useState(false);
   const [atLetsTalk, setAtLetsTalk] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
