@@ -156,14 +156,14 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain IT ── */
       {
         badge:    "Supply Chain · Logistica · Magazzino",
-        headline: ["Quando le operazioni dipendono dai tempi,", "il coordinamento manuale diventa un rischio."],
+        headline: ["Quando operations dipendono dai tempi,", "il coordinamento manuale diventa un rischio."],
         sub:      "AI per team logistici e di supply chain che operano con precisione — non con promesse.",
         intro:    "La tua operazione dipende dalle informazioni. Quando questi dati sono frammentati su piattaforme diverse, caselle di posta e relazioni con i fornitori, il costo si vede nei ritardi e nelle decisioni prese senza il quadro completo. Costruiamo sistemi AI che danno al tuo team visibilità e reattività — non soluzioni provvisorie.",
         pains: [
-          { title: "La domanda supera le previsioni",    desc: "I cambiamenti stagionali e le fluttuazioni del mercato lasciano gli acquisti in reazione — con posizioni di inventario non desiderate." },
-          { title: "I ritardi dei fornitori arrivano tardi", desc: "Quando un'interruzione viene confermata, il cliente si aspetta già la consegna. Questo divario erode la fiducia nei fornitori." },
-          { title: "Il reporting consuma ore preziose", desc: "I dati esistono. Sono distribuiti su piattaforme, fogli di calcolo e caselle di posta — assemblarli richiede ore che non ci sono." },
-          { title: "Gli errori manuali si moltiplicano", desc: "Ogni reinserimento manuale è un rischio. Nella supply chain, gli errori piccoli non rimangono piccoli." },
+          { title: "Incertezza della Domanda",    desc: "Vendite, Stagionalità, Promozioni e cambiamenti di mercato complicano la pianificazione di stock, capacità e replenishment." },
+          { title: "Sistemi Disconnessi & Controlli Manuali", desc: "ERP, tools di warehousing, portali per i corrieri, fogli di lavoro e caselle di posta di solito non parlano tra loro. I Team perdono tempo a controllare lo stesso ordine di trasporto o movimentazione di magazzino in tante diverse piattaforme." },
+          { title: "Report Scritti a Mano", desc: "I report operativi spesso richiedono di estrarre dati, pulire fogli di lavoro, controllo  delle eccezioni e aggiornamenti manuali - il tutto rallenta il processo decisionale e aumenta il rischio d'errore." },
+          { title: "Follow-Up Ripetitivi", desc: "I team perdono ore a rincorrere conferme, ETA, informazioni mancanti, aggiornamenti sulle spedizioni e approvazioni operative — attività che potrebbero essere automatizzate o strutturate a monte." },
         ],
         solutions: [
           { title: "Previsione della Domanda",         desc: "Modelli AI costruiti sui tuoi dati storici, pattern stagionali e lead time dei fornitori — per decisioni di acquisto con una base reale." },
@@ -173,7 +173,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
         ],
         insight: {
           hook:  "3–5",
-          label: "Un'operazione SMB media di supply chain opera su 3–5 sistemi disconnessi.",
+          label: "Le operations di una PMI operano in media su 3-5 sistemi disconnessi.",
           sub:   "Il coordinamento manuale tra questi sistemi è dove nascono la maggior parte dei ritardi — ed è qui che troviamo le vittorie più rapide.",
         },
         cta: "Raccontaci il tuo processo di reporting attuale — è lì che troviamo solitamente le opportunità più immediate.",
