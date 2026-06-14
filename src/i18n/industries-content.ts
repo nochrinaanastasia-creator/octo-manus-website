@@ -156,7 +156,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
       /* ── Supply Chain IT ── */
       {
         badge:    "Supply Chain · Logistica · Magazzino",
-        headline: ["Quando le operazioni dipendono dai tempi,", "il coordinamento manuale diventa un rischio."],
+        headline: ["Quando operations dipendono dai tempi,", "il coordinamento manuale diventa un rischio."],
         sub:      "AI per team logistici e di supply chain che operano con precisione — non con promesse.",
         intro:    "La tua operazione dipende dalle informazioni. Quando questi dati sono frammentati su piattaforme diverse, caselle di posta e relazioni con i fornitori, il costo si vede nei ritardi e nelle decisioni prese senza il quadro completo. Costruiamo sistemi AI che danno al tuo team visibilità e reattività — non soluzioni provvisorie.",
         pains: [
@@ -173,7 +173,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
         ],
         insight: {
           hook:  "3–5",
-          label: "Un'operazione SMB media di supply chain opera su 3–5 sistemi disconnessi.",
+          label: "Le operations di una PMI operano in media su 3-5 sistemi disconnessi.",
           sub:   "Il coordinamento manuale tra questi sistemi è dove nascono la maggior parte dei ritardi — ed è qui che troviamo le vittorie più rapide.",
         },
         cta: "Raccontaci il tuo processo di reporting attuale — è lì che troviamo solitamente le opportunità più immediate.",
@@ -235,7 +235,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
 
   /* ─────────────── ESPAÑOL ─────────────── */
   es: {
-    jumpTitles:    ["Supply Chain", "Retail & E-commerce", "Beauty & Wellness", "Tu sector"],
+    jumpTitles:    ["Cadena De Suministro", "Retail y Comercio Digital", "Belleza y Bienestar", "Tu sector"],
     jumpSubs: [
       "Previsión, coordinación de proveedores e informes operativos.",
       "Contenido de producto, atención al cliente e inteligencia de inventario.",
@@ -246,7 +246,7 @@ export const industriesContent: Record<string, IndustriesLang> = {
     solutionLabel: "Lo que construimos para ti",
     exploreLabel:  "Explorar",
     exploreFourthLabel: "Contáctanos",
-    ctaLabel:      "Reserva una Llamada Estratégica",
+    ctaLabel:      "Agenda una llamada",
     ctaNoPitch:    "Sin ventas. Solo una conversación honesta.",
     ctaFitLabel:   "¿No encuentras tu sector?",
     ctaFitH2:      ["Si tu negocio vive de las operaciones,", "hay un caso de uso de IA en él."],
