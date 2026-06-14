@@ -158,7 +158,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
               "@type": "ProfessionalService",
               name: "Octo Manus",
               url: "https://octomanus.com",
-              logo: "https://octomanus.com/logo.png",
+              logo: "https://octomanus.com/logo-square.jpg",
               sameAs: ["https://www.linkedin.com/company/octomanus"],
               description:
                 "Practical AI consulting for small and medium businesses. AI Advisory, Workflow Automation and AI Agents.",
