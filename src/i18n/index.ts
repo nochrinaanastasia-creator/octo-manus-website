@@ -882,11 +882,11 @@ export const it: Translations = {
       },
       {
         title: "Automazione dei Processi",
-        desc: "Processi manuali, flussi di lavoro basati su copia-incolla, informazioni sparse tra sistemi — progettiamo un'automazione intelligente che elimina l'attrito e restituisce al tuo team le ore che contano.",
+        desc: "Processi manuali, flussi di lavoro basati su copia-incolla, informazioni sparse tra sistemi — progettiamo un'automazione intelligente che elimina attrito e restituisce al tuo team le ore che contano.",
       },
       {
         title: "Agenti IA",
-        desc: "Agenti IA costruiti per i tuoi flussi di lavoro specifici — disponibili tutto il giorno, consistenti nella qualità e progettati per gestire le attività ripetitive ad alto volume, così il tuo team può concentrarsi sulle decisioni che richiedono giudizio umano.",
+        desc: "Agenti IA costruiti per i tuoi flussi di lavoro specifici — disponibili tutto il giorno con qualità costante e progettati per gestire le attività ripetitive ad alto volume, così il tuo team può concentrarsi sulle decisioni che richiedono giudizio umano.",
       },
     ],
     ctaH2: "Pronta a smettere di fare manualmente\nquello che l'IA può fare per te?",
@@ -903,12 +903,12 @@ export const it: Translations = {
     history: {
       label: "La Nostra Storia",
       h2: ["Due Professioniste.", "Una Frustrazione.", "Troppi Fogli Excel."],
-      p1: "Octo Manus è stata fondata a Malta da due professioniste provenienti da aree diverse del business: prodotto, project management e operazioni. Quello che avevamo in comune era semplice: avevamo entrambe visto team perdere ore ogni settimana in report manuali, coordinamento ripetuto, strumenti disconnessi e processi che dipendevano troppo dall'impegno individuale.",
+      p1: "Octo Manus è stata fondata a Malta da due professioniste provenienti da aree diverse del business: prodotto, project management e operations. Quello che avevamo in comune era semplice: avevamo entrambe visto team perdere ore ogni settimana in report manuali, coordinamento ripetuto, strumenti disconnessi e processi che dipendevano troppo dall'impegno individuale.",
       p1Bold1: "",
       p1Bold2: "",
-      p2: "Malta era il luogo giusto per dare forma a quell'idea. Mentre il paese investe nell'alfabetizzazione all'IA e rende strumenti avanzati come ChatGPT Plus e Microsoft 365 Personal Copilot più accessibili ai residenti attraverso iniziative nazionali, una cosa diventa chiara: avere accesso all'IA non è più la parte più difficile. Saperla applicare bene all'interno di un'azienda reale, invece, lo è.",
-      p3: "Abbiamo anche visto il divario tra le dimostrazioni dell'IA e la sua implementazione reale. L'IA sembrava impressionante in teoria, ma in molte aziende falliva perché veniva introdotta senza contesto, senza comprensione dei processi e senza un chiaro piano di adozione.",
-      p4: "Octo Manus è stata creata per colmare quel divario — trasformando l'IA da un'opportunità vaga in sistemi pratici che fanno risparmiare tempo, migliorano la coerenza e supportano il modo in cui i team già lavorano.",
+      p2: "Malta era il luogo giusto per dare forma a quell'idea. Mentre il paese investe nell'alfabetizzazione IA e rende strumenti avanzati come ChatGPT Plus e Microsoft 365 Personal Copilot più accessibili ai residenti attraverso iniziative nazionali, una cosa diventa chiara: avere accesso all'IA non è più la parte difficile. Saperla applicare all'interno di un'azienda reale, invece, lo è.",
+      p3: "Abbiamo anche visto il divario tra le dimostrazioni dell'IA e la sua implementazione. L'IA sembrava impressionante in teoria, ma in molte aziende falliva perché veniva introdotta senza contesto, senza comprensione dei processi e senza un chiaro piano di adozione.",
+      p4: "Octo Manus è stata creata per colmare quel divario — trasformando l'IA da un'opportunità vaga in sistemi pratici che fanno risparmiare tempo, migliorano la consistenza e supportano il modo in cui i team già lavorano.",
       founder1Role: "Co-Fondatrice",
       founder1Title: "Prodotto e Strategia",
       founder1Desc:
@@ -916,12 +916,12 @@ export const it: Translations = {
       founder2Role: "Co-Fondatrice",
       founder2Title: "Operazioni e Delivery",
       founder2Desc:
-        "Esperta di operazioni, la nostra co-fondatrice operativa sa esattamente dove le aziende perdono tempo, denaro e motivazione. Porta uno sguardo pratico all'implementazione dell'IA — assicurandosi che ogni flusso di lavoro che progettiamo sia uno che il tuo team userà davvero (e ti ringrazierà in silenzio alle 17 del venerdì).",
+        "Esperta di operazioni, la nostra co-fondatrice operativa sa esattamente dove le aziende perdono tempo, denaro e motivazione. Porta uno sguardo pratico all'implementazione dell'IA — assicurandosi che ogni flusso di lavoro che progettiamo verrà veramente usato dal tuo team (e ti ringrazierà in silenzio alle 17 del venerdì).",
     },
     mission: {
       label: "La Nostra Missione",
       h2: ["Fai dell'IA il Tuo", "Collaboratore", "Più Produttivo."],
-      p1: "La nostra missione è democratizzare l'IA per le piccole e medie imprese — guidando le professioniste a lavorare fianco a fianco con sistemi intelligenti che si occupano del ripetitivo, del dispendioso in termini di tempo e, diciamocelo, del noioso.",
+      p1: "La nostra missione è democratizzare l'IA per le piccole e medie imprese — guidando i professionisti a lavorare fianco a fianco con sistemi intelligenti che si occupano di ciò che è ripetitivo, dispendioso in termini di tempo e, diciamocelo, noioso.",
       p2: "Perché non hai creato la tua azienda per passare tre ore a formattare un report o a inseguire un fornitore per un aggiornamento che è già da qualche parte nella tua casella di posta.",
       p3: "L'hai creata per costruire qualcosa. Riprendiamoci il tempo per farlo davvero.",
       stats: [
@@ -933,7 +933,7 @@ export const it: Translations = {
     },
     values: {
       label: "I Nostri Valori",
-      h2: ["Ciò in Cui Crediamo —", "E da Cui Non Tradiamo."],
+      h2: ["Ciò in Cui Crediamo —", "E da Cui Non Transigiamo."],
       intro:
         "Non sono valori scritti per una presentazione e poi dimenticati. Sono i principi che guidano ogni conversazione, ogni processo e ogni raccomandazione che facciamo.",
       items: [
@@ -950,12 +950,12 @@ export const it: Translations = {
         {
           title: "Praticità Prima dell'Hype",
           highlight: "Risultati, non buzzword.",
-          desc: "Saltiamo il bingo delle parole d'ordine. Ogni soluzione che raccomandiamo risolve un problema reale, fa risparmiare ore reali e genera un ritorno reale — altrimenti non la raccomandiamo.",
+          desc: "Non consigliamo l'IA per impressionare. Ogni soluzione che raccomandiamo risolve un problema reale, fa risparmiare ore reali e genera un ritorno reale — altrimenti non la raccomandiamo.",
         },
         {
           title: "Crescita Senza Attrito",
           highlight: "Inizia in piccolo, cresci in fretta.",
-          desc: "I nostri flussi di lavoro sono progettati per crescere con te. Inizia da un processo, espanditi in tutta l'azienda. Le piccole vittorie si trasformano in vantaggi competitivi significativi.",
+          desc: "I nostri flussi di lavoro sono progettati per crescere con te. Inizia da un processo, espandi in tutta l'azienda. Le piccole vittorie si trasformano in vantaggi competitivi significativi.",
         },
         {
           title: "Fluenza nel Settore",
@@ -965,7 +965,7 @@ export const it: Translations = {
         {
           title: "Partnership a Lungo Termine",
           highlight: "Con te sul lungo periodo.",
-          desc: "Non siamo del tipo \"implementiamo e sparisci\". Restiamo, iteriamo, miglioriamo. Perché la vera trasformazione non avviene in un unico sprint.",
+          desc: "Non siamo del tipo \"implementiamo e sparisci\". Restiamo, interagiamo, miglioriamo. Perché la vera trasformazione non avviene in un unico sprint.",
         },
       ],
     },
@@ -1019,8 +1019,8 @@ export const it: Translations = {
     automation: {
       badge: "Automazione dei Processi",
       headline: ["Meno Lavoro Manuale.", "Più di Ciò che Conta."],
-      sub: "Per le operazioni che funzionano a forza di impegno quando dovrebbero funzionare con sistemi.",
-      intro: "I processi manuali sono costosi in modi che non compaiono in un foglio di calcolo — tempo, morale, tassi di errore, decisioni ritardate. Identifichiamo i flussi di lavoro pronti per essere automatizzati, costruiamo i sistemi che li sostituiscono e ci assicuriamo che si adattino a come il tuo team lavora davvero. L'obiettivo non è l'automazione in sé. È più capacità per il lavoro che conta.",
+      sub: "Per le operazioni che funzionano con la forza dell'impegno quando dovrebbero basarsi sui sistemi.",
+      intro: "I processi manuali presentano costi che non compaiono in un foglio di calcolo — tempo, morale, tassi di errore, decisioni ritardatarie. Identifichiamo i flussi di lavoro pronti per essere automatizzati, costruiamo i sistemi che li sostituiscono e ci assicuriamo che si adattino a come il tuo team lavora davvero. L'obiettivo non è l'automazione in sé. È più capacità per il lavoro che conta.",
       steps: [
         { title: "Discovery Call", desc: "Troviamo dove il lavoro manuale sta costando di più alla tua operazione." },
         { title: "Mappatura dei Processi", desc: "Documentiamo esattamente come viene fatto, da chi e dove le cose si bloccano." },
@@ -1056,7 +1056,7 @@ export const it: Translations = {
   contact: {
     heroLabel: "Contatti",
     heroH1: ["Parliamo del", "Tuo Business."],
-    heroBody: "Nessun discorso, nessuna pressione. Raccontaci su cosa stai lavorando e cosa vorresti cambiare — ti rispondiamo entro 1 giorno lavorativo.",
+    heroBody: "Nessuna presentazione, nessuna pressione. Raccontaci su cosa stai lavorando e cosa vorresti cambiare — ti rispondiamo entro 1 giorno lavorativo.",
     reassurances: [
       { text: "Risposta entro 1 giorno lavorativo" },
       { text: "Nessuna chiamata di vendita salvo che tu la voglia" },
