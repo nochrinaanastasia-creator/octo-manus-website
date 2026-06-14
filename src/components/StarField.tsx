@@ -1,7 +1,5 @@
-/**
- * Shared star-field + constellation utilities for Octo Manus
- */
 import { ROSE } from "@/components/site-chrome";
+import { useState, useEffect } from "react";
 
 export type StarData = {
   top: number;
@@ -14,11 +12,6 @@ export type StarData = {
   blur: number;
 };
 
-/**
- * Generate deterministic, galaxy-style star positions.
- * Default size is small (0.7–2.2 px) — distant stars, not Christmas baubles.
- * brightnessScale 1.0 → opacityMax 0.55–1.0.
- */
 export function makeStars(
   count: number,
   seedOffset: number,
@@ -45,11 +38,6 @@ export function makeStars(
   });
 }
 
-/**
- * Thin constellation lines between nearby "anchor" stars.
- * Picks every `every`-th star as an anchor, then connects each to
- * its nearest 1–2 neighbours within `maxDist` percent of page.
- */
 export function ConstellationLines({
   stars,
   every = 9,
@@ -63,7 +51,10 @@ export function ConstellationLines({
   color?: string;
   lineOpacity?: number;
 }) {
-  // Evenly-spaced anchor nodes, capped at 40
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   const nodes = stars.filter((_, i) => i % every === 0).slice(0, 40);
 
   const lines: { x1: number; y1: number; x2: number; y2: number }[] = [];
@@ -75,7 +66,6 @@ export function ConstellationLines({
       .map((b, j) => ({
         b,
         j,
-        // Correct for typical aspect ratio so distances look natural
         d: Math.hypot((a.left - b.left) * 1.7, a.top - b.top),
       }))
       .filter(({ j }) => j !== i)
@@ -121,6 +111,10 @@ export function StarField({
   stars: StarData[];
   className?: string;
 }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return <div className={`pointer-events-none absolute inset-0 ${className}`} aria-hidden />;
+
   return (
     <div className={`pointer-events-none absolute inset-0 ${className}`} aria-hidden>
       {stars.map((s, i) => {
