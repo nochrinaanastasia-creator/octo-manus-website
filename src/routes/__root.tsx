@@ -149,13 +149,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
-        {/* JSON-LD — tells Google which image to use as the organisation logo */}
+        {/* JSON-LD — tells Google about the local business and service area */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "ProfessionalService",
               name: "Octo Manus",
               url: "https://octomanus.com",
               logo: "https://octomanus.com/logo.png",
@@ -167,6 +167,21 @@ function RootShell({ children }: { children: React.ReactNode }) {
                 email: "info@octomanus.com",
                 contactType: "customer service",
               },
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "MT",
+                addressLocality: "Valletta"
+              },
+              areaServed: {
+                "@type": "GeoCircle",
+                geoMidpoint: {
+                  "@type": "GeoCoordinates",
+                  latitude: 48.0,
+                  longitude: 9.0
+                },
+                geoRadius: "3000000",
+                description: "Europe"
+              }
             }),
           }}
         />

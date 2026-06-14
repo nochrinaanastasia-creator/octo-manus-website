@@ -676,6 +676,10 @@ export function SiteFooter() {
                     {t.footer.email}
                   </a>
                 </li>
+                <li className="opacity-65 pt-2">
+                  <p>Valletta, Malta</p>
+                  <p className="text-xs mt-0.5 opacity-80">(Serving Europe)</p>
+                </li>
               </ul>
             </div>
           </div>
