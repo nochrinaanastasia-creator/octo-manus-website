@@ -39,7 +39,7 @@ export interface Translations {
   };
   home: {
     heroH1: string[];
-    heroSubtitle: string;
+    heroSubtitle: string[];
     heroBody: string;
     services: { title: string; desc: string }[];
     ctaH2: string;
@@ -100,6 +100,7 @@ export interface Translations {
   services: {
     heroLabel: string;
     heroH1: string[];
+    heroSubtitle: string;
     heroBody: string;
     exploreLabel: string;
     howWeWork: string;
@@ -236,7 +237,10 @@ export const en: Translations = {
   },
   home: {
     heroH1: ["Turn Manual Work", "Into", "Intelligent Systems"],
-    heroSubtitle: "AI built for the way your business actually\u00A0operates. Leading AI Advisory for SMBs in Malta and across Europe.",
+    heroSubtitle: [
+      "AI built for the way your business actually\u00A0operates.",
+      "Leading AI Advisory for SMBs in Malta and across Europe.",
+    ],
     heroBody:
       "We help small and medium businesses use AI where it actually matters: repetitive admin, operational reporting, customer support, supplier follow-ups, product content, and workflow coordination. We advise, design, and build practical AI systems around your existing operations — without requiring your team to become technical or hire an internal engineering department.",
     services: [
@@ -261,7 +265,7 @@ export const en: Translations = {
       label: "Our Story",
       h1: ["AI Is Not Magic.", "But the Results?", "Pretty Close."],
       body:
-        "Octo Manus was created to help SMEs move from AI curiosity to practical implementation: clear use cases, realistic workflows, and tools your team can actually use.",
+        "Octo Manus was created to help SMEs across Europe move from AI curiosity to practical implementation: clear use cases, realistic workflows, and tools your team can actually use.",
       bodyStrong: "",
     },
     history: {
@@ -344,7 +348,7 @@ export const en: Translations = {
     heroLabel: "Industries",
     heroH1: ["The AI That Speaks", "Your Industry's Language."],
     heroBody:
-      "Not every business runs the same way. Not every sector has the same pace, the same pressure points, or the same definition of a productive day. That's why our AI solutions are built around your industry — not around a generic use case.",
+      "Not every business runs the same way. Not every sector has the same pace, the same pressure points, or the same definition of a productive day. That's why our AI solutions are built around your industry — not around a generic use case. From Malta to every corner of Europe, our solutions are shaped to your sector, not the other way around.",
     supplyChain: {
       navLabel: "Supply Chain",
       shortLabel: "Supply Chain",
@@ -361,7 +365,8 @@ export const en: Translations = {
   services: {
     heroLabel: "Services",
     heroH1: ["AI That Works the Way", "Your Business Does."],
-    heroBody: "Advisory, automation, and AI agents — three services, one goal: less manual work and more output, designed with responsible AI, human oversight, and EU compliance in mind.",
+    heroSubtitle: ["Trusted by SMBs across Malta and Europe."],
+    heroBody: "Advisory, automation, and AI agents — three services, one goal: less manual work and more output, designed with responsible AI, human oversight, and EU compliance in mind — for SMBs across Malta and Europe.",
     exploreLabel: "↓ Explore",
     howWeWork: "How we work",
     advisory: {
@@ -420,7 +425,7 @@ export const en: Translations = {
   contact: {
     heroLabel: "Contact",
     heroH1: ["Let's Talk About", "Your Business."],
-    heroBody: "No pitch, no pressure. Tell us what you're working on and what you'd like to change — we'll come back within 1 business day.",
+    heroBody: "No pitch, no pressure. Tell us what you're working on and what you'd like to change — we'll come back within 1 business day, whether you're in Malta, Italy, Spain, or anywhere in Europe.",
     reassurances: [
       { text: "Reply within 1 business day" },
       { text: "No sales call unless you want one" },
@@ -556,7 +561,10 @@ export const es: Translations = {
   },
   home: {
     heroH1: ["Convierte el Trabajo Manual", "en", "Sistemas Inteligentes"],
-    heroSubtitle: "IA construida para el modo en que tu negocio opera de\u00A0verdad. Asesor\u00EDa l\u00EDder en IA para pymes en Espa\u00F1a y toda Europa.",
+    heroSubtitle: [
+      "IA construida para el modo en que tu negocio opera de\u00A0verdad.",
+      "Asesor\u00EDa l\u00EDder en IA para pymes en Espa\u00F1a y toda Europa.",
+    ],
     heroBody:
       "Ayudamos a las pequeñas y medianas empresas a usar la IA donde realmente importa: administración repetitiva, informes operativos, atención al cliente, seguimiento a proveedores, contenido de producto y coordinación de flujos de trabajo. Asesoramos, diseñamos y construimos sistemas de IA prácticos en torno a tus operaciones actuales — sin necesidad de que tu equipo se vuelva técnico ni de contratar un departamento de ingeniería\u00A0interna.",
     services: [
@@ -581,7 +589,7 @@ export const es: Translations = {
       label: "Nuestra Historia",
       h1: ["La IA no es magia.", "¿Pero los resultados?", "Casi."],
       body:
-        "Octo Manus fue creada para ayudar a las pymes a pasar de la curiosidad por la IA a la implementación práctica: casos de uso claros, flujos de trabajo realistas y herramientas que tu equipo puede usar de\u00A0verdad.",
+        "Octo Manus fue creada para ayudar a las pymes de toda Europa a pasar de la curiosidad por la IA a la implementación práctica: casos de uso claros, flujos de trabajo realistas y herramientas que tu equipo puede usar de\u00A0verdad.",
       bodyStrong: "",
     },
     history: {
@@ -664,7 +672,7 @@ export const es: Translations = {
     heroLabel: "Sectores",
     heroH1: ["La IA Que Habla", "el Idioma de Tu Sector."],
     heroBody:
-      "No todos los negocios funcionan igual. No todos los sectores tienen el mismo ritmo, los mismos puntos de presión o la misma definición de un día productivo. Por eso nuestras soluciones de IA se construyen en torno a tu sector — no en torno a un caso de uso genérico.",
+      "No todos los negocios funcionan igual. No todos los sectores tienen el mismo ritmo, los mismos puntos de presión o la misma definición de un día productivo. Por eso nuestras soluciones de IA se construyen en torno a tu sector — no en torno a un caso de uso genérico. Desde Malta hasta España y toda Europa, nuestras soluciones se adaptan a tu sector, no al revés.",
     supplyChain: {
       navLabel: "Cadena de Suministro",
       shortLabel: "Cadena de Suministro",
@@ -681,7 +689,8 @@ export const es: Translations = {
   services: {
     heroLabel: "Servicios",
     heroH1: ["Una IA que Funciona", "Como tu Negocio."],
-    heroBody: "Asesoría, automatización y agentes de IA — tres servicios, un único objetivo: menos trabajo manual y más resultados, sin interrumpir el funcionamiento actual de tu\u00A0equipo.",
+    heroSubtitle: ["Elegido por pymes en España y toda Europa."],
+    heroBody: "Asesoría, automatización y agentes de IA — tres servicios, un único objetivo: menos trabajo manual y más resultados, sin interrumpir el funcionamiento actual de tu\u00A0equipo — para pymes en España y toda Europa.",
     exploreLabel: "↓ Explorar",
     howWeWork: "Cómo trabajamos",
     advisory: {
@@ -740,7 +749,7 @@ export const es: Translations = {
   contact: {
     heroLabel: "Contacto",
     heroH1: ["Hablemos de", "Tu Negocio."],
-    heroBody: "Sin discursos, sin presión. Cuéntanos en qué estás trabajando y qué te gustaría cambiar — te respondemos en 1 día hábil.",
+    heroBody: "Sin discursos, sin presión. Cuéntanos en qué estás trabajando y qué te gustaría cambiar — te respondemos en 1 día hábil, tanto si estás en España, Malta, Italia o en cualquier lugar de Europa.",
     reassurances: [
       { text: "Respuesta en 1 día hábil" },
       { text: "Sin llamada de ventas salvo que la quieras" },
@@ -876,7 +885,10 @@ export const it: Translations = {
   },
   home: {
     heroH1: ["Trasforma il Lavoro Manuale", "in", "Sistemi Intelligenti"],
-    heroSubtitle: "IA costruita per il modo in cui la tua azienda opera\u00A0davvero. Consulenza leader in IA per le PMI in Italia e in tutta Europa.",
+    heroSubtitle: [
+      "IA costruita per il modo in cui la tua azienda opera\u00A0davvero.",
+      "Consulenza leader in IA per le PMI in Italia e in tutta Europa.",
+    ],
     heroBody:
       "Aiutiamo le piccole e medie imprese a usare l'IA dove conta davvero: amministrazione ripetitiva, reportistica operativa, assistenza clienti, follow-up con fornitori, contenuti di prodotto e coordinamento dei flussi di lavoro. Consigliamo, progettiamo e costruiamo sistemi IA pratici attorno alle tue operazioni esistenti — senza che il tuo team debba diventare tecnico o assumere un reparto ingegneristico\u00A0interno.",
     services: [
@@ -901,7 +913,7 @@ export const it: Translations = {
       label: "La Nostra Storia",
       h1: ["L'IA non è magia.", "Ma i risultati?", "Quasi."],
       body:
-        "Octo Manus è stata creata per aiutare le PMI a passare dalla curiosità verso l'IA alla sua implementazione pratica: casi d'uso chiari, flussi di lavoro realistici e strumenti che il tuo team può davvero usare.",
+        "Octo Manus è stata creata per aiutare le PMI in tutta Europa a passare dalla curiosità verso l'IA alla sua implementazione pratica: casi d'uso chiari, flussi di lavoro realistici e strumenti che il tuo team può davvero usare.",
       bodyStrong: "",
     },
     history: {
@@ -984,7 +996,7 @@ export const it: Translations = {
     heroLabel: "Settori",
     heroH1: ["L'IA Che Parla", "la Lingua del Tuo Settore."],
     heroBody:
-      "Non tutte le aziende funzionano allo stesso modo. Non tutti i settori hanno lo stesso ritmo, le stesse pressioni o la stessa definizione di una giornata produttiva. Per questo le nostre soluzioni IA sono costruite attorno al tuo settore — non attorno a un caso d'uso generico.",
+      "Non tutte le aziende funzionano allo stesso modo. Non tutti i settori hanno lo stesso ritmo, le stesse pressioni o la stessa definizione di una giornata produttiva. Per questo le nostre soluzioni IA sono costruite attorno al tuo settore — non attorno a un caso d'uso generico. Da Malta all'Italia e a tutta Europa, le nostre soluzioni si adattano al tuo settore, non al contrario.",
     supplyChain: {
       navLabel: "Supply Chain",
       shortLabel: "Supply Chain",
@@ -1001,7 +1013,8 @@ export const it: Translations = {
   services: {
     heroLabel: "Servizi",
     heroH1: ["Una IA che Funziona", "Come la Tua Azienda."],
-    heroBody: "Consulenza, automazione e agenti IA — tre servizi, un unico obiettivo: meno lavoro manuale e più output, senza stravolgere il modo in cui il tuo team già opera.",
+    heroSubtitle: ["Scelto dalle PMI in Italia e in tutta Europa."],
+    heroBody: "Consulenza, automazione e agenti IA — tre servizi, un unico obiettivo: meno lavoro manuale e più output, senza stravolgere il modo in cui il tuo team già opera — per le PMI in Italia e in tutta Europa.",
     exploreLabel: "↓ Scopri",
     howWeWork: "Come lavoriamo",
     advisory: {
@@ -1060,7 +1073,7 @@ export const it: Translations = {
   contact: {
     heroLabel: "Contatti",
     heroH1: ["Parliamo del", "Tuo Business."],
-    heroBody: "Nessuna presentazione, nessuna pressione. Raccontaci su cosa stai lavorando e cosa vorresti cambiare — ti rispondiamo entro 1 giorno lavorativo.",
+    heroBody: "Nessuna presentazione, nessuna pressione. Raccontaci su cosa stai lavorando e cosa vorresti cambiare — ti rispondiamo entro 1 giorno lavorativo, che tu sia in Italia, Malta, Spagna o in qualsiasi altra parte d'Europa.",
     reassurances: [
       { text: "Risposta entro 1 giorno lavorativo" },
       { text: "Nessuna chiamata di vendita salvo che tu la voglia" },
