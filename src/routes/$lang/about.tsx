@@ -21,10 +21,10 @@ function nb(text: string): string {
   );
 }
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/$lang/about")({
   component: AboutPage,
-  head: ({ search }) => {
-    const lang = (search as any)?.lang || "en";
+  head: ({ params }) => {
+    const lang = (params as any)?.lang || "en";
     const t = translations[lang as keyof typeof translations] || translations.en;
     const seo = t.seo.about;
     return {
@@ -70,7 +70,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 const VALUE_ICONS = [Zap, Users, Shield, TrendingUp, Globe, Heart];
 
 function AboutPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const ta = t.about;
   const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);
 

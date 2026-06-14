@@ -11,10 +11,10 @@ import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
-export const Route = createFileRoute("/privacy")({
+export const Route = createFileRoute("/$lang/privacy")({
   component: PrivacyPage,
-  head: ({ search }) => {
-    const lang = (search as any)?.lang || "en";
+  head: ({ params }) => {
+    const lang = (params as any)?.lang || "en";
     const t = translations[lang as keyof typeof translations] || translations.en;
     const seo = t.seo.privacy;
     return {

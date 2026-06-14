@@ -16,10 +16,10 @@ import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/$lang/services")({
   component: ServicesPage,
-  head: ({ search }) => {
-    const lang = (search as any)?.lang || "en";
+  head: ({ params }) => {
+    const lang = (params as any)?.lang || "en";
     const t = translations[lang as keyof typeof translations] || translations.en;
     const seo = t.seo.services;
     return {
@@ -321,7 +321,7 @@ function ServiceSection({ service, idx, howWeWorkLabel }: { service: ServiceData
 
 /* ── Page ────────────────────────────────────────────────── */
 function ServicesPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);

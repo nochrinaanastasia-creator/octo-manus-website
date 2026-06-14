@@ -9,136 +9,120 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LangIndexRouteImport } from './routes/$lang/index'
+import { Route as LangServicesRouteImport } from './routes/$lang/services'
+import { Route as LangPrivacyRouteImport } from './routes/$lang/privacy'
+import { Route as LangIndustriesRouteImport } from './routes/$lang/industries'
+import { Route as LangContactRouteImport } from './routes/$lang/contact'
+import { Route as LangAboutRouteImport } from './routes/$lang/about'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndustriesRoute = IndustriesRouteImport.update({
-  id: '/industries',
-  path: '/industries',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/$lang/',
+  path: '/$lang/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangServicesRoute = LangServicesRouteImport.update({
+  id: '/$lang/services',
+  path: '/$lang/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangPrivacyRoute = LangPrivacyRouteImport.update({
+  id: '/$lang/privacy',
+  path: '/$lang/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangIndustriesRoute = LangIndustriesRouteImport.update({
+  id: '/$lang/industries',
+  path: '/$lang/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangContactRoute = LangContactRouteImport.update({
+  id: '/$lang/contact',
+  path: '/$lang/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LangAboutRoute = LangAboutRouteImport.update({
+  id: '/$lang/about',
+  path: '/$lang/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/industries': typeof LangIndustriesRoute
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/services': typeof LangServicesRoute
+  '/$lang/': typeof LangIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/industries': typeof LangIndustriesRoute
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/services': typeof LangServicesRoute
+  '/$lang': typeof LangIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/$lang/about': typeof LangAboutRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/industries': typeof LangIndustriesRoute
+  '/$lang/privacy': typeof LangPrivacyRoute
+  '/$lang/services': typeof LangServicesRoute
+  '/$lang/': typeof LangIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/contact'
-    | '/industries'
-    | '/privacy'
-    | '/services'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/industries'
+    | '/$lang/privacy'
+    | '/$lang/services'
+    | '/$lang/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/industries' | '/privacy' | '/services'
+  to:
+    | '/'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/industries'
+    | '/$lang/privacy'
+    | '/$lang/services'
+    | '/$lang'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/contact'
-    | '/industries'
-    | '/privacy'
-    | '/services'
+    | '/$lang/about'
+    | '/$lang/contact'
+    | '/$lang/industries'
+    | '/$lang/privacy'
+    | '/$lang/services'
+    | '/$lang/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
-  IndustriesRoute: typeof IndustriesRoute
-  PrivacyRoute: typeof PrivacyRoute
-  ServicesRoute: typeof ServicesRoute
+  LangAboutRoute: typeof LangAboutRoute
+  LangContactRoute: typeof LangContactRoute
+  LangIndustriesRoute: typeof LangIndustriesRoute
+  LangPrivacyRoute: typeof LangPrivacyRoute
+  LangServicesRoute: typeof LangServicesRoute
+  LangIndexRoute: typeof LangIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/industries': {
-      id: '/industries'
-      path: '/industries'
-      fullPath: '/industries'
-      preLoaderRoute: typeof IndustriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -146,16 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/$lang'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang/services': {
+      id: '/$lang/services'
+      path: '/$lang/services'
+      fullPath: '/$lang/services'
+      preLoaderRoute: typeof LangServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang/privacy': {
+      id: '/$lang/privacy'
+      path: '/$lang/privacy'
+      fullPath: '/$lang/privacy'
+      preLoaderRoute: typeof LangPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang/industries': {
+      id: '/$lang/industries'
+      path: '/$lang/industries'
+      fullPath: '/$lang/industries'
+      preLoaderRoute: typeof LangIndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang/contact': {
+      id: '/$lang/contact'
+      path: '/$lang/contact'
+      fullPath: '/$lang/contact'
+      preLoaderRoute: typeof LangContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$lang/about': {
+      id: '/$lang/about'
+      path: '/$lang/about'
+      fullPath: '/$lang/about'
+      preLoaderRoute: typeof LangAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ContactRoute: ContactRoute,
-  IndustriesRoute: IndustriesRoute,
-  PrivacyRoute: PrivacyRoute,
-  ServicesRoute: ServicesRoute,
+  LangAboutRoute: LangAboutRoute,
+  LangContactRoute: LangContactRoute,
+  LangIndustriesRoute: LangIndustriesRoute,
+  LangPrivacyRoute: LangPrivacyRoute,
+  LangServicesRoute: LangServicesRoute,
+  LangIndexRoute: LangIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

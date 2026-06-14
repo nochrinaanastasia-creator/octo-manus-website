@@ -74,15 +74,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  validateSearch: (search: Record<string, unknown>): RootSearch => {
-    const l = search.lang as string;
-    return {
-      lang: (l === "en" || l === "es" || l === "it") ? l : "en",
-    };
-  },
-  head: ({ search }) => {
-    const lang = search?.lang || "en";
-    const t = translations[lang];
+  head: ({ params }) => {
+    const lang = (params as any)?.lang || "en";
+    const t = translations[lang as keyof typeof translations] || translations.en;
     
     // Check if we have SEO translations, otherwise fallback
     const seo = t.seo || translations.en.seo;
@@ -112,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           content: seo?.description || "AI consulting studio helping SMBs adopt AI, automate workflows, and build intelligent agents — without needing a single line of code.",
         },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: `https://octomanus.com/?lang=${lang}` },
+        { property: "og:url", content: `https://octomanus.com/${lang}` },
         { property: "og:image", content: "https://octomanus.com/logo.png" },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
@@ -132,11 +126,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           rel: "stylesheet",
           href: appCss,
         },
-        { rel: "canonical", href: `https://octomanus.com/?lang=${lang}` },
-        { rel: "alternate", hrefLang: "en", href: "https://octomanus.com/?lang=en" },
-        { rel: "alternate", hrefLang: "es", href: "https://octomanus.com/?lang=es" },
-        { rel: "alternate", hrefLang: "it", href: "https://octomanus.com/?lang=it" },
-        { rel: "alternate", hrefLang: "x-default", href: "https://octomanus.com/?lang=en" },
+        { rel: "canonical", href: `https://octomanus.com/${lang}` },
+        { rel: "alternate", hrefLang: "en", href: "https://octomanus.com/en" },
+        { rel: "alternate", hrefLang: "es", href: "https://octomanus.com/es" },
+        { rel: "alternate", hrefLang: "it", href: "https://octomanus.com/it" },
+        { rel: "alternate", hrefLang: "x-default", href: "https://octomanus.com/en" },
       ],
     };
   },

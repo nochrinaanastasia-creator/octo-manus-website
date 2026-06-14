@@ -11,10 +11,10 @@ import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/$lang/contact")({
   component: ContactPage,
-  head: ({ search }) => {
-    const lang = (search as any)?.lang || "en";
+  head: ({ params }) => {
+    const lang = (params as any)?.lang || "en";
     const t = translations[lang as keyof typeof translations] || translations.en;
     const seo = t.seo.contact;
     return {
@@ -108,7 +108,7 @@ function Field({
 
 /* ── Page ────────────────────────────────────────────────── */
 function ContactPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const ct = t.contact;
 
   const [form, setForm] = useState<FormData>(EMPTY);

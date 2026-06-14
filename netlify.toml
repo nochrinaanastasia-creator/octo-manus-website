@@ -1,6 +1,39 @@
-[build]
-  command = "npm run build"
-  publish = "dist/client"
+[[redirects]]
+  from = "/"
+  query = {lang = ":lang"}
+  to = "/:lang/"
+  status = 301
+  force = true
 
-[functions]
-  directory = ".netlify/v1/functions"
+[[redirects]]
+  from = "/about"
+  query = {lang = ":lang"}
+  to = "/:lang/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  query = {lang = ":lang"}
+  to = "/:lang/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries"
+  query = {lang = ":lang"}
+  to = "/:lang/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  query = {lang = ":lang"}
+  to = "/:lang/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

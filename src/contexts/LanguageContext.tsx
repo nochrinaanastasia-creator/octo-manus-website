@@ -14,9 +14,9 @@ const LanguageContext = createContext<LanguageContextValue>({
   t: translations.en,
 });
 
-import { useNavigate, useSearch } from "@tanstack/react-router";
+import { useNavigate, useParams, useLocation } from "@tanstack/react-router";
 
-const STORAGE_KEY = "octo-lang-detected";
+export const STORAGE_KEY = "octo-lang-detected";
 
 /** Detect preferred language from browser locale. Only runs on first visit. */
 function detectLangFromBrowser(): Lang {
@@ -32,15 +32,16 @@ function detectLangFromBrowser(): Lang {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const search = useSearch({ strict: false }) as { lang?: string };
+  const params = useParams({ strict: false }) as { lang?: string };
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const lang: Lang = (search.lang === "es" || search.lang === "it") ? search.lang : "en";
+  const lang: Lang = (params.lang === "es" || params.lang === "it") ? params.lang : "en";
 
   // On first visit (no lang param in URL), auto-detect from browser locale.
   // Store in localStorage so we only redirect once — manual switches are respected.
   useEffect(() => {
-    if (search.lang) return; // user already has a lang param, don't override
+    if (params.lang) return; // user already has a lang param, don't override
     const alreadyDetected = typeof localStorage !== "undefined" && localStorage.getItem(STORAGE_KEY);
     if (alreadyDetected) return; // already ran detection before
     const detected = detectLangFromBrowser();
@@ -48,7 +49,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem(STORAGE_KEY, detected);
     }
     if (detected !== "en") {
-      navigate({ search: (prev: any) => ({ ...prev, lang: detected }), replace: true });
+      const parts = location.pathname.split("/").filter(Boolean);
+      parts.unshift(detected);
+      navigate({ to: "/" + parts.join("/") + location.hash, replace: true });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -58,7 +61,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     if (typeof localStorage !== "undefined") {
       localStorage.setItem(STORAGE_KEY, l);
     }
-    navigate({ search: (prev: any) => ({ ...prev, lang: l }), replace: true });
+    
+    // Replace the first segment of the pathname with the new lang
+    // E.g. /en/about -> /it/about
+    const parts = location.pathname.split("/").filter(Boolean);
+    if (parts.length > 0 && (parts[0] === "en" || parts[0] === "it" || parts[0] === "es")) {
+      parts[0] = l;
+    } else {
+      parts.unshift(l);
+    }
+    const newPath = "/" + parts.join("/") + location.hash;
+    navigate({ to: newPath });
   };
 
   return (
