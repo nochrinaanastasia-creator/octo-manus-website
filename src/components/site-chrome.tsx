@@ -83,6 +83,7 @@ export function FloatingCta() {
 export function CookieBar() {
   const STORAGE_KEY = "octo-cookie-consent";
   const [show, setShow] = useState(false);
+  const { lang } = useLanguage();
 
   const loadGA = () => {
     if (typeof window === "undefined") return;
