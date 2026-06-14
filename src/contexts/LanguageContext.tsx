@@ -74,6 +74,28 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const setLang = (l: Lang) => {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, l);
+    }
+    
+    const parts = location.pathname.split("/").filter(Boolean);
+    const currentSlug = parts.length > 1 ? parts[1] : "";
+    
+    let baseSlug = currentSlug;
+    if (currentSlug) {
+      for (const [key, map] of Object.entries(ROUTE_MAP)) {
+        if (Object.values(map).includes(currentSlug)) {
+          baseSlug = key;
+          break;
+        }
+      }
+    }
+    
+    const newPath = getLocalizedPath(l, baseSlug) + location.hash;
+    navigate({ to: newPath });
+  };
+
 return (
     <LanguageContext.Provider value={{ lang, setLang, t: translations[lang] }}>
       {children}

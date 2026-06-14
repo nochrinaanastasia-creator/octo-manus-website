@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Globe, Menu, X, ChevronDown, Phone } from "lucide-react";
 import logo from "@/assets/octo-manus-logo.png";
-import { useLanguage, LANG_LABELS } from "@/contexts/LanguageContext";
+import { useLanguage, LANG_LABELS, getLocalizedPath } from "@/contexts/LanguageContext";
 
 export const IVORY = "#F5EFE7";
 export const HEADER_BG = "#030812";
