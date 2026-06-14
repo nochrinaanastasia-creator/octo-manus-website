@@ -50,16 +50,17 @@ export function getLocalizedPath(lang: Lang, baseSlug: string) {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const params = useParams({ strict: false }) as { lang?: string };
   const location = useLocation();
   const navigate = useNavigate();
 
-  const lang: Lang = (params.lang === "es" || params.lang === "it") ? params.lang : "en";
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const pathLang = pathParts.length > 0 ? pathParts[0] : "";
+  const lang: Lang = (pathLang === "es" || pathLang === "it") ? pathLang : "en";
 
   // On first visit (no lang param in URL), auto-detect from browser locale.
   // Store in localStorage so we only redirect once — manual switches are respected.
   useEffect(() => {
-    if (params.lang) return; // user already has a lang param, don't override
+    if (pathLang === "en" || pathLang === "es" || pathLang === "it") return; // user already has a lang param, don't override
     const alreadyDetected = typeof localStorage !== "undefined" && localStorage.getItem(STORAGE_KEY);
     if (alreadyDetected) return; // already ran detection before
     const detected = detectLangFromBrowser();
