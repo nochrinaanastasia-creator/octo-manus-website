@@ -627,6 +627,14 @@ export function SiteFooter() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    to={getLocalizedPath(lang, "privacy")}
+                    className="opacity-65 transition-opacity hover:opacity-100"
+                  >
+                    {lang === "it" ? "Privacy" : lang === "es" ? "Privacidad" : "Privacy Policy"}
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -696,13 +704,6 @@ export function SiteFooter() {
           <p>{t.footer.copyright}</p>
           <div className="flex items-center gap-4">
             <p>{t.footer.slogan}</p>
-            <Link
-              to={getLocalizedPath(lang, "privacy")}
-              className="shrink-0 underline underline-offset-2 transition-opacity hover:opacity-100"
-              style={{ opacity: 0.65 }}
-            >
-              {lang === "it" ? "Privacy" : lang === "es" ? "Privacidad" : "Privacy Policy"}
-            </Link>
           </div>
         </div>
       </div>

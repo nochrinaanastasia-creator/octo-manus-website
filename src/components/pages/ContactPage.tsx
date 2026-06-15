@@ -8,7 +8,7 @@ import {
   SiteHeader, SiteFooter, IVORY, PAGE_BG, ROSE, ctaButtonStyle,
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, getLocalizedPath } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n";
 
 type FormData = {
@@ -500,7 +500,7 @@ export function ContactPage() {
             <span className="text-base leading-relaxed" style={{ color: IVORY, opacity: 0.65 }}>
               {ct.privacyText}{" "}
               <a
-                href="/privacy"
+                href={getLocalizedPath(lang, "privacy")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-2 transition-opacity hover:opacity-100"
