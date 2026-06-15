@@ -560,7 +560,7 @@ export const es: Translations = {
     aiAgents: "Agentes de IA",
   },
   home: {
-    heroH1: ["Convierte el Trabajo Manual", "en", "Sistemas Inteligentes"],
+    heroH1: ["Convierte", "el Trabajo Manual", "en Sistemas Inteligentes"],
     heroSubtitle: [
       "IA construida para el modo en que tu negocio opera de\u00A0verdad.",
       "Asesor\u00EDa l\u00EDder en IA para pymes en Espa\u00F1a y toda Europa.",
@@ -884,7 +884,7 @@ export const it: Translations = {
     aiAgents: "Agenti IA",
   },
   home: {
-    heroH1: ["Trasforma il Lavoro Manuale", "in", "Sistemi Intelligenti"],
+    heroH1: ["Trasforma", "il Lavoro Manuale", "in Sistemi Intelligenti"],
     heroSubtitle: [
       "IA costruita per il modo in cui la tua azienda opera\u00A0davvero.",
       "Consulenza leader in IA per le PMI in Italia e in tutta Europa.",

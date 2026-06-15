@@ -570,10 +570,10 @@ export function SiteFooter() {
   const { t, lang } = useLanguage();
 
   const navLinks = [
-    { label: t.nav.about, to: "/about" },
-    { label: t.nav.services, to: "/services" },
-    { label: t.nav.industries, to: "/industries" },
-    { label: t.nav.contact, to: "/contact" },
+    { label: t.nav.about, to: getLocalizedPath(lang, "about") },
+    { label: t.nav.services, to: getLocalizedPath(lang, "services") },
+    { label: t.nav.industries, to: getLocalizedPath(lang, "industries") },
+    { label: t.nav.contact, to: getLocalizedPath(lang, "contact") },
   ];
 
   return (
@@ -694,7 +694,16 @@ export function SiteFooter() {
           }}
         >
           <p>{t.footer.copyright}</p>
-          <p>{t.footer.slogan}</p>
+          <div className="flex items-center gap-4">
+            <p>{t.footer.slogan}</p>
+            <Link
+              to={getLocalizedPath(lang, "privacy")}
+              className="shrink-0 underline underline-offset-2 transition-opacity hover:opacity-100"
+              style={{ opacity: 0.65 }}
+            >
+              {lang === "it" ? "Privacy" : lang === "es" ? "Privacidad" : "Privacy Policy"}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

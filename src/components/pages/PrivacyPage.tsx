@@ -8,7 +8,6 @@ import {
 } from "@/components/site-chrome";
 import { makeStars, StarField } from "@/components/StarField";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { translations } from "@/i18n";
 
 interface PolicyText {
   title: string;
@@ -211,7 +210,7 @@ const privacyTranslations: Record<"en" | "es" | "it", PolicyText> = {
 
 export function PrivacyPage() {
   const { lang } = useLanguage();
-  const content = translations[lang] || translations.en;
+  const content = privacyTranslations[lang as "en" | "it" | "es"] || privacyTranslations.en;
 
   const stars = useMemo(
     () => makeStars(120, 24, { top: [-5, 110], left: [-5, 105] }),
