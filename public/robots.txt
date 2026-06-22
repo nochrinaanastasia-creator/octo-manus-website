@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Block Vite's hashed asset bundle (prevents transparent PNGs from being indexed)
+Disallow: /assets/
+
 Sitemap: https://octomanus.com/sitemap.xml
