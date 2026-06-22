@@ -98,6 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           content: seo?.keywords || "AI consulting, AI advisory, business automation, AI agents, workflow automation, logistics AI, customer support AI, operations AI, SMB AI, no-code AI",
         },
         { name: "theme-color", content: "#01060F" },
+        { name: "google-site-verification", content: "XiBL7YqUVL3nMQL9JaKN2G8cTfZEfCA04p2fKpFKPkE" },
         // Open Graph
         { property: "og:site_name", content: "Octo Manus" },
         { property: "og:title", content: seo?.title || "Octo Manus — AI Consulting for Business Professionals" },
